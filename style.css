@@ -1,9 +1,14 @@
+body {
+    margin: 0px;
+}
 #test {
     width: 200px; 
     height: 200px; 
     background: red;
     border-radius: 50%;
+    /* position: absolute;
+    left: -200px;  */
 
-    position: absolute;
-    left: -100px;
+    /* position: absolute; */
+    /* left: -100px; */
 }

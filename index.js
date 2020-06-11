@@ -4,10 +4,12 @@ console.log(test);
 
 // create keyframes inside an array 
 
-let kf = [
+let slideInFrames = [
     {
         background: 'black',
-        // left: '-20px'
+        // left: '-200px'
+        transform: 'translateX(-200px)'
+
     },
     {
         background: 'blue',
@@ -15,15 +17,48 @@ let kf = [
     },
     {
         background: 'red',
-        left: '10px'
+        // left: '0'
+        transform: 'translateX(0px)'
+
     }
 ]
 
-// create object denoting time values 
-let time = {
-    duration: 1000,
+let slideOutFrames = [
+    {
+        background: 'black',
+        transform: 'translateX(0px)'
+    },
+    {
+        background: 'blue',
+        // offset: 0.2
+    },
+    {
+        background: 'red',
+        // left: '-200px'
+        transform: 'translateX(-200px)'
+    }
+]
+
+// create object denoting option values 
+let timeIn = {
+    duration: 500,
+    easing: 'ease-out',
     // iterations: Infinity
 }
 
-// apply animation to test div 
-test.animate(kf, time)
+
+const slideMenuIn = () => {
+    // apply animation to test div 
+    return test.animate(slideInFrames, {
+        duration: 500,
+        easing: 'ease-out',
+        iterations: 1
+    })
+}
+
+const slideMenuOut = () => {
+    // apply animation to test div 
+    return test.animate(slideOutFrames, {duration:200})    
+}
+
+slideMenuIn() 
