@@ -62,7 +62,7 @@ const slideMenuOut = () => {
 }
 // add 'active' class to drawer to open and close it
 const toggleMenuOpen = () => {
-    sideDrawer.classList.toggle('non-active'); 
+    // sideDrawer.classList.toggle('non-active'); 
     sideDrawer.classList.toggle('active'); 
 }
 

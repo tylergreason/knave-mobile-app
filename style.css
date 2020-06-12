@@ -7,12 +7,20 @@ body {
     margin: 0px;
 }
 
+/* button to toggle open and closing the side drawer */
+#toggler {
+    position: absolute; 
+    top: 0px; 
+    right: 0px; 
+}
+
 #sideDrawer {
     width: var(--drawerWidth); 
     height: 100vh;  
     /* border-radius: 50%; */
     transition: 0.5s;
-    top: 100px; 
+    /* transition: 0.1s; */
+    top: 0px; 
     overflow-y: scroll;
     position: absolute;
 }
@@ -21,12 +29,16 @@ body {
     /* left: -200px; */
     /* top: 100px;  */
     background: rgb(100,100,100);
+    transition-timing-function: ease-out;
 }
 
 .active {
     /* transform: translateX(calc(var(--drawerWidth) * 0.5)); */
-    transform: translateX(30px);
+    /* transform: translateX(var(--drawerWidth)); */
+    left: 0px;
     background: rgb(50,50,50);
+    transition-timing-function: ease-in;
+
 }
 
 .filler {
