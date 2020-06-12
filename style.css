@@ -1,14 +1,49 @@
+/* css global variables */
+:root {
+    --drawerWidth: 200px; 
+}
+
 body {
     margin: 0px;
 }
-#test {
-    width: 200px; 
-    height: 200px; 
-    background: red;
-    border-radius: 50%;
-    /* position: absolute;
-    left: -200px;  */
 
-    /* position: absolute; */
-    /* left: -100px; */
+#sideDrawer {
+    width: var(--drawerWidth); 
+    height: 100vh;  
+    /* border-radius: 50%; */
+    transition: 0.5s;
+    top: 100px; 
+    overflow-y: scroll;
+    position: absolute;
+}
+.non-active {
+    left: calc(var(--drawerWidth) * -1);
+    /* left: -200px; */
+    /* top: 100px;  */
+    background: rgb(100,100,100);
+}
+
+.active {
+    /* transform: translateX(calc(var(--drawerWidth) * 0.5)); */
+    transform: translateX(30px);
+    background: rgb(50,50,50);
+}
+
+.filler {
+    height: 100px; 
+    color: white; 
+    margin: auto; 
+    word-wrap: wrap;
+    margin: 15px; 
+    text-align: center; 
+    align-items: center;
+    border: 2px solid white;
+
+}
+
+#closeMenuButton { 
+    position: sticky; 
+    float: right;
+    margin-right: 20px; 
+    top: 20px; 
 }
