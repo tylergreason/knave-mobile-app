@@ -1,3 +1,10 @@
+const drawerWidth = 200; 
+
+const swipeAreaLeft = 0, minimumSwipeDistance = 20, swipeAreaRight = swipeAreaLeft + minimumSwipeDistance; 
+// set css drawer width to that which is set above 
+document.documentElement.style.setProperty(`--drawerWidth`, `${drawerWidth}px`);
+
+
 // find sideDrawer div 
 let sideDrawer = document.getElementById('sideDrawer'); 
 let toggler = document.getElementById('toggler')
@@ -95,8 +102,8 @@ let x1, y1;
 document.addEventListener('touchstart', (event) => {
     console.log('touch moved');
     let touchLocation = event.targetTouches[0]
-    console.log(touchLocation.pageX);
-    console.log(touchLocation.pageY);
+    // console.log(touchLocation.pageX);
+    // console.log(touchLocation.pageY);
     x1 = touchLocation.clientX;
     y1 = touchLocation.clientY;
 })
@@ -105,12 +112,16 @@ document.addEventListener('touchend', event =>{
     let x2 = event.changedTouches[0].clientX; 
     let y2 = event.changedTouches[0].clientY; 
     // console.log (x1 - x2); 
-    if (x2 - x1 > 20 && x1 < 20){
+    // if the minimum distance swiped is (whatever the const set at the top of this page says) and the swipe started inside the swipe area (again, see the top of the page for those consts)
+    console.log(`${x1} ${x2}`)
+    // debugger
+    if (x2 - x1 > minimumSwipeDistance && x1 < swipeAreaRight){
         if (!sideDrawer.classList.contains('active')){
             sideDrawer.classList.add('active')
         }
     }
-    if (x2 - x1 < 20 && x1 < 200){
+    else if ((Math.abs(x1) - Math.abs(x2) > (minimumSwipeDistance)) && x1 > x2 && x1 < drawerWidth){
+        console.log('swiped back')
         if (sideDrawer.classList.contains('active')){
             sideDrawer.classList.remove('active')
         }
