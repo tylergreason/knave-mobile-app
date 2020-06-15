@@ -4,7 +4,7 @@
     --drawerColor: rgb(50,50,50);
     --textColor: rgb(200,200,200);
     --backgroundColor: rgb(20,20,20);
-    --drawerBackgroundColor: rgb(100,100,100); 
+    --drawerBackgroundColor: rgb(200,200,200); 
 }
 
 body {
@@ -22,8 +22,7 @@ body {
 #sideDrawer {
     width: var(--drawerWidth); 
     height: 100vh;  
-    background: var(--backgroundColor);
-    background: cornsilk;
+    background: var(--drawerBackgroundColor);
     top: 0px; 
     overflow-y: scroll;
     position: fixed;
