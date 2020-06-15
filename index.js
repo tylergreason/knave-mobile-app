@@ -124,4 +124,20 @@ document.addEventListener('touchend', event => {
     }
 })
 
+const toggleSubItemActive = (subItem) => {
+    subItem.classList.toggle('active');
+}
+
+// add click listener to all drawerItemTitle elements to unhide their sibling subItem elements 
+const drawerItemsList = Array.from(document.getElementsByClassName('drawerItem'));
+drawerItemsList.forEach(item => {
+    let subItems = item.getElementsByClassName('subItems'); 
+    // add event listener to item to toggle active class of the first (and only) subItem in that element 
+    item.addEventListener('click', () => toggleSubItemActive(subItems[0]))
+    // debugger
+}) 
+
+
+
+// Array.from(di.children).filter(item => item.classList.contains('subItem')).forEach(item => item.classList.toggle('active'))
 

@@ -19,6 +19,8 @@ body {
 #sideDrawer {
     width: var(--drawerWidth); 
     height: 100vh;  
+    background: var(--drawerColor);
+    background-color: cornsilk;
     /* border-radius: 50%; */
     /* transition: 0.1s; */
     position: absolute;
@@ -31,25 +33,25 @@ body {
     /* justify-content: center; */
 }
 
+/* drawer non-active class  */
 .non-active {
     left: calc(var(--drawerWidth) * -1);
     /* left: -200px; */
     /* top: 100px;  */
-    background: var(--drawerColor);
     transition-timing-function: ease-out;
     transition: 0.1s;
 }
 
+/* drawer active class  */
 .active {
     transition: 0.2s;
     /* transform: translateX(calc(var(--drawerWidth) * 0.5)); */
     /* transform: translateX(var(--drawerWidth)); */
     left: 0px;
     transition-timing-function: ease-in;
-
 }
 
-.drawerItem {
+.drawerItemTitle {
     font-size: 1.5rem; 
     height: 100px; 
     width: calc(var(--drawerWidth) * 0.9);
@@ -62,10 +64,25 @@ body {
     background-color: rgb(200, 100, 100);
 }
 
+.subItem {
+    /* height: 100%; */
+    display: none; 
+}
+
 /* sub items of drawer items  */
-.subItem{
-    height: 50px; 
-    color: blue; 
+.subItems {
+    height: 0px; 
+    display: hidden;
+    color: white`;
+}
+
+.subItems.active {
+    display: block; 
+    height: 100%; 
+}
+/* when subItems has the active class, unhide its children */
+.subItems.active .subItem {
+    display: block;
 }
 
 #closeMenuButton { 
@@ -73,7 +90,6 @@ body {
     float: right;
     margin-right: 20px; 
     top: 20px; 
-
     height: 0px; 
     background-color: transparent;
     width: 50px; 
