@@ -1,7 +1,10 @@
 /* css global variables */
 :root {
     --drawerWidth: 200px; 
-    --drawerColor: rgb(50,50,50)
+    --drawerColor: rgb(50,50,50);
+    --textColor: rgb(200,200,200);
+    --backgroundColor: rgb(20,20,20);
+    --drawerBackgroundColor: rgb(100,100,100); 
 }
 
 body {
@@ -19,19 +22,12 @@ body {
 #sideDrawer {
     width: var(--drawerWidth); 
     height: 100vh;  
-    background: var(--drawerColor);
-    background-color: cornsilk;
-    /* border-radius: 50%; */
-    /* transition: 0.1s; */
-    position: absolute;
+    background: var(--backgroundColor);
+    background: cornsilk;
     top: 0px; 
     overflow-y: scroll;
-    /* padding: 10px; */
-    /* margin: auto; */
-    /* display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: center; */
+    position: fixed;
+
 }
 
 /* drawer non-active class  */
@@ -41,6 +37,7 @@ body {
     /* top: 100px;  */
     transition-timing-function: ease-out;
     transition: 0.1s;
+    /* position: absolute;  */
 }
 
 /* drawer active class  */
@@ -50,6 +47,7 @@ body {
     /* transform: translateX(var(--drawerWidth)); */
     left: 0px;
     transition-timing-function: ease-in;
+    /* position: sticky; */
 }
 
 .drawerItem {
@@ -127,4 +125,11 @@ body {
     top: 10px; 
     /* right: 10px;  */
     background-color: red;
+}
+
+main {
+    overflow-y: scroll;
+    padding: 10px;
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
 }
