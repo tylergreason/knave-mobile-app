@@ -5,6 +5,7 @@
 
 body {
     margin: 0px;
+    font-family: roboto, sans-serif;
 }
 
 /* button to toggle open and closing the side drawer */
@@ -19,9 +20,9 @@ body {
     height: 100vh;  
     /* border-radius: 50%; */
     /* transition: 0.1s; */
+    position: absolute;
     top: 0px; 
     overflow-y: scroll;
-    position: absolute;
 }
 
 .non-active {
@@ -43,16 +44,20 @@ body {
 
 }
 
-.filler {
+.drawerItem {
+    font-size: 1.5rem; 
     height: 100px; 
+    width: calc(var(--drawerWidth) * 0.8);
     color: white; 
-    margin: auto; 
-    word-wrap: wrap;
-    margin: 15px; 
-    text-align: center; 
+    /* margin: auto;  */
+    /* padding: 10px; */
+    margin: 5px auto; 
+    /* border: 2px solid white; */
+    display: flex; 
     align-items: center;
-    border: 2px solid white;
-
+    justify-content: center;
+    text-align: center; 
+    background-color: rgb(200, 100, 100);
 }
 
 #closeMenuButton { 
