@@ -27,10 +27,10 @@ body {
     top: 0px; 
     overflow-y: scroll;
     /* margin: auto; */
-    /* display: flex; */
-    /* flex-flow: column; */
-    /* align-items: center; */
-    /* justify-content: center; */
+    /* display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center; */
 }
 
 /* drawer non-active class  */
@@ -51,22 +51,21 @@ body {
     transition-timing-function: ease-in;
 }
 
+.drawerItem {
+
+}
+
 .drawerItemTitle {
     font-size: 1.5rem; 
     height: 100px; 
     width: calc(var(--drawerWidth) * 0.9);
     color: white; 
-    margin: 5px auto;
+    margin: 5px auto; 
+    background-color: rgb(200, 100, 100);
     display: flex; 
     align-items: center;
     justify-content: center;
-    text-align: center; 
-    background-color: rgb(200, 100, 100);
-}
-
-.subItem {
-    /* height: 100%; */
-    display: none; 
+    text-align: center;
 }
 
 /* sub items of drawer items  */
@@ -77,12 +76,21 @@ body {
 }
 
 .subItems.active {
+    /* background-color: blue; */
     display: block; 
     height: 100%; 
+    transition: .2s;
 }
+
+.subItem {
+    display: none; 
+    transition: .2s;
+}
+
 /* when subItems has the active class, unhide its children */
 .subItems.active .subItem {
     display: block;
+    transition: .2s;
 }
 
 #closeMenuButton { 

@@ -125,7 +125,9 @@ document.addEventListener('touchend', event => {
 })
 
 const toggleSubItemActive = (subItem) => {
-    subItem.classList.toggle('active');
+    if (subItem !== undefined){
+        subItem.classList.toggle('active');
+    }
 }
 
 // add click listener to all drawerItemTitle elements to unhide their sibling subItem elements 
