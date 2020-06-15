@@ -120,26 +120,20 @@ const toggleSubItemActive = (subItem) => {
     }
 }
 
-// add click listener to all drawerItemTitle elements to unhide their sibling subItem elements 
-// const drawerItemsList = Array.from(document.getElementsByClassName('drawerItem'));
-// drawerItemsList.forEach(item => {
-//     // find all subItem elements inside this element
-//     let subItems = item.getElementsByClassName('subItems'); 
-//     // add event listener to item to toggle active class of the first (and only) subItem in that element 
-//     item.addEventListener('click', () => toggleSubItemActive(subItems[0]))
-//     // debugger
-// }) 
-
 // find all titles, add this event listener to them
 let titles = Array.from(document.getElementsByClassName('drawerItemTitle')); 
-let lists = Array.from(document.getElementsByClassName('subItems'))
+let subItems = Array.from(document.getElementsByClassName('subItems'))
+
 titles.forEach(title => {
-    // iterate through subItems and add event listener to toggle active class on the subItems list that matches this title 
+    // find the UL that matches this title element (the next sibling element) and add toggle its visitbility with a callback to toggleSubItemActive(the matching UL) 
     let matchingUL = title.nextElementSibling;
     console.log(matchingUL);
     if (matchingUL !== undefined){
         title.addEventListener('click', () => toggleSubItemActive(matchingUL))
     }
 })
-// Array.from(di.children).filter(item => item.classList.contains('subItem')).forEach(item => item.classList.toggle('active'))
 
+// on a subitem click, hide the drawer
+subItems.forEach(subItem => {
+    subItem.addEventListener('click', toggleMenuOpen)
+})

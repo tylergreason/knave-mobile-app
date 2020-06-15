@@ -26,6 +26,7 @@ body {
     position: absolute;
     top: 0px; 
     overflow-y: scroll;
+    /* padding: 10px; */
     /* margin: auto; */
     /* display: flex;
     flex-flow: column;
@@ -58,7 +59,8 @@ body {
 .drawerItemTitle {
     font-size: 1.5rem; 
     height: 100px; 
-    width: calc(var(--drawerWidth) * 0.9);
+    /* width: calc(var(--drawerWidth) * 0.9); */
+    width: 100%;
     color: white; 
     margin: 5px auto; 
     background-color: rgb(200, 100, 100);
@@ -66,6 +68,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
+    font-style: italic;
 }
 
 /* sub items of drawer items  */
@@ -80,12 +83,21 @@ body {
     display: block; 
     height: 100%; 
     transition: .2s;
+    padding: 0px 10px; 
 }
 
 .subItem {
-    line-height: 1.5rem;
+    line-height: 1rem;
     display: none; 
     transition: .2s;
+    word-wrap: wrap;
+    width: 100%; 
+    margin: auto; 
+    font-size: .8rem;
+}
+
+.subItem:before{
+    content: '- '
 }
 
 /* when subItems has the active class, unhide its children */
