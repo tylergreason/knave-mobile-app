@@ -83,21 +83,11 @@ const removeEventListenerFromCloseButton = () => {
 
 toggler.addEventListener('click', toggleMenuOpen)
 
-
 let x1, y1; 
 document.addEventListener('touchstart', (event) => {
-    // debugger
-    // console.log('touch moved');
     let touchLocation = event.targetTouches[0]
-    // console.log(touchLocation.pageX);
-    // console.log(touchLocation.pageY);
-    console.log(touchLocation.clientX - event.changedTouches[0].clientX);
-    
-
     x1 = touchLocation.clientX;
     y1 = touchLocation.clientY;
-    // debugger
-
 })
 
 document.addEventListener('touchend', event => {
@@ -133,6 +123,7 @@ const toggleSubItemActive = (subItem) => {
 // add click listener to all drawerItemTitle elements to unhide their sibling subItem elements 
 const drawerItemsList = Array.from(document.getElementsByClassName('drawerItem'));
 drawerItemsList.forEach(item => {
+    // find all subItem elements inside this element
     let subItems = item.getElementsByClassName('subItems'); 
     // add event listener to item to toggle active class of the first (and only) subItem in that element 
     item.addEventListener('click', () => toggleSubItemActive(subItems[0]))
