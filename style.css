@@ -1,6 +1,7 @@
 /* css global variables */
 :root {
     --drawerWidth: 200px; 
+    --drawerColor: rgb(50,50,50)
 }
 
 body {
@@ -23,13 +24,18 @@ body {
     position: absolute;
     top: 0px; 
     overflow-y: scroll;
+    /* margin: auto; */
+    /* display: flex; */
+    /* flex-flow: column; */
+    /* align-items: center; */
+    /* justify-content: center; */
 }
 
 .non-active {
     left: calc(var(--drawerWidth) * -1);
     /* left: -200px; */
     /* top: 100px;  */
-    background: rgb(100,100,100);
+    background: var(--drawerColor);
     transition-timing-function: ease-out;
     transition: 0.1s;
 }
@@ -39,20 +45,16 @@ body {
     /* transform: translateX(calc(var(--drawerWidth) * 0.5)); */
     /* transform: translateX(var(--drawerWidth)); */
     left: 0px;
-    background: rgb(50,50,50);
     transition-timing-function: ease-in;
 
 }
 
 .drawerItem {
     font-size: 1.5rem; 
-    height: 100px; 
-    width: calc(var(--drawerWidth) * 0.8);
+    height: 150px; 
+    width: calc(var(--drawerWidth) * 0.9);
     color: white; 
-    /* margin: auto;  */
-    /* padding: 10px; */
-    margin: 5px auto; 
-    /* border: 2px solid white; */
+    margin: 5px auto;
     display: flex; 
     align-items: center;
     justify-content: center;
@@ -61,7 +63,7 @@ body {
 }
 
 #closeMenuButton { 
-    position: sticky; 
+    position: absolute; 
     float: right;
     margin-right: 20px; 
     top: 20px; 
