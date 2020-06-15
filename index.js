@@ -121,16 +121,25 @@ const toggleSubItemActive = (subItem) => {
 }
 
 // add click listener to all drawerItemTitle elements to unhide their sibling subItem elements 
-const drawerItemsList = Array.from(document.getElementsByClassName('drawerItem'));
-drawerItemsList.forEach(item => {
-    // find all subItem elements inside this element
-    let subItems = item.getElementsByClassName('subItems'); 
-    // add event listener to item to toggle active class of the first (and only) subItem in that element 
-    item.addEventListener('click', () => toggleSubItemActive(subItems[0]))
-    // debugger
-}) 
+// const drawerItemsList = Array.from(document.getElementsByClassName('drawerItem'));
+// drawerItemsList.forEach(item => {
+//     // find all subItem elements inside this element
+//     let subItems = item.getElementsByClassName('subItems'); 
+//     // add event listener to item to toggle active class of the first (and only) subItem in that element 
+//     item.addEventListener('click', () => toggleSubItemActive(subItems[0]))
+//     // debugger
+// }) 
 
-
-
+// find all titles, add this event listener to them
+let titles = Array.from(document.getElementsByClassName('drawerItemTitle')); 
+let lists = Array.from(document.getElementsByClassName('subItems'))
+titles.forEach(title => {
+    // iterate through subItems and add event listener to toggle active class on the subItems list that matches this title 
+    let matchingUL = title.nextElementSibling;
+    console.log(matchingUL);
+    if (matchingUL !== undefined){
+        title.addEventListener('click', () => toggleSubItemActive(matchingUL))
+    }
+})
 // Array.from(di.children).filter(item => item.classList.contains('subItem')).forEach(item => item.classList.toggle('active'))
 

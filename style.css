@@ -70,8 +70,8 @@ body {
 
 /* sub items of drawer items  */
 .subItems {
-    height: 0px; 
-    display: hidden;
+    height: 0px;
+    display: none;
     color: white`;
 }
 
@@ -83,6 +83,7 @@ body {
 }
 
 .subItem {
+    line-height: 1.5rem;
     display: none; 
     transition: .2s;
 }
