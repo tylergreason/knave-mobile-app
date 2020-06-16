@@ -1,5 +1,5 @@
 # Knave Mobile App
-A mobile application for the Knave Role Playing Game by Ben Milton
+A mobile application for the Knave, a role playing game by Ben Milton
 
 This app was originally made to play around with webkit animations. It soon evolved into experiments with JavaScript's touch API, then into a mock mobile application, and now into the framework for my Knave mobile app. 
 
