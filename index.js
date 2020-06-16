@@ -84,10 +84,45 @@ const removeEventListenerFromCloseButton = () => {
 toggler.addEventListener('click', toggleMenuOpen)
 
 let x1, y1; 
+let recentTouches = []; 
+let firstX = ''; 
 document.addEventListener('touchstart', (event) => {
+    if (firstX === ''){
+        firstX = event.changedTouches[0].clientX; 
+        console.log(firstX);
+    }
+    // console.log(event.timeStamp)
+    // check for doubletap, make sure  recentTouches list isn't empty first 
+
+    if (recentTouches.length > 0){
+        // console.log(recentTouches)
+        // console.log(`${event.timeStamp} - ${recentTouches[recentTouches.length-1]}`);
+        if ((event.timeStamp - recentTouches[recentTouches.length-1]) < 1000){
+            console.log('double tap')
+            recentTouches = [];
+        }
+    }
+    recentTouches = [];
+    recentTouches.push(event.timeStamp); 
+    console.log(recentTouches);
     let touchLocation = event.targetTouches[0]
     x1 = touchLocation.clientX;
     y1 = touchLocation.clientY;
+    // debugger
+})
+
+
+document.addEventListener('touchmove', (event)=>{
+    // console.log(event.touches[0].clientY)
+    // console.log(event.touches[0].clientX)
+
+    // toggler.style.left = event.touches[0].pageX + 'px'
+    // toggler.style.top = event.touches[0].pageY + 'px'
+    if (event.touches[0].clientX > firstX + 20){
+        // move drawer out 
+        sideDrawer.style.left = event.touches[0].clientX;
+    }
+
 })
 
 document.addEventListener('touchend', event => {
@@ -97,7 +132,7 @@ document.addEventListener('touchend', event => {
     let yDiff = Math.abs(y1 - y2); 
 
     // if the minimum distance swiped is (whatever the const set at the top of this page says) and the swipe started inside the swipe area (again, see the top of the page for those consts)
-    console.log(`${x1} ${x2}`)
+    // console.log(`${x1} ${x2}`)
     // debugger
     // if swiping right 
     if (x2 - x1 > minimumSwipeDistance && x1 < swipeAreaRight){
@@ -112,6 +147,7 @@ document.addEventListener('touchend', event => {
             sideDrawer.classList.remove('active')
         }
     }
+    firstX = '';
 })
 
 const toggleSubItemActive = (subItem) => {
