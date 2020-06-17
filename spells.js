@@ -125,9 +125,10 @@ spellsList.forEach(spell => {
 const createSpellList = spells => {
     // create an unordered list to wrap spells in 
     const spellUL = document.createElement('ul');
+    spellUL.className = 'spells'; 
 
     spells.forEach(spell => {
-        let boldText = `${spell.number}. ${spell.name}`
+        let boldText = `${spell.name}`
         let regularText = `: ${spell.description}`
         let boldTextSpan = document.createElement('span');
         let regularTextSpan = document.createElement('span');
@@ -135,6 +136,7 @@ const createSpellList = spells => {
         regularTextSpan.innerText = regularText;
 
         let spellLI = document.createElement('li'); 
+        spellLI.innerText = `${spell.number}. `;
         spellLI.className = 'spell'
         spellLI.appendChild(boldTextSpan)
         spellLI.appendChild(regularTextSpan)
