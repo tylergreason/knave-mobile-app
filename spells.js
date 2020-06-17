@@ -149,3 +149,14 @@ const createSpellList = spells => {
 const spellList = document.getElementById('spellList');
 // append spell list to that element 
 spellList.appendChild(createSpellList(spells))
+
+// find spell generator button and apply event listener for generateRandomSpell() to it 
+const spellGeneratorButton = document.getElementById('spellGeneratorButton')
+spellGeneratorButton.addEventListener('click', () => generateRandomSpell(spells))
+// random spell button 
+const generateRandomSpell = spells => {
+    let spell = spells[Math.floor(Math.random()*spells.length)]
+    const spellGenerator = document.getElementById('spellGenerator')
+    spellGenerator.innerText = `${spell.number}. ${spell.name}: ${spell.description}`;
+    
+}
