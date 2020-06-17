@@ -121,7 +121,29 @@ spellsList.forEach(spell => {
     spells.push(newSpell)
 })
 
-console.log(spells[0]);
-console.log(spells[10]);
-console.log(spells[spells.length-1]);
-console.log(spells)
+// function to create UL element containing LI of spells 
+const createSpellList = spells => {
+    // create an unordered list to wrap spells in 
+    const spellUL = document.createElement('ul');
+
+    spells.forEach(spell => {
+        let boldText = `${spell.number}. ${spell.name}`
+        let regularText = `: ${spell.description}`
+        let boldTextSpan = document.createElement('span');
+        let regularTextSpan = document.createElement('span');
+        boldTextSpan.innerText = boldText; 
+        regularTextSpan.innerText = regularText;
+
+        let spellLI = document.createElement('li'); 
+        spellLI.className = 'spell'
+        spellLI.appendChild(boldTextSpan)
+        spellLI.appendChild(regularTextSpan)
+        spellUL.appendChild(spellLI); 
+    })
+    return spellUL; 
+}
+
+// find where the spell list should be appended
+const spellList = document.getElementById('spellList');
+// append spell list to that element 
+spellList.appendChild(createSpellList(spells))
