@@ -1,4 +1,4 @@
-["1. Adhere: Object is covered in extremely sticky slime. ",
+const spellsList = ["1. Adhere: Object is covered in extremely sticky slime. ",
 "2. Animate Object: Object obeys your commands as best it can. It can walk 15ft per round.",
 "3. Anthropomorphize: A touched animal either gains human intelligence or human appearance for L days. ",
 "4. Arcane Eye: You can see through a magical floating eyeball that flies around at your command.",
@@ -93,12 +93,35 @@
 "93. True Sight: You see through all nearby illusions.",
 "94. Upwell: A spring of seawater appears.",
 "95. Vision: You completely control what a creature sees. ",
-"96. Visual Illusion: A silent, immobile, illusion of your",
-"choice appears, up to the size of a bedroom.",
-"97. Ward: A silver circle 40ft across appears on the",
-"ground. Choose one thing that cannot cross it: Living",
-"creatures, dead creatures, projectiles or metal.",
+"96. Visual Illusion: A silent, immobile, illusion of your choice appears, up to the size of a bedroom.",
+"97. Ward: A silver circle 40ft across appears on the ground. Choose one thing that cannot cross it: living creatures, dead creatures, projectiles or metal.",
 "98. Web: Your wrists can shoot thick webbing.",
-"99. Wizard Mark: Your finger can shoot a stream of",
-"ulfire-colored paint. This paint is only visible to you, and can be seen at any distance, even through solid objects.",
+"99. Wizard Mark: Your finger can shoot a stream of ulfire-colored paint. This paint is only visible to you, and can be seen at any distance, even through solid objects.",
 "100. X-Ray Vision: You gain X-Ray vision."]
+
+// array to push spell objects to 
+let spells = []; 
+// iterate through array of strings, make an object of each string (with number, name, description), then push that object to spells array 
+spellsList.forEach(spell => {
+    let newSpell = {}; 
+    // find period after number  
+    let decimal = spell.indexOf('.');
+    let spellNumber = parseInt(spell.slice(0,decimal));
+    newSpell.number = spellNumber;
+
+    // find name of spell 
+    let colon = spell.indexOf(':'); 
+    let spellName = spell.slice(decimal+1, colon); 
+    newSpell.name = spellName.trim(); 
+
+    // find spell description 
+    let spellDescription = spell.slice(colon+1); 
+    newSpell.description = spellDescription.trim();
+
+    spells.push(newSpell)
+})
+
+console.log(spells[0]);
+console.log(spells[10]);
+console.log(spells[spells.length-1]);
+console.log(spells)
