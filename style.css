@@ -15,7 +15,19 @@ body {
     margin: 0px;
     line-height: 1.5;
     font-family: roboto, sans-serif;
+    padding: 0px;
 }
+
+main {
+    --mainPadding: 10px; 
+    overflow-y: scroll;
+    padding: 0px;
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
+    /* add padding to the left to make up for side drawer width */
+    padding-left: calc(var(--drawerWidth) + var(--mainPadding)); 
+}
+
 
 article {
     max-width: var(--standardWidth);
@@ -33,6 +45,7 @@ h1 {
 
 /* button to toggle open and closing the side drawer */
 #toggler {
+    display: none;
     position: absolute; 
     top: 0px; 
     right: 0px; 
@@ -41,7 +54,7 @@ h1 {
 #sideDrawer {
     width: var(--drawerWidth); 
     height: 100vh;  
-    background: var(--drawerBackgroundColor);
+    background: var(--textColor);
     top: 0px; 
     overflow-y: scroll;
     position: fixed; 
@@ -59,47 +72,18 @@ h1 {
     /* max-height: 100px;  */
 }
 
-.drawerItemTitle {
-    font-size: 1.5rem; 
-    height: 100px; 
+.drawerItem {
+    font-size: 1.2rem; 
+    height: 40px; 
     /* width: calc(var(--drawerWidth) * 0.9); */
     width: 100%;
-    color: white; 
-    margin: 5px auto; 
-    background-color: rgb(200, 100, 100);
+    color: var(--backgroundColor); 
+    margin: 10px auto; 
+    background-color: var(--textColor);
     display: flex; 
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-style: italic;
-}
-
-/* sub items of drawer items  */
-.subItems {
-    height: 0px;
-    display: none;
-    color: white`;
-}
-
-.subItems.active {
-    /* background-color: blue; */
-    display: block; 
-    height: 100%; 
-    transition: .2s;
-    padding: 0px 10px; 
-}
-
-.subItem {
-    display: none; 
-    transition: .2s;
-    word-wrap: wrap;
-    width: 100%; 
-    margin: auto; 
-    font-size: .8rem;
-}
-
-.subItem:before{
-    content: '- '
 }
 
 /* when subItems has the active class, unhide its children */
@@ -131,16 +115,6 @@ h1 {
     top: 10px; 
     /* right: 10px;  */
     background-color: red;
-}
-
-main {
-    --mainPadding: 10px; 
-    overflow-y: scroll;
-    padding: var(--mainPadding);
-    background-color: var(--backgroundColor);
-    color: var(--textColor);
-    /* add padding to the left to make up for side drawer width */
-    padding-left: calc(var(--drawerWidth) + var(--mainPadding)); 
 }
 
 b {
@@ -250,7 +224,7 @@ h2 {
     padding: 5px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
     #sideDrawer.non-active {
         left: calc(var(--drawerWidth) * -1);
         transition-timing-function: ease-out;
@@ -268,7 +242,7 @@ h2 {
         padding: 10px;
     }
 
-    #closeMenuButton {
+    #closeMenuButton, #toggler {
         display: block;
     }
 }

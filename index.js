@@ -4,85 +4,26 @@ const swipeAreaLeft = 0, minimumSwipeDistance = 60, swipeAreaRight = swipeAreaLe
 // set css drawer width to that which is set above 
 document.documentElement.style.setProperty(`--drawerWidth`, `${drawerWidth}px`);
 
-
-// find sideDrawer div 
-let sideDrawer = document.getElementById('sideDrawer'); 
-let toggler = document.getElementById('toggler')
-let closeButton = document.getElementById('closeMenuButton')
-
-// create keyframes inside an array 
-let slideInFrames = [
-    {
-        background: 'black',
-        // left: '-200px'
-        transform: 'translateX(-200px)'
-
-    },
-    {
-        background: 'blue',
-        // offset: 0.2
-    },
-    {
-        background: 'red',
-        // left: '0'
-        transform: 'translateX(0px)'
-
-    }
-]
-
-let slideOutFrames = [
-    {
-        background: 'black',
-        transform: 'translateX(0px)'
-    },
-    {
-        background: 'blue',
-        // offset: 0.2
-    },
-    {
-        background: 'red',
-        // left: '-200px'
-        transform: 'translateX(-200px)'
-    }
-]
-
-// create object denoting option values 
-let timeIn = {
-    duration: 500,
-    easing: 'ease-out',
-    // iterations: Infinity
-}
-
-
-const slideMenuIn = () => {
-    // apply animation to sideDrawer div 
-    return sideDrawer.animate(slideInFrames, {
-        duration: 500,
-        easing: 'ease-out',
-        iterations: 1
-    })
-}
-
-const slideMenuOut = () => {
-    // apply animation to sideDrawer div 
-    return sideDrawer.animate(slideOutFrames, {duration:200})    
-}
-
 // add 'active' class to drawer to open and close it
 const toggleMenuOpen = () => {
     sideDrawer.classList.toggle('active'); 
 }
 
-closeButton.addEventListener('click', toggleMenuOpen)
-
-// define function to remove event listener from closeButton 
-const removeEventListenerFromCloseButton = () => {
-    closeButton.removeEventListener('click', toggleMenuOpen)
+const closeSideDrawer = () => {
+    if (sideDrawer.classList.contains('active')){
+        sideDrawer.classList.remove('active'); 
+    }
 }
 
+closeMenuButton.addEventListener('click', toggleMenuOpen)
+// define function to remove event listener from closeMenuButton 
+const removeEventListenerFromcloseMenuButton = () => {
+    closeMenuButton.removeEventListener('click', toggleMenuOpen)
+}
 
 toggler.addEventListener('click', toggleMenuOpen)
 
+// swiping menu open touch feature
 let x1, y1; 
 let recentTouches = []; 
 let firstX = ''; 
@@ -142,7 +83,7 @@ document.addEventListener('touchend', event => {
     }
     // if swiping left 
     else if ((x1 - x2 > minimumSwipeDistance) && x1 < drawerWidth && xDiff > yDiff){
-        console.log('swiped back')
+        // console.log('swiped back')
         if (sideDrawer.classList.contains('active')){
             sideDrawer.classList.remove('active')
         }
@@ -173,3 +114,24 @@ titles.forEach(title => {
 subItems.forEach(subItem => {
     subItem.addEventListener('click', toggleMenuOpen)
 })
+
+
+// generate sideDrawer buttons for navigation 
+const headers = Array.from(document.getElementsByTagName('h2')); 
+
+const generateNavigation = list => {
+    list.forEach(item => {
+        let link = '#' + item.id; 
+        let title = item.childNodes[0].data; 
+        let element = document.createElement('a'); 
+
+        // add event listener to close menu on click 
+        element.addEventListener('click', closeSideDrawer)
+
+        element.className = 'drawerItem'; 
+        element.href = link; 
+        element.innerText = title; 
+        sideDrawer.appendChild(element); 
+    })
+}
+generateNavigation(headers); 
