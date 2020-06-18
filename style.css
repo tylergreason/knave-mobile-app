@@ -108,7 +108,9 @@ h1 {
     transition: .2s;
 }
 
-#closeMenuButton { 
+#closeMenuButton {
+     /*keep hidden until in mobile size screen  */
+    display: none; 
     position: sticky; 
     /* right: 100px; */
     float: right;
@@ -264,5 +266,9 @@ h2 {
     }
     main {
         padding: 10px;
+    }
+
+    #closeMenuButton {
+        display: block;
     }
 }
