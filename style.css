@@ -44,34 +44,15 @@ h1 {
     background: var(--drawerBackgroundColor);
     top: 0px; 
     overflow-y: scroll;
-    position: fixed;
+    position: fixed; 
     z-index: 2;
-}
-
-/* drawer non-active class  */
-.non-active {
-    left: calc(var(--drawerWidth) * -1);
-    /* left: -200px; */
-    /* top: 100px;  */
-    transition-timing-function: ease-out;
-    transition: 0.1s;
-    /* position: absolute;  */
-}
-
-/* drawer active class  */
-.active {
-    transition: 0.2s;
-    /* transform: translateX(calc(var(--drawerWidth) * 0.5)); */
-    /* transform: translateX(var(--drawerWidth)); */
-    left: 0px;
-    transition-timing-function: ease-in;
-    /* position: sticky; */
+    /* display: inline; */
 }
 
 /* blur body when side drawer is active */
 #sideDrawer.active ~ main{
-    transition: 0.2s ease;
-    filter: blur(1px);
+    transition: 0.2s ease-in;
+    filter: blur(2px);
 }
 
 .drawerItem {
@@ -151,10 +132,13 @@ h1 {
 }
 
 main {
+    --mainPadding: 10px; 
     overflow-y: scroll;
-    padding: 10px;
+    padding: var(--mainPadding);
     background-color: var(--backgroundColor);
     color: var(--textColor);
+    /* add padding to the left to make up for side drawer width */
+    padding-left: calc(var(--drawerWidth) + var(--mainPadding)); 
 }
 
 b {
@@ -170,7 +154,8 @@ h2 {
     text-align: center;
 }
 .headerBGLine {
-    background-image: linear-gradient(transparent 40%, blue 40%, blue 60%, transparent 60%);
+    /* the following line draws a line behind the header with this tag */
+    /* background-image: linear-gradient(transparent 40%, blue 40%, blue 60%, transparent 60%); */
 }
 
 #spellList {
@@ -261,4 +246,23 @@ h2 {
     border: 3px solid var(--textColor); 
     border-radius: 7px; 
     padding: 5px;
+}
+
+@media (max-width: 800px) {
+    #sideDrawer.non-active {
+        left: calc(var(--drawerWidth) * -1);
+        transition-timing-function: ease-out;
+        transition: 0.1s;
+    }
+    #sideDrawer.active {
+        transition: 0.2s;
+        /* transform: translateX(calc(var(--drawerWidth) * 0.5)); */
+        /* transform: translateX(var(--drawerWidth)); */
+        left: 0px;
+        transition-timing-function: ease-in;
+        /* position: sticky; */
+    }
+    main {
+        padding: 10px;
+    }
 }
