@@ -135,7 +135,7 @@ const createSpellList = spells => {
         boldTextSpan.innerText = boldText; 
         regularTextSpan.innerText = regularText;
 
-        let spellLI = document.createElement('li'); 
+        let spellLI = document.createElement('div'); 
         spellLI.innerText = `${spell.number}. `;
         spellLI.className = 'spell'
         spellLI.appendChild(boldTextSpan)

@@ -6,12 +6,28 @@
     --backgroundColor: rgb(20,20,20);
     --drawerBackgroundColor: rgb(200,200,200); 
     --listBackgroundColor: rgba(100,100,100,0.5);
+    --borderRadius: 7px;    
+    --standardWidth: calc(70vw); 
 }
 
 body {
     margin: 0px;
     line-height: 1.5;
     font-family: roboto, sans-serif;
+}
+
+article {
+    max-width: var(--standardWidth);
+    margin: auto;
+}
+
+
+h1 {
+    font-size: 4rem;
+    text-align: center; 
+    background: var(--textColor); 
+    color: var(--backgroundColor);
+    margin: 0px; 
 }
 
 /* button to toggle open and closing the side drawer */
@@ -148,19 +164,60 @@ h2 {
     background-image: linear-gradient(transparent 40%, blue 40%, blue 60%, transparent 60%);
 }
 
+#spellList {
+    margin: auto; 
+    /* max-width: var(--standardWidth);  */
+    /* width: calc(var(--standardWidth) * 2); */
+}
 .spells {
     padding: 5px; 
-    /* line-height: 1.5; */
+    display: flex; 
+    flex-flow: column wrap; 
+    align-content: center;
+    /* min and max height of the spells list states that 
+    the min height should hold about 30 spells in a column 
+    and at max it should hold about 50 
+    */
+    min-height: calc(50px * 30);
+    max-height: calc(50px * 50);
 }
 
-.spells li {
-    list-style: none;
-    margin: 10px;
+.spells div {
+    /* list-style: none; */
+    margin: 2px;
     padding: 3px;
-    /* border-radius: 10px; */
+    /* spells cannot grow (0), they can shrink (1) */
+    flex: 0 1 0;
+    max-width: 30vw;
 }
 
-.spells li:nth-child(2n){
+@media (max-width: 1080px){
+    .spells {
+        flex-flow: column;
+        max-height: none; 
+        max-width: 90vw;
+    }
+    .spells div {
+        max-width: 100%;
+    }
+}
+/* mobile media query */
+@media (max-height: 700px), (max-width: 600px){
+    :root {
+        --standardWidth: calc(90vw);
+    }
+    #spellList {
+        /* if the screen isn't tall enough, make the spell list scrollable */
+        border: 3px solid var(--textColor); 
+        border-radius: var(--borderRadius);
+        /* float: right;  */
+        max-width: 80vw;
+        max-height: 95vh; 
+        overflow-y: scroll;
+    }
+}
+
+.spells div:nth-child(2n){
     background: var(--listBackgroundColor);
 }
 
