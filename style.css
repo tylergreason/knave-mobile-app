@@ -49,24 +49,32 @@ article {
     background: var(--textColor); 
     color: var(--backgroundColor);
     margin: auto; 
-    position: fixed;
-    top: 0px; 
-    left: 0px; 
 }
 
-h1 {
+#mainTitle h1 {
     font-size: 7vh;
     margin: 0; 
+    text-align: center;
+    display: inline-block;
+    /* add padding to the right to make up for the width of the menu button */
+    padding-right: var(--headerHeight);
 }
 
 #mainTitle{ 
     width: 100%;
+    position: fixed;
+    top: 0px; 
+    left: 0px; 
+    z-index: 1;
 }
 
 /* button to toggle open and closing the side drawer */
 #toggler {
     font-size: 3rem;
-    min-width: 10%;
+    width: var(--headerHeight);
+    display: inline-block;
+    float: left; 
+
 }
 
 #sideDrawer {
@@ -74,7 +82,7 @@ h1 {
     height: 100vh;  
     background: var(--textColor);
     top: 0; 
-    overflow-y: scroll;
+    overflow-y: auto;
     position: fixed; 
     z-index: 2;
     /* display: inline; */
@@ -95,6 +103,7 @@ h1 {
     transition-timing-function: ease-in;
     /* position: sticky; */
 }
+
 main {
     padding: 10px;
 }
@@ -102,7 +111,7 @@ main {
 
 
 /* blur body when side drawer is active */
-#sideDrawer.active ~ main{
+#sideDrawer.active ~ main, #sideDrawer.active ~ #mainTitle{
     transition: 0.2s ease-in;
     filter: blur(2px);
 }
@@ -126,9 +135,6 @@ main {
 }
 
 #closeMenuButton {
-     /*keep hidden until in mobile size screen  */
-    display: none; 
-    position: sticky; 
     /* right: 100px; */
     float: right;
     margin-right: 20px; 
