@@ -2,12 +2,13 @@
 :root {
     --drawerWidth: 200px; 
     --drawerColor: rgb(50,50,50);
-    --textColor: rgb(200,200,200);
-    --backgroundColor: rgb(20,20,20);
+    --textColor: rgb(70,70,70);
+    --backgroundColor: rgb(250,250,250);
     --drawerBackgroundColor: rgb(200,200,200); 
     --listBackgroundColor: rgba(100,100,100,0.5);
     --borderRadius: 7px;    
     --standardWidth: calc(70vw); 
+    --boldTextColor: rgb(0,0,0);
 }
 
 body {
@@ -158,6 +159,7 @@ main {
 
 b {
     font-style: italic;
+    color: var(--boldTextColor);
 }
 
 h2 {
