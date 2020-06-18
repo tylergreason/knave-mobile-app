@@ -9,6 +9,7 @@
     --borderRadius: 7px;    
     --standardWidth: calc(70vw); 
     --boldTextColor: rgb(0,0,0);
+    --headerHeight: 10vh; 
 }
 
 body {
@@ -16,16 +17,22 @@ body {
     line-height: 1.5;
     font-family: roboto, sans-serif;
     padding: 0px;
+
+}
+
+/* give first header a large top margin to make up for floating header */
+#title {
+    margin-top: var(--headerHeight)
 }
 
 main {
     --mainPadding: 10px; 
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     padding: 0px;
     background-color: var(--backgroundColor);
     color: var(--textColor);
     /* add padding to the left to make up for side drawer width */
-    padding-left: calc(var(--drawerWidth) + var(--mainPadding)); 
+    /* padding-left: calc(var(--drawerWidth) + var(--mainPadding));  */
 }
 
 
@@ -34,33 +41,65 @@ article {
     margin: auto;
 }
 
-
-h1 {
-    font-size: 4rem;
+#mainTitle, #toggler {
+    height: var(--headerHeight);
+    max-height: var(--headerHeight);
+    /* font-size: 4rem; */
     text-align: center; 
     background: var(--textColor); 
     color: var(--backgroundColor);
-    margin: 0px; 
+    margin: auto; 
+    position: fixed;
+    top: 0px; 
+    left: 0px; 
+}
+
+h1 {
+    font-size: 7vh;
+    margin: 0; 
+}
+
+#mainTitle{ 
+    width: 100%;
 }
 
 /* button to toggle open and closing the side drawer */
 #toggler {
-    display: none;
-    position: absolute; 
-    top: 0px; 
-    right: 0px; 
+    font-size: 3rem;
+    min-width: 10%;
 }
 
 #sideDrawer {
     width: var(--drawerWidth); 
     height: 100vh;  
     background: var(--textColor);
-    top: 0px; 
+    top: 0; 
     overflow-y: scroll;
     position: fixed; 
     z-index: 2;
     /* display: inline; */
 }
+
+#sideDrawer.non-active {
+    /* left: calc(var(--drawerWidth) * -1); */
+    width: 0px; 
+    transition-timing-function: ease-out;
+    transition: 0.1s;
+}
+#sideDrawer.active {
+    transition: 0.2s;
+    /* transform: translateX(calc(var(--drawerWidth) * 0.5)); */
+    /* transform: translateX(var(--drawerWidth)); */
+    /* left: 0px; */
+    width: var(--drawerWidth);
+    transition-timing-function: ease-in;
+    /* position: sticky; */
+}
+main {
+    padding: 10px;
+}
+
+
 
 /* blur body when side drawer is active */
 #sideDrawer.active ~ main{
@@ -84,12 +123,6 @@ h1 {
     align-items: center;
     justify-content: center;
     text-align: center;
-}
-
-/* when subItems has the active class, unhide its children */
-.subItems.active .subItem {
-    display: block;
-    transition: .2s;
 }
 
 #closeMenuButton {
@@ -222,27 +255,4 @@ h2 {
     border: 3px solid var(--textColor); 
     border-radius: 7px; 
     padding: 5px;
-}
-
-@media (max-width: 600px) {
-    #sideDrawer.non-active {
-        left: calc(var(--drawerWidth) * -1);
-        transition-timing-function: ease-out;
-        transition: 0.1s;
-    }
-    #sideDrawer.active {
-        transition: 0.2s;
-        /* transform: translateX(calc(var(--drawerWidth) * 0.5)); */
-        /* transform: translateX(var(--drawerWidth)); */
-        left: 0px;
-        transition-timing-function: ease-in;
-        /* position: sticky; */
-    }
-    main {
-        padding: 10px;
-    }
-
-    #closeMenuButton, #toggler {
-        display: block;
-    }
 }
