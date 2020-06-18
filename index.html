@@ -15,7 +15,72 @@
     <button id='toggler'>open/close drawer</button>
     <!-- drawer to slide out -->
     
+    <div id='sideDrawer' class='non-active'>
+        <!-- lots of elements to test scrolling -->
+        <div class='drawerItem'>
+            <div class='drawerItemTitle'>Introduction</div>
+            <ul class='subItems'>
+                <a class='subItem' href='#title'>Lorem <b>
+                    ipsum
+                </b> dolor sitLorem ipsum d</a>
+                <li class='subItem'>Lorem ipsum dolor sit</li>
+                <li class='subItem'>Lorem ipsum dolor sit</li>
+            </ul>
+        </div>
+        <div class='drawerItem'>
+            <div class='drawerItemTitle'>Character Creation</div>
+            <ul class='subItems'>
+                <a class='subItem' href='#characterCreation'>Lorem ipsum dolor sit</a>
+                <li class='subItem'>Lorem ipsum dolor sit</li>
+                <li class='subItem'>Lorem ipsum dolor sit</li>
+            </ul>
+        </div>
+        <div class='drawerItem'>
+            <div class='drawerItemTitle'>Traits</div>
+            <ul class='subItems'>
+                <a class='subItem' href='#traits'>Lorem ipsum dolor sit</a>
+                <li class='subItem'>Lorem ipsum dolor sit</li>
+                <li class='subItem'>Lorem ipsum dolor sit</li>
+            </ul>
+        </div>
 
+        <div class='drawerItem'>
+            <div class='drawerItemTitle'>Starting Gear</div>
+            <ul class='subItems'>
+                <li class='subItem'>Lorem ipsum dolor sit</li>
+                <li class='subItem'>Lorem ipsum dolor sit</li>
+                <li class='subItem'>Lorem ipsum dolor sit</li>
+            </ul>
+        </div>
+        <div class='drawerItem'>
+            <div class='drawerItemTitle'>Playing the Game</div>
+            <ul class='subItems'>
+                <li class='subItem'>Lorem ipsum dolor sit</li>
+                <li class='subItem'>Lorem ipsum dolor sit</li>
+                <li class='subItem'>Lorem ipsum dolor sit</li>
+            </ul>
+        </div>
+        <div class='drawerItem'>
+            <div class='drawerItemTitle'>Magic</div>
+            <ul class='subItems'>
+                <li class='subItem'>Lorem ipsum dolor sit</li>
+                <li class='subItem'>Lorem ipsum dolor sit</li>
+                <li class='subItem'>Lorem ipsum dolor sit</li>
+            </ul>
+        </div>
+        
+        <div class='drawerItem'>
+            <div class='drawerItemTitle'>100 Level-Less Spells</div>
+            <ul class='subItems'>
+                <li class='subItem'>Lorem ipsum dolor sit</li>
+                <li class='subItem'>Lorem ipsum dolor sit</li>
+                <li class='subItem'>Lorem ipsum dolor sit</li>
+            </ul>
+        </div>
+        <button id='closeMenuButton'>
+            X
+        </button>
+    </div>
     <main>
         <h1 id='mainTitle'>Knave App</h1>
         <h2 id='title'>Introduction</h2>
@@ -249,6 +314,7 @@ Designer’s Note: Constitution bonuses do not affect maximum hit points like in
                 </i>
             </article>
             <h2 id='spells'>100 Level-less Spells</h2>
+
             <article>
                 <p>
                     If you prefer spells that are level-less and scale up as the caster becomes more powerful, use the list below. In the following spells, “L” is a number equal to the caster’s level, an item is an object able to be lifted with one hand, and an object is anything up to human size. Unless otherwise noted, all spells with ongoing effects last up to L×10 minutes, and have a range of up to 40 feet. If a spell direct- ly affects another creature, the creature may make a save to avoid it (as described previously). Success reduces or ne- gates the spell’s effects.
@@ -311,77 +377,12 @@ Designer’s Note: Constitution bonuses do not affect maximum hit points like in
                 Invent or roll the rest of your PC’s traits, such as their physique, face, skin, hair, clothing, virtue, vice, speech, background, and alignment, using the
                 random tables on the following page. Choose a gender and a name for your PC, but don’t get too attached. It’s a dan- gerous world out there.
             </p>
+
             <i><b>Designer’s Note</b>: Randomizing most of a PC’s traits speeds up character creation, but it also has the effect of creating surpris- ing, unique characters that most players wouldn’t think to invent or play.
             </i>
         </article>
     </main>
 
-    <div id='sideDrawer' class='non-active'>
-        <!-- lots of elements to test scrolling -->
-        <div class='drawerItem'>
-            <div class='drawerItemTitle'>Introduction</div>
-            <ul class='subItems'>
-                <a class='subItem' href='#title'>Lorem <b>
-                    ipsum
-                </b> dolor sitLorem ipsum d</a>
-                <li class='subItem'>Lorem ipsum dolor sit</li>
-                <li class='subItem'>Lorem ipsum dolor sit</li>
-            </ul>
-        </div>
-        <div class='drawerItem'>
-            <div class='drawerItemTitle'>Character Creation</div>
-            <ul class='subItems'>
-                <a class='subItem' href='#characterCreation'>Lorem ipsum dolor sit</a>
-                <li class='subItem'>Lorem ipsum dolor sit</li>
-                <li class='subItem'>Lorem ipsum dolor sit</li>
-            </ul>
-        </div>
-        <div class='drawerItem'>
-            <div class='drawerItemTitle'>Traits</div>
-            <ul class='subItems'>
-                <a class='subItem' href='#traits'>Lorem ipsum dolor sit</a>
-                <li class='subItem'>Lorem ipsum dolor sit</li>
-                <li class='subItem'>Lorem ipsum dolor sit</li>
-            </ul>
-        </div>
-
-        <div class='drawerItem'>
-            <div class='drawerItemTitle'>Starting Gear</div>
-            <ul class='subItems'>
-                <li class='subItem'>Lorem ipsum dolor sit</li>
-                <li class='subItem'>Lorem ipsum dolor sit</li>
-                <li class='subItem'>Lorem ipsum dolor sit</li>
-            </ul>
-        </div>
-        <div class='drawerItem'>
-            <div class='drawerItemTitle'>Playing the Game</div>
-            <ul class='subItems'>
-                <li class='subItem'>Lorem ipsum dolor sit</li>
-                <li class='subItem'>Lorem ipsum dolor sit</li>
-                <li class='subItem'>Lorem ipsum dolor sit</li>
-            </ul>
-        </div>
-        <div class='drawerItem'>
-            <div class='drawerItemTitle'>Magic</div>
-            <ul class='subItems'>
-                <li class='subItem'>Lorem ipsum dolor sit</li>
-                <li class='subItem'>Lorem ipsum dolor sit</li>
-                <li class='subItem'>Lorem ipsum dolor sit</li>
-            </ul>
-        </div>
-        
-        <div class='drawerItem'>
-            <div class='drawerItemTitle'>100 Level-Less Spells</div>
-            <ul class='subItems'>
-                <li class='subItem'>Lorem ipsum dolor sit</li>
-                <li class='subItem'>Lorem ipsum dolor sit</li>
-                <li class='subItem'>Lorem ipsum dolor sit</li>
-            </ul>
-        </div>
-        <button id='closeMenuButton'>
-            X
-        </button>
-    </div>
     <script src='index.js'></script>
     <script src='spells.js'></script>
 </body>

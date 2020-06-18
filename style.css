@@ -44,7 +44,7 @@ h1 {
     top: 0px; 
     overflow-y: scroll;
     position: fixed;
-
+    z-index: 2;
 }
 
 /* drawer non-active class  */
@@ -65,6 +65,12 @@ h1 {
     left: 0px;
     transition-timing-function: ease-in;
     /* position: sticky; */
+}
+
+/* blur body when side drawer is active */
+#sideDrawer.active ~ main{
+    transition: 0.2s ease;
+    filter: blur(1px);
 }
 
 .drawerItem {
