@@ -1,264 +1,293 @@
 /* css global variables */
 :root {
-    --drawerWidth: 200px; 
-    --drawerColor: rgb(50,50,50);
-    --textColor: rgb(70,70,70);
-    --backgroundColor: rgb(250,250,250);
-    --drawerBackgroundColor: rgb(200,200,200); 
-    --listBackgroundColor: rgba(100,100,100,0.5);
-    --borderRadius: 7px;    
-    --standardWidth: calc(70vw); 
-    --boldTextColor: rgb(0,0,0);
-    --headerHeight: 10vh; 
+  --drawerWidth: 200px;
+  --drawerColor: rgb(50,50,50);
+  --textColor: rgb(70,70,70);
+  --backgroundColor: rgb(250,250,250);
+  --drawerBackgroundColor: rgb(200,200,200);
+  --listBackgroundColor: rgba(100,100,100,0.5);
+  --borderRadius: 7px;
+  --standardWidth: calc(70vw);
+  --boldTextColor: rgb(0,0,0);
+  --headerHeight: 10vh;
+  --headerFontSize: 6vh;
 }
 
 body {
-    margin: 0px;
-    line-height: 1.5;
-    font-family: roboto, sans-serif;
-    padding: 0px;
-
+  margin: 0px;
+  line-height: 1.5;
+  font-family: roboto, sans-serif;
+  padding: 0px;
 }
 
 /* give first header a large top margin to make up for floating header */
 #title {
-    margin-top: var(--headerHeight)
+  margin-top: var(--headerHeight);
+}
+
+#mainWrapper {
+  overflow-y: hidden;
 }
 
 main {
-    --mainPadding: 10px; 
-    /* overflow-y: scroll; */
-    padding: 0px;
-    background-color: var(--backgroundColor);
-    color: var(--textColor);
-    /* add padding to the left to make up for side drawer width */
-    /* padding-left: calc(var(--drawerWidth) + var(--mainPadding));  */
+  --mainPadding: 10px;
+  padding: 0px;
+  background-color: var(--backgroundColor);
+  color: var(--textColor);
+  /* add padding to the left to make up for side drawer width */
+  /* padding-left: calc(var(--drawerWidth) + var(--mainPadding));  */
 }
 
-
 article {
-    max-width: var(--standardWidth);
-    margin: auto;
+  max-width: var(--standardWidth);
+  margin: auto;
 }
 
 #mainTitle, #toggler {
-    height: var(--headerHeight);
-    max-height: var(--headerHeight);
-    /* font-size: 4rem; */
-    text-align: center; 
-    background: var(--textColor); 
-    color: var(--backgroundColor);
-    margin: auto; 
+  height: var(--headerHeight);
+  max-height: var(--headerHeight);
+  /* font-size: 4rem; */
+  text-align: center;
+  background: var(--textColor);
+  color: var(--backgroundColor);
+  margin: auto;
+}
+
+#mainTitle {
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  font-size: 6vh;
 }
 
 #mainTitle h1 {
-    font-size: 7vh;
-    margin: 0; 
-    text-align: center;
-    display: inline-block;
-    /* add padding to the right to make up for the width of the menu button */
-    padding-right: var(--headerHeight);
-}
-
-#mainTitle{ 
-    width: 100%;
-    position: fixed;
-    top: 0px; 
-    left: 0px; 
-    z-index: 1;
+  font-size: var(--headerFontSize);
+  margin: 0;
+  text-align: center;
+  /* display: inline-block; */
+  /* add padding to the right to make up for the width of the menu button */
+  /* padding-right: var(--headerHeight); */
 }
 
 /* button to toggle open and closing the side drawer */
 #toggler {
-    font-size: 3rem;
-    width: var(--headerHeight);
-    display: inline-block;
-    float: left; 
-
+  font-size: var(--headerFontSize);
+  height: 6vw;
+  width: 6vw;
+  /* display: inline-block; */
+  text-align: center;
+  margin: auto;
+  float: left;
+  border: none;
+  position: -webkit-sticky;
+  position: sticky;
 }
 
 #sideDrawer {
-    width: var(--drawerWidth); 
-    height: 100vh;  
-    background: var(--textColor);
-    top: 0; 
-    overflow-y: auto;
-    position: fixed; 
-    z-index: 2;
-    /* display: inline; */
+  width: var(--drawerWidth);
+  height: 100vh;
+  background: var(--textColor);
+  overflow-y: auto;
+  position: fixed;
+  z-index: 2;
+  /* display: inline; */
 }
 
 #sideDrawer.non-active {
-    /* left: calc(var(--drawerWidth) * -1); */
-    width: 0px; 
-    transition-timing-function: ease-out;
-    transition: 0.1s;
+  /* left: calc(var(--drawerWidth) * -1); */
+  width: 0px;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
 }
+
 #sideDrawer.active {
-    transition: 0.2s;
-    /* transform: translateX(calc(var(--drawerWidth) * 0.5)); */
-    /* transform: translateX(var(--drawerWidth)); */
-    /* left: 0px; */
-    width: var(--drawerWidth);
-    transition-timing-function: ease-in;
-    /* position: sticky; */
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  /* transform: translateX(calc(var(--drawerWidth) * 0.5)); */
+  /* transform: translateX(var(--drawerWidth)); */
+  /* left: 0px; */
+  width: var(--drawerWidth);
+  /* position: sticky; */
 }
 
 main {
-    padding: 10px;
+  position: absolute;
+  top: 0px;
+  padding: 10px;
 }
-
-
 
 /* blur body when side drawer is active */
-#sideDrawer.active ~ main, #sideDrawer.active ~ #mainTitle{
-    transition: 0.2s ease-in;
-    filter: blur(2px);
+#sideDrawer.active ~ main, #sideDrawer.active ~ #mainTitle {
+  -webkit-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
 }
 
 .drawerItem {
-    /* max-height: 100px;  */
+  /* max-height: 100px;  */
 }
 
 .drawerItem {
-    font-size: 1.2rem; 
-    height: 40px; 
-    /* width: calc(var(--drawerWidth) * 0.9); */
-    width: 100%;
-    color: var(--backgroundColor); 
-    margin: 10px auto; 
-    background-color: var(--textColor);
-    display: flex; 
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  font-size: 1.2rem;
+  height: 40px;
+  /* width: calc(var(--drawerWidth) * 0.9); */
+  width: 100%;
+  color: var(--backgroundColor);
+  margin: 10px auto;
+  background-color: var(--textColor);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
 }
 
 #closeMenuButton {
-    /* right: 100px; */
-    float: right;
-    margin-right: 20px; 
-    top: 50%; 
-    height: 20px; 
-    background-color: transparent;
-    width: 50px; 
-    font-size: 2rem;
-    color: black; 
-    border: none; 
+  /* right: 100px; */
+  float: right;
+  margin-right: 20px;
+  top: 50%;
+  height: 20px;
+  background-color: transparent;
+  width: 50px;
+  font-size: 2rem;
+  color: black;
+  border: none;
 }
 
 #test {
-    width: 100px; 
-    height: 100px; 
-    position: absolute; 
-    top: 10px; 
-    /* right: 10px;  */
-    background-color: red;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 10px;
+  /* right: 10px;  */
+  background-color: red;
 }
 
 b {
-    font-style: italic;
-    color: var(--boldTextColor);
+  font-style: italic;
+  color: var(--boldTextColor);
 }
 
 h2 {
-    /* text-align: right; */
-    /* float: right; */
-    font-size: 3rem;
-    margin-bottom: 0px;
-    text-align: center;
+  /* text-align: right; */
+  /* float: right; */
+  font-size: 3rem;
+  margin-bottom: 0px;
+  text-align: center;
 }
+
 .headerBGLine {
-    /* the following line draws a line behind the header with this tag */
-    /* background-image: linear-gradient(transparent 40%, blue 40%, blue 60%, transparent 60%); */
+  /* the following line draws a line behind the header with this tag */
+  /* background-image: linear-gradient(transparent 40%, blue 40%, blue 60%, transparent 60%); */
 }
 
 #spellList {
-    margin: auto; 
-    /* max-width: var(--standardWidth);  */
-    /* width: calc(var(--standardWidth) * 2); */
+  margin: auto;
+  /* max-width: var(--standardWidth);  */
+  /* width: calc(var(--standardWidth) * 2); */
 }
+
 .spells {
-    padding: 5px; 
-    display: flex; 
-    flex-flow: column wrap; 
-    align-content: center;
-    /* min and max height of the spells list states that 
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  /* min and max height of the spells list states that 
     the min height should hold about 30 spells in a column 
     and at max it should hold about 50 
     */
-    min-height: calc(50px * 30);
-    max-height: calc(50px * 50);
+  min-height: calc(50px * 30);
+  max-height: calc(50px * 50);
 }
 
 .spells div {
-    /* list-style: none; */
-    margin: 2px;
-    padding: 3px;
-    /* spells cannot grow (0), they can shrink (1) */
-    flex: 0 1 0;
-    max-width: 30vw;
+  /* list-style: none; */
+  margin: 2px;
+  padding: 3px;
+  /* spells cannot grow (0), they can shrink (1) */
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 0px;
+          flex: 0 1 0;
+  max-width: 30vw;
 }
 
-@media (max-width: 1080px){
-    .spells {
-        flex-flow: column;
-        max-height: none; 
-        max-width: 90vw;
-    }
-    .spells div {
-        max-width: 100%;
-    }
+@media (max-width: 1080px) {
+  .spells {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    max-height: none;
+    max-width: 90vw;
+  }
+  .spells div {
+    max-width: 100%;
+  }
 }
+
 /* mobile media query */
-@media (max-height: 700px), (max-width: 600px){
-    :root {
-        --standardWidth: calc(90vw);
-    }
-    #spellList {
-        /* if the screen isn't tall enough, make the spell list scrollable */
-        border: 3px solid var(--textColor); 
-        border-radius: var(--borderRadius);
-        /* float: right;  */
-        max-width: 80vw;
-        max-height: 95vh; 
-        overflow-y: scroll;
-    }
+@media (max-height: 700px), (max-width: 600px) {
+  :root {
+    --standardWidth: calc(90vw);
+  }
+  #spellList {
+    /* if the screen isn't tall enough, make the spell list scrollable */
+    border: 3px solid var(--textColor);
+    border-radius: var(--borderRadius);
+    /* float: right;  */
+    max-width: 80vw;
+    max-height: 95vh;
+    overflow-y: scroll;
+  }
 }
 
-.spells div:nth-child(2n){
-    background: var(--listBackgroundColor);
+.spells div:nth-child(2n) {
+  background: var(--listBackgroundColor);
 }
 
-.spell span:nth-child(1){
-    font-weight: 900;
-    font-style: italic;
-    /* color: blue; */
+.spell span:nth-child(1) {
+  font-weight: 900;
+  font-style: italic;
+  /* color: blue; */
 }
 
 #spellGenerator {
-    max-width: 300px; 
-    height: 150px; 
-    border: 3px solid var(--textColor);
-    border-radius: 7px; 
-    margin: auto; 
-    padding: 10px; 
-    text-align: center; 
+  max-width: 300px;
+  height: 150px;
+  border: 3px solid var(--textColor);
+  border-radius: 7px;
+  margin: auto;
+  padding: 10px;
+  text-align: center;
 }
 
 #spellGeneratorName {
-    margin: 0px auto; 
+  margin: 0px auto;
 }
-
-
 
 #spellGeneratorButton {
-    margin: 5px auto; 
-    display: flex; 
-    font-size: 1.5rem;    
-    background-color: var(--backgroundColor);
-    color: var(--textColor); 
-    border: 3px solid var(--textColor); 
-    border-radius: 7px; 
-    padding: 5px;
+  margin: 5px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.5rem;
+  background-color: var(--backgroundColor);
+  color: var(--textColor);
+  border: 3px solid var(--textColor);
+  border-radius: 7px;
+  padding: 5px;
 }
+/*# sourceMappingURL=style.css.map */
