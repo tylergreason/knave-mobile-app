@@ -25,17 +25,21 @@ body {
     height: 100vh; 
     width: 0px;
     transition: 0.1s ease-in; 
+    
+    display: flex; 
+    flex-flow: column;
+    justify-content: space-evenly;
 
-    // #closeMenuButton {
-    //     visibility: hidden;
-    // }
+    overflow-y: scroll;
+    #closeMenuButton {
+        visibility: hidden;
+    }
 
-    // .drawerItem {
-    //     visibility: hidden;
-    //     display: flex; 
-    //     flex-flow: column;
-    //     width: 0px; 
-    // }
+    .drawerItem {
+        color: $textColor; 
+        visibility: hidden;
+        width: 0px; 
+    }
 }
 
 #sideDrawer.active {
@@ -43,22 +47,68 @@ body {
     top: 0px; 
     transition: 0.2s ease-out; 
     width: $drawerWidth;
+    
+    #closeMenuButton {
+        visibility: visible;
+    }
 
-//     #closeMenuButton {
-//         visibility: visible;
-//     }
+    .drawerItem {
+        visibility: visible;
+        width: $drawerWidth; 
+    }
 
-//     .drawerItem {
-//         visibility: visible;
-//         width: $drawerWidth; 
-//     }
+    body {
+        overflow: hidden; 
+    }
 }
 
-#test {
-    width: 200px; 
-    height: 200px; 
-    background: black; 
+#toggler {
     position: fixed; 
     top: 20px; 
-    left: 20px; 
 }
+
+/* give first header a large top margin to make up for floating header */
+#title {
+    margin-top: var(--headerHeight)
+}
+
+#mainTitle, #toggler {
+    height: var(--headerHeight);
+    max-height: var(--headerHeight);
+    /* font-size: 4rem; */
+    text-align: center; 
+    background: var(--textColor); 
+    color: var(--backgroundColor);
+    margin: auto; 
+}
+
+#mainTitle{ 
+    width: 100%;
+    position: fixed;
+    top: 0px; 
+    left: 0px; 
+    z-index: 1;
+    font-size: 6vh;
+}
+
+#mainTitle h1 {
+    font-size: var(--headerFontSize);
+    margin: 0; 
+    text-align: center;
+    /* display: inline-block; */
+    /* add padding to the right to make up for the width of the menu button */
+    /* padding-right: var(--headerHeight); */
+}
+
+main {
+    padding: 0px;
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
+    height: 100vh; 
+}
+
+article {
+    max-width: standardWidth;
+    margin: auto;
+}
+

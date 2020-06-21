@@ -13,6 +13,27 @@ body {
   width: 0px;
   -webkit-transition: 0.1s ease-in;
   transition: 0.1s ease-in;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  overflow-y: scroll;
+}
+
+#sideDrawer #closeMenuButton {
+  visibility: hidden;
+}
+
+#sideDrawer .drawerItem {
+  color: #464646;
+  visibility: hidden;
+  width: 0px;
 }
 
 #sideDrawer.active {
@@ -23,12 +44,66 @@ body {
   width: 200px;
 }
 
-#test {
+#sideDrawer.active #closeMenuButton {
+  visibility: visible;
+}
+
+#sideDrawer.active .drawerItem {
+  visibility: visible;
   width: 200px;
-  height: 200px;
-  background: black;
+}
+
+#sideDrawer.active body {
+  overflow: hidden;
+}
+
+#toggler {
   position: fixed;
   top: 20px;
-  left: 20px;
+}
+
+/* give first header a large top margin to make up for floating header */
+#title {
+  margin-top: var(--headerHeight);
+}
+
+#mainTitle, #toggler {
+  height: var(--headerHeight);
+  max-height: var(--headerHeight);
+  /* font-size: 4rem; */
+  text-align: center;
+  background: var(--textColor);
+  color: var(--backgroundColor);
+  margin: auto;
+}
+
+#mainTitle {
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  font-size: 6vh;
+}
+
+#mainTitle h1 {
+  font-size: var(--headerFontSize);
+  margin: 0;
+  text-align: center;
+  /* display: inline-block; */
+  /* add padding to the right to make up for the width of the menu button */
+  /* padding-right: var(--headerHeight); */
+}
+
+main {
+  padding: 0px;
+  background-color: var(--backgroundColor);
+  color: var(--textColor);
+  height: 100vh;
+}
+
+article {
+  max-width: standardWidth;
+  margin: auto;
 }
 /*# sourceMappingURL=style2.css.map */

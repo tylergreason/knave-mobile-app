@@ -5,9 +5,9 @@ const drawerWidth = 200;
 // document.documentElement.style.setProperty(`--drawerWidth`, `${drawerWidth}px`);
 
 // // add 'active' class to drawer to open and close it
-// const toggleMenuOpen = () => {
-//     sideDrawer.classList.toggle('active'); 
-// }
+const toggleMenuOpen = () => {
+    sideDrawer.classList.toggle('active'); 
+}
 
 const closeSideDrawer = () => {
     sideDrawer.classList.remove('active')
@@ -139,4 +139,5 @@ const generateNavigation = list => {
 generateNavigation(headers); 
 
 closeMenuButton.addEventListener('click', () => closeSideDrawer()); 
-toggler.addEventListener('click', () => openSideDrawer())
+toggler.addEventListener('click', () => toggleMenuOpen())
+toggleMenuOpen(); 
