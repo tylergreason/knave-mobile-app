@@ -126,9 +126,12 @@ const generateNavigation = list => {
         let link = '#' + item.id; 
         let title = item.childNodes[0].data; 
         let element = document.createElement('a'); 
-
         // add event listener to close menu on click 
-        element.addEventListener('click', closeSideDrawer)
+        element.addEventListener('click', (e) => {
+            // e.preventDefault()
+            closeSideDrawer()
+            // `${link}`.scrollTo(); 
+        })
 
         element.className = 'drawerItem'; 
         element.href = link; 

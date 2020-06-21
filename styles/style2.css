@@ -6,7 +6,7 @@ body {
 }
 
 #sideDrawer {
-  background-color: #fafafa;
+  background-color: #646464;
   position: fixed;
   margin: 0px;
   height: 100vh;
@@ -24,6 +24,7 @@ body {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   overflow-y: scroll;
+  z-index: 2;
 }
 
 #sideDrawer #closeMenuButton {
@@ -31,14 +32,14 @@ body {
 }
 
 #sideDrawer .drawerItem {
-  color: #464646;
+  color: #c8c8c8;
   visibility: hidden;
   width: 0px;
 }
 
 #sideDrawer.active {
   position: fixed;
-  top: 0px;
+  top: 10vh;
   -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
   width: 200px;
@@ -53,57 +54,61 @@ body {
   width: 200px;
 }
 
-#sideDrawer.active body {
-  overflow: hidden;
+#mainTitle, #toggler {
+  max-height: 10vh;
+  /* font-size: 4rem; */
+  text-align: center;
+  margin: auto;
+  color: #c8c8c8;
 }
 
 #toggler {
   position: fixed;
-  top: 20px;
+  left: 0px;
+  height: 5vh;
+  width: 5vh;
 }
 
 /* give first header a large top margin to make up for floating header */
 #title {
-  margin-top: var(--headerHeight);
-}
-
-#mainTitle, #toggler {
-  height: var(--headerHeight);
-  max-height: var(--headerHeight);
-  /* font-size: 4rem; */
-  text-align: center;
-  background: var(--textColor);
-  color: var(--backgroundColor);
-  margin: auto;
+  margin-top: 10vh;
 }
 
 #mainTitle {
+  height: 10vh;
   width: 100%;
   position: fixed;
   top: 0px;
   left: 0px;
-  z-index: 1;
-  font-size: 6vh;
+  font-size: 3vh;
+  background: #646464;
+  margin: 0px;
 }
 
 #mainTitle h1 {
-  font-size: var(--headerFontSize);
+  font-size: 6vh;
   margin: 0;
   text-align: center;
   /* display: inline-block; */
   /* add padding to the right to make up for the width of the menu button */
-  /* padding-right: var(--headerHeight); */
+  /* padding-right: $headerHeight); */
 }
 
 main {
   padding: 0px;
-  background-color: var(--backgroundColor);
-  color: var(--textColor);
+  color: #464646;
   height: 100vh;
+  margin-top: 10vh;
 }
 
 article {
   max-width: standardWidth;
   margin: auto;
+}
+
+h2 {
+  font-size: 3rem;
+  margin-bottom: 0px;
+  text-align: center;
 }
 /*# sourceMappingURL=style2.css.map */
