@@ -5,21 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Knave App</title>
-    <link rel='stylesheet' href='style.css'>
+
+    <!-- <link rel='stylesheet' href='style.css'> -->
+    <link rel='stylesheet' href='./styles/style2.css'>
     <!-- roboto font from google fonts  -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- <div id='test'>test div</div> -->
-    <!-- button to open drawer -->
-    <!-- drawer to slide out -->
-
-    <nav id='sideDrawer' class='non-active'>
-        
+    <div id='sideDrawer' class=''>
         <button id='closeMenuButton'>
             X
-        </button>``
-    </nav>
+        </button>
+    </div>
     
     <div id='mainTitle'>
         <button id='toggler'>☰</button>
@@ -27,307 +25,307 @@
 
     </div>
     <div id='mainWrapper'>
-    <main id='main'>
-        <h2 id='title'>Introduction</h2>
-        <article>
-            <p>
-                KNAVE is a rules toolkit created by Ben Milton for run- ning old school fantasy RPGs without classes. Adding, subtracting and modifying rules is both expected and en- couraged. Knave’s features include:
-            </p>
-            <ul>
-                    <li>
-                        <b>High compatibility with OSR games</b>: If you have a library of OSR bestiaries, adventure and spell books, little or no con- version is needed to use them with Knave.
-                    </li>
-                    <li>
-                        <b>Fast to teach, easy to run</b>: If you are introducing a group of new players to OSR games, Knave allows them to make characters and understand all the rules in minutes.
-                    </li>
-                    <li>
-                        <b>No classes</b>: Every PC is a Knave, a tomb-raiding, adventure- seeking ne’er-do-well who wields a spell book just as easily as a blade. This is an ideal system for players who like to switch up their character’s focus from time to time and don’t like being pigeonholed. A PC’s role in the party is determined largely by the equipment they carry.
-                    </li>
-                    <li>
-                        <b>Abilities are king</b>: All d20 rolls use the six standard abilities. The way that ability scores and bonuses work has also been cleaned up, rationalized, and made consistent with how other systems like armor work.
-                    </li>
-                    <li>
-                        <b>Optional player-facing rolls</b>: Knave easily accommodates referees who want the players to do all the rolling. Switch- ing between the traditional shared-rolling model and play- ers-only rolling can be done effortlessly on the fly.
-                    </li>
-                    <li>
-                        <b>Copper standard</b>: Knave assumes that the common unit of currency is the copper penny. All item prices use this de- nomination and approximate actual medieval prices.
-                    </li>
-                    <li>
-                        <b>A list of 100 level-less spells.</b>
-                    </li>
-                    <li>
-                        <b>Creative Commons Attribution 4.0 International License</b>: You
-                        are free to share and adapt this material for any purpose, including commercially, as long as you give attribution.
-                        Designer commentary. The rules include designer com- ments explaining why each rule was written the way it was, to aid in hacking the game.
-                    </li>
-                </ul>
-        </article>
-        
-
-        <h2 id='abilities'>Abilities</h2>
-        <article>
-            Each of the six abilities is used in different circumstances.
-            <ul>
-                
-                <li>
-                    <b>Strength</b>: Used for melee attacks and saves requiring physical power, like lifting gates, bending bars, etc.
-                </li>
-                <li>
-                    <b>Dexterity</b>: Used for saves requiring poise, speed, and
-                    reflexes, like dodging, climbing, sneaking, balancing, etc.
-                </li>
-                <li>
-                    <b>Constitution</b>: Used for saves to resist poison, sickness,
-                    cold, etc. The Constitution bonus is added to healing rolls. A PC’s number of item slots is always equal to their Constitution defense.
-                </li>
-                <li>
-                    <b>Intelligence</b>: Used for saves requiring concentration and precision, such as wielding magic, resisting magical effects, recalling lore, crafting objects, tinkering with machinery, picking pockets, etc.
-                </li>
-                <li>
-                    <b>Wisdom</b>: Used for ranged attacks and saves requiring perception and intuition, such as tracking, navigating, searching for secret doors, detecting illusions, etc.
-                </li>
-                <li>
-                    <b>Charisma</b>: Used for saves to persuade, deceive, interro- gate, intimidate, charm, provoke, etc. PCs may employ a number of henchmen equal to their Charisma bonus.
-                </li>
-            </ul>
-                <i><b>Designer’s Note</b>: In a system that relies so heavily on the six abilities, it’s important for each of them to play an important role, to discourage dump stats. Non-magical characters tend to dump the mental abilities, for example, so I increased their use- fulness.</i>
-        </article>
-
-        <h2 id='itemSlots'>Item Slots</h2>
+        <main id='main'>
+            <h2 id='title'>Introduction</h2>
             <article>
                 <p>
-                    PCs have a number of item slots equal to their Constitu- tion defense. Most items, including spellbooks, potions, a day’s rations, light weapons, tools and so on take up 1 slot, but particularly heavy or bulky items like armor or medi- um to heavy weapons may take up more slots. Groups of small, identical items may be bundled into the same slot, at the referee’s discretion. 100 coins can fit in a slot. As a gen- eral guideline, a slot holds around 5 pounds of weight. 
-                </p>
-                <i><b>Designer’s Note</b>: Using item slots makes encumbrance simple enough that players will be willing to track it. Slots are also the key to character customization, as a PC’s gear helps determine who they are. Raising Constitution, therefore, will probably be a priority for most characters.</i>
-            </article>
-            <h2 id='savingThrows'>Saving Throws</h2>
-            <article>                
-                <p>
-                    If a character attempts something where the outcome is uncertain and failure has consequences, they make a sav- ing throw, or “save”. To make a save, add the bonus of the relevant ability to a d20 roll. If the total is greater than 15, the character succeeds. If not, they fail.
-                </p>
-                
-                <i><b>Designer’s Note</b>: Requiring saves to exceed 15 means that new PCs have around a 25% chance of success, while level 10 charac- ters have around a 75% chance of success, since ability bonuses can get up to +10 by level 10. This reflects the general pattern found in the save mechanics of early D&D.</i>
-                
-                <p>
-                    If the save is opposed by another character, then instead of aiming to exceed 15, the side doing the rolling must get a total greater than the opposing character’s relevant defense score in order to succeed. If they fail, the opposing side succeeds. This type of save is called an opposed save. Note that it doesn’t matter which side does the rolling, since the odds of success remain the same.
-                </p>
-                
-                <p>
-                    <i><b>Example</b>: A wizard casts a fireball spell at a goblin, who gets a saving throw to avoid. This is resolved as an opposed save using the wizard’s Intelligence versus the goblin’s Dexterity. The goblin may roll plus their Dexterity bonus, hoping to exceed the wizard’s Intelligence defense or the wizard may roll plus their Intelligence bonus, hoping to exceed the goblin’s Dexterity defense.</i>
-                </p>
-                
-                <i><b>Designer’s Note</b>: An ability’s defense score is essentially its average roll. Requiring the rolling side to beat the opposing defense allows contests to be settled more quickly, eliminates the possibility of ties, and allows the game to be run with players doing all of the rolling if they so choose, since the odds of success are the same no matter which side rolls.</i>
-                
-                <p>
-                    If there are situational factors that make a save significantly easier or harder, the referee may grant the roll advantage or disadvantage. If a roll has advantage, roll 2d20 and use the better of the two dice. If it has disadvantage, roll 2d20 and use the worse of the two dice.
-                </p>
-                
-                <i><b>Designer’s Note</b>: The referee is of course free to impose positive or negative modifiers rather than use the advantage system, but most players seem to enjoy it and it simplifies the math.</i>
-            </article>
-                
-            <h2 id='reactions'>Reactions</h2>
-            <article>
-                <p>
-                    When the PCs encounter an NPC whose reaction to the party is not obvious, the referee may roll 2d6 and consult the following table.
+                    KNAVE is a rules toolkit created by Ben Milton for run- ning old school fantasy RPGs without classes. Adding, subtracting and modifying rules is both expected and en- couraged. Knave’s features include:
                 </p>
                 <ul>
-                    <li>2: Hostile</li>
-                    <li>3-5: Unfriendly</li>
-                    <li>6-8: Unsure</li>
-                    <li>9-11: Talkative</li>
-                    <li>12: Helpful</li>
+                        <li>
+                            <b>High compatibility with OSR games</b>: If you have a library of OSR bestiaries, adventure and spell books, little or no con- version is needed to use them with Knave.
+                        </li>
+                        <li>
+                            <b>Fast to teach, easy to run</b>: If you are introducing a group of new players to OSR games, Knave allows them to make characters and understand all the rules in minutes.
+                        </li>
+                        <li>
+                            <b>No classes</b>: Every PC is a Knave, a tomb-raiding, adventure- seeking ne’er-do-well who wields a spell book just as easily as a blade. This is an ideal system for players who like to switch up their character’s focus from time to time and don’t like being pigeonholed. A PC’s role in the party is determined largely by the equipment they carry.
+                        </li>
+                        <li>
+                            <b>Abilities are king</b>: All d20 rolls use the six standard abilities. The way that ability scores and bonuses work has also been cleaned up, rationalized, and made consistent with how other systems like armor work.
+                        </li>
+                        <li>
+                            <b>Optional player-facing rolls</b>: Knave easily accommodates referees who want the players to do all the rolling. Switch- ing between the traditional shared-rolling model and play- ers-only rolling can be done effortlessly on the fly.
+                        </li>
+                        <li>
+                            <b>Copper standard</b>: Knave assumes that the common unit of currency is the copper penny. All item prices use this de- nomination and approximate actual medieval prices.
+                        </li>
+                        <li>
+                            <b>A list of 100 level-less spells.</b>
+                        </li>
+                        <li>
+                            <b>Creative Commons Attribution 4.0 International License</b>: You
+                            are free to share and adapt this material for any purpose, including commercially, as long as you give attribution.
+                            Designer commentary. The rules include designer com- ments explaining why each rule was written the way it was, to aid in hacking the game.
+                        </li>
+                    </ul>
+            </article>
+            
+
+            <h2 id='abilities'>Abilities</h2>
+            <article>
+                Each of the six abilities is used in different circumstances.
+                <ul>
+                    
+                    <li>
+                        <b>Strength</b>: Used for melee attacks and saves requiring physical power, like lifting gates, bending bars, etc.
+                    </li>
+                    <li>
+                        <b>Dexterity</b>: Used for saves requiring poise, speed, and
+                        reflexes, like dodging, climbing, sneaking, balancing, etc.
+                    </li>
+                    <li>
+                        <b>Constitution</b>: Used for saves to resist poison, sickness,
+                        cold, etc. The Constitution bonus is added to healing rolls. A PC’s number of item slots is always equal to their Constitution defense.
+                    </li>
+                    <li>
+                        <b>Intelligence</b>: Used for saves requiring concentration and precision, such as wielding magic, resisting magical effects, recalling lore, crafting objects, tinkering with machinery, picking pockets, etc.
+                    </li>
+                    <li>
+                        <b>Wisdom</b>: Used for ranged attacks and saves requiring perception and intuition, such as tracking, navigating, searching for secret doors, detecting illusions, etc.
+                    </li>
+                    <li>
+                        <b>Charisma</b>: Used for saves to persuade, deceive, interro- gate, intimidate, charm, provoke, etc. PCs may employ a number of henchmen equal to their Charisma bonus.
+                    </li>
                 </ul>
+                    <i><b>Designer’s Note</b>: In a system that relies so heavily on the six abilities, it’s important for each of them to play an important role, to discourage dump stats. Non-magical characters tend to dump the mental abilities, for example, so I increased their use- fulness.</i>
             </article>
 
-            <h2 id='combat'>Combat</h2>
-            <article>
-                <p>
-                    At the start of each combat round, determine initiative by rolling a d6. On a 1-3, all of the enemies will act first. On a 4-6 all of the PCs will act first. Reroll initiative each round.
-                </p>
-                <i><b>Designer’s Note</b>: Using simple group initiative speeds up com- bat, keeps all of the players engaged, and avoids bookkeeping. Rerolling initiative every round makes combat more dangerous, since it’s possible for one side to go twice in a row.</i>
-                <p>
-                    On their turn, a character may move their speed (usually 40 ft) and take up to one combat action. This action may be casting a spell, making a second move, making an at- tack, attempting a stunt, or any other action deemed rea- sonable by the referee.
-                </p>
-                <p>
-                    Melee weapons can strike adjacent foes, but ranged weap- ons cannot be used if the shooting character is engaged in melee combat. To make an attack, roll a d20 and add the character’s Strength or Wisdom bonus, depending on whether they are using a melee or ranged weapon, respec- tively. If the attack total is greater than the defender’s armor defense, the attack hits. If not, the attack misses.
-                </p>
-                <p>
-                    Alternatively, an attack roll can also be resolved by the defender rolling a d20 and adding their armor bonus, hop- ing to roll a total greater than the defense of the ability the attacker is using. If they succeed, the attack misses. If they fail, the attack hits.
-                </p>
-                <i><b>Designer’s Note</b>: In other words, attacks are resolved the same way as opposed saves, just using Armor in place of an ability.</i>
+            <h2 id='itemSlots'>Item Slots</h2>
+                <article>
+                    <p>
+                        PCs have a number of item slots equal to their Constitu- tion defense. Most items, including spellbooks, potions, a day’s rations, light weapons, tools and so on take up 1 slot, but particularly heavy or bulky items like armor or medi- um to heavy weapons may take up more slots. Groups of small, identical items may be bundled into the same slot, at the referee’s discretion. 100 coins can fit in a slot. As a gen- eral guideline, a slot holds around 5 pounds of weight. 
+                    </p>
+                    <i><b>Designer’s Note</b>: Using item slots makes encumbrance simple enough that players will be willing to track it. Slots are also the key to character customization, as a PC’s gear helps determine who they are. Raising Constitution, therefore, will probably be a priority for most characters.</i>
+                </article>
+                <h2 id='savingThrows'>Saving Throws</h2>
+                <article>                
+                    <p>
+                        If a character attempts something where the outcome is uncertain and failure has consequences, they make a sav- ing throw, or “save”. To make a save, add the bonus of the relevant ability to a d20 roll. If the total is greater than 15, the character succeeds. If not, they fail.
+                    </p>
+                    
+                    <i><b>Designer’s Note</b>: Requiring saves to exceed 15 means that new PCs have around a 25% chance of success, while level 10 charac- ters have around a 75% chance of success, since ability bonuses can get up to +10 by level 10. This reflects the general pattern found in the save mechanics of early D&D.</i>
+                    
+                    <p>
+                        If the save is opposed by another character, then instead of aiming to exceed 15, the side doing the rolling must get a total greater than the opposing character’s relevant defense score in order to succeed. If they fail, the opposing side succeeds. This type of save is called an opposed save. Note that it doesn’t matter which side does the rolling, since the odds of success remain the same.
+                    </p>
+                    
+                    <p>
+                        <i><b>Example</b>: A wizard casts a fireball spell at a goblin, who gets a saving throw to avoid. This is resolved as an opposed save using the wizard’s Intelligence versus the goblin’s Dexterity. The goblin may roll plus their Dexterity bonus, hoping to exceed the wizard’s Intelligence defense or the wizard may roll plus their Intelligence bonus, hoping to exceed the goblin’s Dexterity defense.</i>
+                    </p>
+                    
+                    <i><b>Designer’s Note</b>: An ability’s defense score is essentially its average roll. Requiring the rolling side to beat the opposing defense allows contests to be settled more quickly, eliminates the possibility of ties, and allows the game to be run with players doing all of the rolling if they so choose, since the odds of success are the same no matter which side rolls.</i>
+                    
+                    <p>
+                        If there are situational factors that make a save significantly easier or harder, the referee may grant the roll advantage or disadvantage. If a roll has advantage, roll 2d20 and use the better of the two dice. If it has disadvantage, roll 2d20 and use the worse of the two dice.
+                    </p>
+                    
+                    <i><b>Designer’s Note</b>: The referee is of course free to impose positive or negative modifiers rather than use the advantage system, but most players seem to enjoy it and it simplifies the math.</i>
+                </article>
+                    
+                <h2 id='reactions'>Reactions</h2>
+                <article>
+                    <p>
+                        When the PCs encounter an NPC whose reaction to the party is not obvious, the referee may roll 2d6 and consult the following table.
+                    </p>
+                    <ul>
+                        <li>2: Hostile</li>
+                        <li>3-5: Unfriendly</li>
+                        <li>6-8: Unsure</li>
+                        <li>9-11: Talkative</li>
+                        <li>12: Helpful</li>
+                    </ul>
+                </article>
 
-                <p>
-                    On a hit, the attacker rolls their weapon’s damage die to determine how many Hit Points (HP) the defender loses. A bonus damage die of the weapon’s type may be added to the roll if the ideal weapon was used against an enemy type (for example, using a blunt weapon vs. a skeleton).
-                </p>
-                <p>
-                    When a character reaches 0 HP, they are unconscious. When they reach -1 HP or less, they are dead. Players should roll up a new level 1 PC when their old one dies, and should rejoin the party as soon as possible.
-                </p>
-            </article>
-            <h2 id='stunts'>Stunts</h2>
-            <article>
-                <p>Stunts are combat maneuvers such as stunning, shoving, disarming, tripping, sundering armor, and so on. They are resolved with a versus save. They may not cause damage directly, but may do so indirectly (for example, pushing an enemy off of a ledge). The referee is the final arbiter as to what stunts can be attempted in a given situation.</p>
-            </article>
-            <h2 id='advantageInCombat'>Advantage in Combat</h2>
-            <article>
-                <p>
-                    Characters can gain advantage in combat by attacking a target that is unaware, on lower ground, off balance, dis- armed, distracted, or tactically disadvantaged in any signif- icant way. The referee, as usual, has the final say.
-                </p>
-                <p>
-                    When a character has advantage against an opponent on their combat turn, they may either A.) Apply advantage to their attack roll or stunt against that opponent or B.) Make an attack and a stunt attempt in the same round against that opponent, without advantage.
-                </p>
-            </article>
-            <h2 id='criticalHitsAndQuality'>Critical Hits and Quality</h2>
-            <article>
-                <p>
-                    During an attack roll, if the attacker rolls a natural 20 or the defender rolls a natural 1, the defender’s armor loses 1 point of quality and they take an additional die of damage (of the weapon’s type). If the attacker rolls a natural 1 or the defender rolls a natural 20, the attacker’s weapon loses 1 point of quality. At 0 quality, the item is destroyed. Each point of quality costs 10% of the item’s cost to repair.
-                </p>
-                <i><b>Designer’s Note</b>: The slow degradation of their gear is another resource clock ticking down during long dungeon raids along- side hit points, spells, torches, and so on.</i>
-            </article>
-            <h2 id='morale'>Morale</h2>
-            <article>
-                Monsters and NPCs all have a morale rating, usually be- tween 5 and 9. When they face more danger than they were expecting, the referee will make a morale roll by rolling 2d6 and comparing the result to the NPC’s morale rating. If the roll is higher than the rating, the NPC will attempt to flee, retreat, or parley. Morale rolls can be trig- gered by defeating half of an enemy group, defeating a group’s leader, or reducing a lone enemy to half HP. Other effects may trigger a morale roll at the referee’s discretion.
-Hirelings also make morale rolls when they aren’t paid, their employer dies, or they face extraordinary danger. Morale may also be improved by paying hirelings more and treating them well.
-            </article>
-            <h2 id='healing'>Healing</h2>
-            <article>
-                After a meal and a full night’s rest, PCs regain lost hit points equal to a d8 plus their Constitution bonus. Resting at a safe haven restores all lost HP.
-Designer’s Note: Constitution bonuses do not affect maximum hit points like in most OSR games, but it is a big help when it comes to healing.
-            </article>
-            <h2 id='monsters'>Monsters</h2>
-            <article>
-                <p>
-                    All monsters from OSR bestiaries should work as-is in Knave with no major conversion needed. Here are some guidelines.
-    Hit Dice/Hit Points: All monster hit dice can be assumed to be d8s unless otherwise specified. To get the monster’s hit points, just multiply the number of hit dice they have by 4 (or 5 if you’re feeling mean.)
-                </p>
-                <li>
-                    <b>Armor</b>: Monster AC (if ascending) is identical to Armor defense. If the AC is descending, subtract it from 19 (if it is from OD&D or B/X D&D) or from 20 (if it is from AD&D) to find its ascending equivalent.
-                </li>
-                <li>
-                    <b>Attack Bonus</b>: Any attack bonus given is unchanged, and can be added to both melee and ranged attacks. If an attack bonus is not given, assume that it is the same as the mon- ster’s number of hit dice.
-                </li>
-                <li>
-                    <b>Damage</b>: Damage remains the same.
-                </li>
-                <li>
-                    <b>Morale</b>: Morale rating remains the same.
-                </li>
-                <li>
-                    <b>Saves</b>: Since OSR monsters usually don’t come with ability scores, assume that monsters have ability bonuses equal to their level, with the corresponding ability defenses.
-                </li>
-                <p>
+                <h2 id='combat'>Combat</h2>
+                <article>
+                    <p>
+                        At the start of each combat round, determine initiative by rolling a d6. On a 1-3, all of the enemies will act first. On a 4-6 all of the PCs will act first. Reroll initiative each round.
+                    </p>
+                    <i><b>Designer’s Note</b>: Using simple group initiative speeds up com- bat, keeps all of the players engaged, and avoids bookkeeping. Rerolling initiative every round makes combat more dangerous, since it’s possible for one side to go twice in a row.</i>
+                    <p>
+                        On their turn, a character may move their speed (usually 40 ft) and take up to one combat action. This action may be casting a spell, making a second move, making an at- tack, attempting a stunt, or any other action deemed rea- sonable by the referee.
+                    </p>
+                    <p>
+                        Melee weapons can strike adjacent foes, but ranged weap- ons cannot be used if the shooting character is engaged in melee combat. To make an attack, roll a d20 and add the character’s Strength or Wisdom bonus, depending on whether they are using a melee or ranged weapon, respec- tively. If the attack total is greater than the defender’s armor defense, the attack hits. If not, the attack misses.
+                    </p>
+                    <p>
+                        Alternatively, an attack roll can also be resolved by the defender rolling a d20 and adding their armor bonus, hop- ing to roll a total greater than the defense of the ability the attacker is using. If they succeed, the attack misses. If they fail, the attack hits.
+                    </p>
+                    <i><b>Designer’s Note</b>: In other words, attacks are resolved the same way as opposed saves, just using Armor in place of an ability.</i>
+
+                    <p>
+                        On a hit, the attacker rolls their weapon’s damage die to determine how many Hit Points (HP) the defender loses. A bonus damage die of the weapon’s type may be added to the roll if the ideal weapon was used against an enemy type (for example, using a blunt weapon vs. a skeleton).
+                    </p>
+                    <p>
+                        When a character reaches 0 HP, they are unconscious. When they reach -1 HP or less, they are dead. Players should roll up a new level 1 PC when their old one dies, and should rejoin the party as soon as possible.
+                    </p>
+                </article>
+                <h2 id='stunts'>Stunts</h2>
+                <article>
+                    <p>Stunts are combat maneuvers such as stunning, shoving, disarming, tripping, sundering armor, and so on. They are resolved with a versus save. They may not cause damage directly, but may do so indirectly (for example, pushing an enemy off of a ledge). The referee is the final arbiter as to what stunts can be attempted in a given situation.</p>
+                </article>
+                <h2 id='advantageInCombat'>Advantage in Combat</h2>
+                <article>
+                    <p>
+                        Characters can gain advantage in combat by attacking a target that is unaware, on lower ground, off balance, dis- armed, distracted, or tactically disadvantaged in any signif- icant way. The referee, as usual, has the final say.
+                    </p>
+                    <p>
+                        When a character has advantage against an opponent on their combat turn, they may either A.) Apply advantage to their attack roll or stunt against that opponent or B.) Make an attack and a stunt attempt in the same round against that opponent, without advantage.
+                    </p>
+                </article>
+                <h2 id='criticalHitsAndQuality'>Critical Hits and Quality</h2>
+                <article>
+                    <p>
+                        During an attack roll, if the attacker rolls a natural 20 or the defender rolls a natural 1, the defender’s armor loses 1 point of quality and they take an additional die of damage (of the weapon’s type). If the attacker rolls a natural 1 or the defender rolls a natural 20, the attacker’s weapon loses 1 point of quality. At 0 quality, the item is destroyed. Each point of quality costs 10% of the item’s cost to repair.
+                    </p>
+                    <i><b>Designer’s Note</b>: The slow degradation of their gear is another resource clock ticking down during long dungeon raids along- side hit points, spells, torches, and so on.</i>
+                </article>
+                <h2 id='morale'>Morale</h2>
+                <article>
+                    Monsters and NPCs all have a morale rating, usually be- tween 5 and 9. When they face more danger than they were expecting, the referee will make a morale roll by rolling 2d6 and comparing the result to the NPC’s morale rating. If the roll is higher than the rating, the NPC will attempt to flee, retreat, or parley. Morale rolls can be trig- gered by defeating half of an enemy group, defeating a group’s leader, or reducing a lone enemy to half HP. Other effects may trigger a morale roll at the referee’s discretion.
+    Hirelings also make morale rolls when they aren’t paid, their employer dies, or they face extraordinary danger. Morale may also be improved by paying hirelings more and treating them well.
+                </article>
+                <h2 id='healing'>Healing</h2>
+                <article>
+                    After a meal and a full night’s rest, PCs regain lost hit points equal to a d8 plus their Constitution bonus. Resting at a safe haven restores all lost HP.
+    Designer’s Note: Constitution bonuses do not affect maximum hit points like in most OSR games, but it is a big help when it comes to healing.
+                </article>
+                <h2 id='monsters'>Monsters</h2>
+                <article>
+                    <p>
+                        All monsters from OSR bestiaries should work as-is in Knave with no major conversion needed. Here are some guidelines.
+        Hit Dice/Hit Points: All monster hit dice can be assumed to be d8s unless otherwise specified. To get the monster’s hit points, just multiply the number of hit dice they have by 4 (or 5 if you’re feeling mean.)
+                    </p>
+                    <li>
+                        <b>Armor</b>: Monster AC (if ascending) is identical to Armor defense. If the AC is descending, subtract it from 19 (if it is from OD&D or B/X D&D) or from 20 (if it is from AD&D) to find its ascending equivalent.
+                    </li>
+                    <li>
+                        <b>Attack Bonus</b>: Any attack bonus given is unchanged, and can be added to both melee and ranged attacks. If an attack bonus is not given, assume that it is the same as the mon- ster’s number of hit dice.
+                    </li>
+                    <li>
+                        <b>Damage</b>: Damage remains the same.
+                    </li>
+                    <li>
+                        <b>Morale</b>: Morale rating remains the same.
+                    </li>
+                    <li>
+                        <b>Saves</b>: Since OSR monsters usually don’t come with ability scores, assume that monsters have ability bonuses equal to their level, with the corresponding ability defenses.
+                    </li>
+                    <p>
+                        <i>
+                            <b>Example</b>: A typical 4 HD monster would have a bonus of +4 and a defense of 14 in all of its abilities by default, unless modified by the referee.
+                            Designer’s Note: Due to the unified 1-to-10 scale of Knave, mon- sters and NPCs essentially add their hit dice or level to any at- tacks or saves they make. Obviously this should be adjusted by the referee when it doesn’t make sense.
+                        </i>
+                    </p>
+                </article>
+                <h2 id='advancement'>Advancement</h2>
+                <article>
+                    <p>
+                        Whenever a PC accumulates 1000 XP, they gain a level. As a guideline, PCs receive 50 XP for low-risk accomplish- ments, 100 XP for moderate-risk accomplishments, and 200 XP for high-risk accomplishments. The referee should freely notify the PCs of how much XP different objectives are worth when asked.
+                    </p>
+                    <p>
+                        Designer’s Note: This is the way I run advancement because it’s simple and easy to understand. Of course, swapping in milestone advancement, session advancement, or an XP-for-coin system works perfectly well. If using XP-for-gold or silver, note that a gold piece is 100 copper, and a silver piece is 10 copper.
+                    </p>
+                    <p>
+                        When a PC gains a level, they roll a number of d8s equal to their new level to find their new HP maximum. If the re- sult is less than their previous maximum, their maximum HP increases by 1. They also raise the defense and bonus scores of 3 different abilities of their choice by 1 point. Abilities may never be raised higher than 20/+10.
+                    </p>
                     <i>
-                        <b>Example</b>: A typical 4 HD monster would have a bonus of +4 and a defense of 14 in all of its abilities by default, unless modified by the referee.
-                        Designer’s Note: Due to the unified 1-to-10 scale of Knave, mon- sters and NPCs essentially add their hit dice or level to any at- tacks or saves they make. Obviously this should be adjusted by the referee when it doesn’t make sense.
+                        <b>Designer’s Note</b>: You can also raise abilities randomly if you want. My preferred method is to roll a d20 for each ability, in any order, raising that ability by 1 if the roll is less than that ability’s defense. Keep cycling through the abilities, stopping when three abilities have advanced, and skipping any abilities that have maxed out. In this method, natural talents will tend to advance faster than weaknesses, which makes PCs more varied and specialized.
                     </i>
-                </p>
-            </article>
-            <h2 id='advancement'>Advancement</h2>
+                </article>
+                <h2 id='magic'>Magic</h2>
+                    <!-- <span class='headerBGLine'>Magic</span> -->
+                <article>
+                    <p>
+                        The spell lists from any old-school RPG will work perfect- ly well in Knave, provided that they go up to 9th level. There are many free lists of classic spells available online.
+                    </p>
+                    <p>
+                        In Knave, PCs may only cast spells of their level or less, so a level 3 PC could only cast spells of level 0 to 3. Spells are cast out of spell books, which must be held in both hands and read aloud. Each spell book can only be used once per day. Importantly, each spell book only holds a single spell, and each spell book takes up an item slot, so if a PC wants to be able to cast a wide variety of spells, they’ll have to fill most of their inventory with spell books.
+                    </p>
+                    <i>
+                        <b>Designer’s Note</b>: It’s always seemed odd to me that spell levels don’t correspond to PC level in most OSR games. Well, now they do. I also took the abstract notion of spell slots and turned them into something concrete; PCs can cast as many spells as they can physically carry. Boost Constitution if you want your PC to carry around that mobile library.
+                    </i>
+
+                    <p>
+                        PCs are unable to create, copy or transcribe spell books. In order to gain new spell books, PCs must adventure for them, by either recovering them from dungeons or looting them from other magicians. The higher the level of the spell book, the rarer and more valuable it is. PCs openly carrying high level spell books are likely to be hounded by bandits and wizards looking to “acquire” them.
+                    </p>
+                    <p>
+                        When a spell allows for a save, make an opposed Intelli- gence save against the defender’s relevant ability, usually Dexterity for ranged attack spells, Constitution for life- draining spells, Intelligence for mind-altering spells, or Wisdom for Illusions.
+                    </p>
+                    <i>
+                        <b>Designer’s Note</b>: Note that spell books can be easily re-skinned as rune stones, clay tablets, potions, scrolls, or whatever else fits your campaign. If you wanted a more dangerous, low-magic setting for example, you could make spell books potions or scrolls that are only used once and then lost forever. The random spell generator found in my other game, Maze Rats, can be useful for generating ideas for new spells.
+                    </i>
+                </article>
+                <h2 id='spells'>100 Level-less Spells</h2>
+
+                <article>
+                    <p>
+                        If you prefer spells that are level-less and scale up as the caster becomes more powerful, use the list below. In the following spells, “L” is a number equal to the caster’s level, an item is an object able to be lifted with one hand, and an object is anything up to human size. Unless otherwise noted, all spells with ongoing effects last up to L×10 minutes, and have a range of up to 40 feet. If a spell direct- ly affects another creature, the creature may make a save to avoid it (as described previously). Success reduces or ne- gates the spell’s effects.
+                    </p>
+
+                    <button id='spellGeneratorButton'>Roll Random Spell</button>
+                    
+                    <div id='spellGenerator'>
+                        <h3 id='spellGeneratorName'></h3>
+                        <div id='spellGeneratorDescription'>Click above to roll a random level-less spell</div>
+                    </div>
+
+                    <!-- spell list is inserted into the div below by JavaScript -->
+                    <div id='spellList'></div>
+
+                </article>
+
+                <h2 id='characterCreation'>Character Creation</h2>
             <article>
+                <h3>1. Roll Ability Scores</h3>
                 <p>
-                    Whenever a PC accumulates 1000 XP, they gain a level. As a guideline, PCs receive 50 XP for low-risk accomplish- ments, 100 XP for moderate-risk accomplishments, and 200 XP for high-risk accomplishments. The referee should freely notify the PCs of how much XP different objectives are worth when asked.
+                    PCs have six abilities: Strength, Dexterity, Constitu- tion, Intelligence, Wisdom, and Charisma. Each abil- ity has two related values: a defense and a bonus.
                 </p>
                 <p>
-                    Designer’s Note: This is the way I run advancement because it’s simple and easy to understand. Of course, swapping in milestone advancement, session advancement, or an XP-for-coin system works perfectly well. If using XP-for-gold or silver, note that a gold piece is 100 copper, and a silver piece is 10 copper.
+                    When creating a PC, roll 3d6 for each of their abilities, in order. The lowest of the three dice on each roll is that abil- ity’s bonus. Add 10 to find its defense.
                 </p>
                 <p>
-                    When a PC gains a level, they roll a number of d8s equal to their new level to find their new HP maximum. If the re- sult is less than their previous maximum, their maximum HP increases by 1. They also raise the defense and bonus scores of 3 different abilities of their choice by 1 point. Abilities may never be raised higher than 20/+10.
+                    After you’ve finished rolling, you may optionally swap the scores of two abilities.
+                </p>
+                <p>
+                    <i><b>Example</b>: You roll a 2, 2, and 6 for Strength. The lowest die is a 2, so your PC’s Strength has a bonus of +2 and a defense of 12. Repeat this process for the rest of the abilities.</i>
+                </p>
+                    <i><b>Designer’s Note</b>: “Ability defense” is my term for what is normally called ability scores. I refer to them this way to make it clearer how they work during opposed saves, explained later.</i>
+                <p>
+                    The rolling mechanic will make most abilities start at 11/+1. The bonus and defense of three abilities will rise by 1 point each time the PC gains a level, up to a maximum of 20/+10 by level 10. This puts everything on an intuitive ten point scale, and is intended to mirror the way that attack bonuses, hit dice, and saving throws in most OSR games increase by about one point per level.
+                </p>
+                <h3>2. Roll Starting Equipment</h3>
+                <p>
+                    2 PCs start with 2 days of rations and one weapon of their player’s choice. Roll on the Starting Gear ta- bles on the following page to determine starting armor and equipment.
+                </p>
+                <i><b>Designer’s Note</b>: Rolling for starting equipment dramatically speeds up the character creation process, which is important if you’re playing a high-lethality game like Knave. If you want to permit shopping for equipment, however, have players roll 3d6x20 to find their starting copper pieces. Note that spell books are not normally available to new PCs, but you could always add “random spellbook” to the Dungeoneering Gear table, or simply allow new PCs to roll a random spell in exchange for not starting with any armor.</i>
+
+                <p>
+                    PCs have a number of item slots equal to their Constitu- tion defense, and items they carry must fit into available slots. Most items take up one slot, but some take up more. Some small items can be bundled together into a single slot. Ask the referee if you are unsure.
+                </p>
+                <i><b>Designer’s Note</b>: Item slots make tracking encumbrance very fast and easy, which is important since resource management is an important aspect of the game. They also represent character customization slots, since what a Knave is carrying goes a long way towards determining their playstyle and role in the party.</i>
+                <p>
+                    Armor comes with an armor defense value. Note that val- ue on your character sheet with its corresponding Armor bonus (always 10 less than the defense). If the PC is not wearing any armor, their armor defense is 11 and their armor bonus is +1.
+                </p>
+                <i><b>Designer’s Note</b>: “Armor defense” is essentially the same concept as armor class in most OSR games. It’s been renamed to empha- size the connection between the way it and ability defenses work. The armor bonus exists in order to allow combat to be run en- tirely player-facing, as explained in the combat section.</i>
+                <h3>3. Roll Starting Hit Points</h3>
+                <p>
+                    3 Roll 1d8 to determine your PC’s starting and maximum hit points. A PC’s healing rate is 1d8+ Consti- tution bonus. Their exploration speed is 120ft per exploration turn, and their combat speed is 40ft per round.
                 </p>
                 <i>
-                    <b>Designer’s Note</b>: You can also raise abilities randomly if you want. My preferred method is to roll a d20 for each ability, in any order, raising that ability by 1 if the roll is less than that ability’s defense. Keep cycling through the abilities, stopping when three abilities have advanced, and skipping any abilities that have maxed out. In this method, natural talents will tend to advance faster than weaknesses, which makes PCs more varied and specialized.
+                    <b>Designer’s Note</b>: All hit dice are assumed to be d8s in Knave, for PCs, NPCs, and monsters. This simplifies the game and keeps things compatible with the stats in most OSR books. Note that a PC’s Constitution bonus is not added to their hit point rolls. Ref- erees who don’t want starting PCs to be quite as fragile might want to allow starting HP to be rerolled if it is below 5.
+                </i>
+                <h3>4. Roll Traits</h3>
+                <p>
+                    Invent or roll the rest of your PC’s traits, such as their physique, face, skin, hair, clothing, virtue, vice, speech, background, and alignment, using the
+                    random tables on the following page. Choose a gender and a name for your PC, but don’t get too attached. It’s a dan- gerous world out there.
+                </p>
+
+                <i><b>Designer’s Note</b>: Randomizing most of a PC’s traits speeds up character creation, but it also has the effect of creating surpris- ing, unique characters that most players wouldn’t think to invent or play.
                 </i>
             </article>
-            <h2 id='magic'>Magic</h2>
-                <!-- <span class='headerBGLine'>Magic</span> -->
-            <article>
-                <p>
-                    The spell lists from any old-school RPG will work perfect- ly well in Knave, provided that they go up to 9th level. There are many free lists of classic spells available online.
-                </p>
-                <p>
-                    In Knave, PCs may only cast spells of their level or less, so a level 3 PC could only cast spells of level 0 to 3. Spells are cast out of spell books, which must be held in both hands and read aloud. Each spell book can only be used once per day. Importantly, each spell book only holds a single spell, and each spell book takes up an item slot, so if a PC wants to be able to cast a wide variety of spells, they’ll have to fill most of their inventory with spell books.
-                </p>
-                <i>
-                    <b>Designer’s Note</b>: It’s always seemed odd to me that spell levels don’t correspond to PC level in most OSR games. Well, now they do. I also took the abstract notion of spell slots and turned them into something concrete; PCs can cast as many spells as they can physically carry. Boost Constitution if you want your PC to carry around that mobile library.
-                </i>
-
-                <p>
-                    PCs are unable to create, copy or transcribe spell books. In order to gain new spell books, PCs must adventure for them, by either recovering them from dungeons or looting them from other magicians. The higher the level of the spell book, the rarer and more valuable it is. PCs openly carrying high level spell books are likely to be hounded by bandits and wizards looking to “acquire” them.
-                </p>
-                <p>
-                    When a spell allows for a save, make an opposed Intelli- gence save against the defender’s relevant ability, usually Dexterity for ranged attack spells, Constitution for life- draining spells, Intelligence for mind-altering spells, or Wisdom for Illusions.
-                </p>
-                <i>
-                    <b>Designer’s Note</b>: Note that spell books can be easily re-skinned as rune stones, clay tablets, potions, scrolls, or whatever else fits your campaign. If you wanted a more dangerous, low-magic setting for example, you could make spell books potions or scrolls that are only used once and then lost forever. The random spell generator found in my other game, Maze Rats, can be useful for generating ideas for new spells.
-                </i>
-            </article>
-            <h2 id='spells'>100 Level-less Spells</h2>
-
-            <article>
-                <p>
-                    If you prefer spells that are level-less and scale up as the caster becomes more powerful, use the list below. In the following spells, “L” is a number equal to the caster’s level, an item is an object able to be lifted with one hand, and an object is anything up to human size. Unless otherwise noted, all spells with ongoing effects last up to L×10 minutes, and have a range of up to 40 feet. If a spell direct- ly affects another creature, the creature may make a save to avoid it (as described previously). Success reduces or ne- gates the spell’s effects.
-                </p>
-
-                <button id='spellGeneratorButton'>Roll Random Spell</button>
-                
-                <div id='spellGenerator'>
-                    <h3 id='spellGeneratorName'></h3>
-                    <div id='spellGeneratorDescription'>Click above to roll a random level-less spell</div>
-                </div>
-
-                <!-- spell list is inserted into the div below by JavaScript -->
-                <div id='spellList'></div>
-
-            </article>
-
-            <h2 id='characterCreation'>Character Creation</h2>
-        <article>
-            <h3>1. Roll Ability Scores</h3>
-            <p>
-                PCs have six abilities: Strength, Dexterity, Constitu- tion, Intelligence, Wisdom, and Charisma. Each abil- ity has two related values: a defense and a bonus.
-            </p>
-            <p>
-                When creating a PC, roll 3d6 for each of their abilities, in order. The lowest of the three dice on each roll is that abil- ity’s bonus. Add 10 to find its defense.
-            </p>
-            <p>
-                After you’ve finished rolling, you may optionally swap the scores of two abilities.
-            </p>
-            <p>
-                <i><b>Example</b>: You roll a 2, 2, and 6 for Strength. The lowest die is a 2, so your PC’s Strength has a bonus of +2 and a defense of 12. Repeat this process for the rest of the abilities.</i>
-            </p>
-                <i><b>Designer’s Note</b>: “Ability defense” is my term for what is normally called ability scores. I refer to them this way to make it clearer how they work during opposed saves, explained later.</i>
-            <p>
-                The rolling mechanic will make most abilities start at 11/+1. The bonus and defense of three abilities will rise by 1 point each time the PC gains a level, up to a maximum of 20/+10 by level 10. This puts everything on an intuitive ten point scale, and is intended to mirror the way that attack bonuses, hit dice, and saving throws in most OSR games increase by about one point per level.
-            </p>
-            <h3>2. Roll Starting Equipment</h3>
-            <p>
-                2 PCs start with 2 days of rations and one weapon of their player’s choice. Roll on the Starting Gear ta- bles on the following page to determine starting armor and equipment.
-            </p>
-            <i><b>Designer’s Note</b>: Rolling for starting equipment dramatically speeds up the character creation process, which is important if you’re playing a high-lethality game like Knave. If you want to permit shopping for equipment, however, have players roll 3d6x20 to find their starting copper pieces. Note that spell books are not normally available to new PCs, but you could always add “random spellbook” to the Dungeoneering Gear table, or simply allow new PCs to roll a random spell in exchange for not starting with any armor.</i>
-
-            <p>
-                PCs have a number of item slots equal to their Constitu- tion defense, and items they carry must fit into available slots. Most items take up one slot, but some take up more. Some small items can be bundled together into a single slot. Ask the referee if you are unsure.
-            </p>
-            <i><b>Designer’s Note</b>: Item slots make tracking encumbrance very fast and easy, which is important since resource management is an important aspect of the game. They also represent character customization slots, since what a Knave is carrying goes a long way towards determining their playstyle and role in the party.</i>
-            <p>
-                Armor comes with an armor defense value. Note that val- ue on your character sheet with its corresponding Armor bonus (always 10 less than the defense). If the PC is not wearing any armor, their armor defense is 11 and their armor bonus is +1.
-            </p>
-            <i><b>Designer’s Note</b>: “Armor defense” is essentially the same concept as armor class in most OSR games. It’s been renamed to empha- size the connection between the way it and ability defenses work. The armor bonus exists in order to allow combat to be run en- tirely player-facing, as explained in the combat section.</i>
-            <h3>3. Roll Starting Hit Points</h3>
-            <p>
-                3 Roll 1d8 to determine your PC’s starting and maximum hit points. A PC’s healing rate is 1d8+ Consti- tution bonus. Their exploration speed is 120ft per exploration turn, and their combat speed is 40ft per round.
-            </p>
-            <i>
-                <b>Designer’s Note</b>: All hit dice are assumed to be d8s in Knave, for PCs, NPCs, and monsters. This simplifies the game and keeps things compatible with the stats in most OSR books. Note that a PC’s Constitution bonus is not added to their hit point rolls. Ref- erees who don’t want starting PCs to be quite as fragile might want to allow starting HP to be rerolled if it is below 5.
-            </i>
-            <h3>4. Roll Traits</h3>
-            <p>
-                Invent or roll the rest of your PC’s traits, such as their physique, face, skin, hair, clothing, virtue, vice, speech, background, and alignment, using the
-                random tables on the following page. Choose a gender and a name for your PC, but don’t get too attached. It’s a dan- gerous world out there.
-            </p>
-
-            <i><b>Designer’s Note</b>: Randomizing most of a PC’s traits speeds up character creation, but it also has the effect of creating surpris- ing, unique characters that most players wouldn’t think to invent or play.
-            </i>
-        </article>
-    </main>
+        </main>
     </div>
     <script src='index.js'></script>
     <script src='spells.js'></script>

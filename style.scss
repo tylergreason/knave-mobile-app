@@ -87,34 +87,21 @@ article {
 }
 
 #sideDrawer {
-    // width: $drawerWidth; 
     height: 100vh;  
     background: var(--textColor);
-    top: 0vh; 
-    width: $drawerWidth;
-    // left: 0; 
-    // bottom: 100vh; 
+    top: 0vh;  
     overflow-y: auto;
     position: fixed; 
-    z-index: 2;
-    /* display: inline; */
     
     .non-active {
-        /* left: calc($drawerWidth * -1); */
-        // width: 0px; 
+        width: 0px; 
         left: ($drawerWidth * -1);
-        // transition-timing-function: ease-out;
         transition: 0.1s;
     }
 
     .active {
+        width: $drawerWidth;
         transition: 0.2s;
-        /* left: 0px; */
-        // width: $drawerWidth;
-        // transition-timing-function: ease-in;
-        /* position: sticky; */
-        height: 100vh; 
-    
         #main {
             overflow-y: hidden;
         }

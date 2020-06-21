@@ -88,26 +88,21 @@ article {
   height: 100vh;
   background: var(--textColor);
   top: 0vh;
-  width: 200px;
   overflow-y: auto;
   position: fixed;
-  z-index: 2;
-  /* display: inline; */
 }
 
 #sideDrawer .non-active {
-  /* left: calc($drawerWidth * -1); */
+  width: 0px;
   left: -200px;
   -webkit-transition: 0.1s;
   transition: 0.1s;
 }
 
 #sideDrawer .active {
+  width: 200px;
   -webkit-transition: 0.2s;
   transition: 0.2s;
-  /* left: 0px; */
-  /* position: sticky; */
-  height: 100vh;
 }
 
 #sideDrawer .active #main {
