@@ -1,6 +1,6 @@
-const drawerWidth = 200; 
+const drawerWidth = 220; 
 
-// const swipeAreaLeft = 0, minimumSwipeDistance = 60, swipeAreaRight = swipeAreaLeft + minimumSwipeDistance; 
+const swipeAreaLeft = 0, minimumSwipeDistance = 60, swipeAreaRight = swipeAreaLeft + minimumSwipeDistance; 
 // // set css drawer width to that which is set above 
 // document.documentElement.style.setProperty(`--drawerWidth`, `${drawerWidth}px`);
 
@@ -18,80 +18,81 @@ const openSideDrawer = () => {
 }
 
 // closeMenuButton.addEventListener('click', toggleMenuOpen)
-// // define function to remove event listener from closeMenuButton 
+// define function to remove event listener from closeMenuButton 
 // const removeEventListenerFromcloseMenuButton = () => {
 //     closeMenuButton.removeEventListener('click', toggleMenuOpen)
 // }
 
 // toggler.addEventListener('click', toggleMenuOpen)
 
-// // swiping menu open touch feature
-// let x1, y1; 
+// swiping menu open touch feature
+let x1, y1; 
 // let recentTouches = []; 
-// let firstX = ''; 
-// document.addEventListener('touchstart', (event) => {
-//     if (firstX === ''){
-//         firstX = event.changedTouches[0].clientX; 
-//         console.log(firstX);
-//     }
-//     // console.log(event.timeStamp)
-//     // check for doubletap, make sure  recentTouches list isn't empty first 
-
-//     if (recentTouches.length > 0){
-//         // console.log(recentTouches)
-//         // console.log(`${event.timeStamp} - ${recentTouches[recentTouches.length-1]}`);
-//         if ((event.timeStamp - recentTouches[recentTouches.length-1]) < 1000){
-//             console.log('double tap')
-//             recentTouches = [];
-//         }
-//     }
-//     recentTouches = [];
-//     recentTouches.push(event.timeStamp); 
-//     console.log(recentTouches);
-//     let touchLocation = event.targetTouches[0]
-//     x1 = touchLocation.clientX;
-//     y1 = touchLocation.clientY;
-//     // debugger
-// })
+let firstX = ''; 
+document.addEventListener('touchstart', (event) => {
+    if (firstX === ''){
+        firstX = event.changedTouches[0].clientX; 
+        // console.log(firstX);
+    }
+    // console.log(event.timeStamp)
+    // check for doubletap, make sure  recentTouches list isn't empty first 
+    // if (recentTouches.length > 0){
+    //     // console.log(recentTouches)
+    //     // console.log(`${event.timeStamp} - ${recentTouches[recentTouches.length-1]}`);
+    //     if ((event.timeStamp - recentTouches[recentTouches.length-1]) < 1000){
+    //         console.log('double tap')
+    //         recentTouches = [];
+    //     }
+    // }
+    // recentTouches = [];
+    // recentTouches.push(event.timeStamp); 
+    // console.log(recentTouches);
+    let touchLocation = event.targetTouches[0]
+    x1 = touchLocation.clientX;
+    y1 = touchLocation.clientY;
+    // debugger
+})
 
 
 // document.addEventListener('touchmove', (event)=>{
-//     // console.log(event.touches[0].clientY)
-//     // console.log(event.touches[0].clientX)
+    // console.log(event.touches[0].clientY)
+    // console.log(event.touches[0].clientX)
 
-//     // toggler.style.left = event.touches[0].pageX + 'px'
-//     // toggler.style.top = event.touches[0].pageY + 'px'
-//     if (event.touches[0].clientX > firstX + 20){
-//         // move drawer out 
-//         sideDrawer.style.left = event.touches[0].clientX;
-//     }
+    // toggler.style.left = event.touches[0].pageX + 'px'
+    // toggler.style.top = event.touches[0].pageY + 'px'
+    // console.log(event.touches[0].clientX)
+    // if (event.touches[0].clientX > x1 + 20){
+    //     // move drawer out 
+    //     sideDrawer.style.width = event.touches[0].clientX;
+    // }
 
 // })
 
-// document.addEventListener('touchend', event => {
-//     let x2 = event.changedTouches[0].clientX; 
-//     let y2 = event.changedTouches[0].clientY; 
-//     let xDiff = Math.abs(x1 - x2); 
-//     let yDiff = Math.abs(y1 - y2); 
+document.addEventListener('touchend', event => {
+    let x2 = event.changedTouches[0].clientX; 
+    let y2 = event.changedTouches[0].clientY; 
+    let xDiff = Math.abs(x1 - x2); 
+    let yDiff = Math.abs(y1 - y2); 
 
-//     // if the minimum distance swiped is (whatever the const set at the top of this page says) and the swipe started inside the swipe area (again, see the top of the page for those consts)
-//     // console.log(`${x1} ${x2}`)
-//     // debugger
-//     // if swiping right 
-//     if (x2 - x1 > minimumSwipeDistance && x1 < swipeAreaRight){
-//         if (!sideDrawer.classList.contains('active')){
-//             sideDrawer.classList.add('active')
-//         }
-//     }
-//     // if swiping left 
-//     else if ((x1 - x2 > minimumSwipeDistance) && x1 < drawerWidth && xDiff > yDiff){
-//         // console.log('swiped back')
-//         if (sideDrawer.classList.contains('active')){
-//             sideDrawer.classList.remove('active')
-//         }
-//     }
-//     firstX = '';
-// })
+    // if the minimum distance swiped is (whatever the const set at the top of this page says) and the swipe started inside the swipe area (again, see the top of the page for those consts)
+    // console.log(`${x1} ${x2}`)
+    // debugger
+    // if swiping right 
+    if (x2 - x1 > minimumSwipeDistance && x1 < swipeAreaRight){
+        if (!sideDrawer.classList.contains('active')){
+            sideDrawer.classList.add('active')
+        }
+    }
+    // if swiping left 
+    else if ((x1 - x2 > minimumSwipeDistance) && x1 < drawerWidth && xDiff > yDiff){
+        // console.log('swiped back')
+        if (sideDrawer.classList.contains('active')){
+            console.log('slide drawer back in ')
+            sideDrawer.classList.remove('active')
+        }
+    }
+    firstX = '';
+})
 
 // const toggleSubItemActive = (subItem) => {
 //     if (subItem !== undefined){
