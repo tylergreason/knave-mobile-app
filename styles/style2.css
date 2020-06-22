@@ -135,8 +135,8 @@ h2:before {
   content: "";
   height: 0;
   margin: auto;
-  margin-top: 4vh;
-  margin-bottom: 4vh;
+  margin-top: 7.2vh;
+  margin-bottom: 7.2vh;
   border-top: 0.5px solid #2b2b2b;
   width: 70%;
   -webkit-transform: translateY(1rem);

@@ -153,8 +153,8 @@ h2:before {
     content:"";
     height: 0;
     margin: auto; 
-    margin-top: 0.5 * $headerHeight;
-    margin-bottom: 0.5 * $headerHeight;
+    margin-top: 0.9 * $headerHeight;
+    margin-bottom: 0.9 * $headerHeight;
     border-top: 0.5px solid $textColor; 
     width: 70%; 
     transform: translateY(1rem);
