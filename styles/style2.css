@@ -3,6 +3,7 @@ body {
   line-height: 1.5;
   font-family: roboto, sans-serif;
   padding: 0px;
+  background-color: #fffaf6;
 }
 
 button {
@@ -56,6 +57,10 @@ button {
   width: 220px;
 }
 
+#sideDrawer.active main {
+  -webkit-filter: blur(5px);
+}
+
 .drawerItem {
   margin: 5px;
   font-size: 1.2rem;
@@ -94,11 +99,6 @@ button {
   z-index: 2;
 }
 
-/* give first header a large top margin to make up for floating header */
-#title {
-  margin-top: 8vh;
-}
-
 #mainTitle h1 {
   font-size: 5vh;
   text-align: left;
@@ -127,7 +127,6 @@ h2 {
   margin-bottom: 0px;
   text-align: center;
   padding-top: 8vh;
-  margin-top: -8vh;
 }
 
 #spellList {
@@ -163,6 +162,16 @@ h2 {
   max-width: 30vw;
 }
 
+.spells div:nth-child(2n) {
+  background: rgba(100, 100, 100, 0.5);
+}
+
+.spell span:nth-child(1) {
+  font-weight: 900;
+  font-style: italic;
+  /* color: blue; */
+}
+
 @media (max-width: 1080px) {
   .spells {
     -webkit-box-orient: vertical;
@@ -194,16 +203,6 @@ h2 {
     max-height: 95vh;
     overflow-y: scroll;
   }
-}
-
-.spells div:nth-child(2n) {
-  background: rgba(100, 100, 100, 0.5);
-}
-
-.spell span:nth-child(1) {
-  font-weight: 900;
-  font-style: italic;
-  /* color: blue; */
 }
 
 #spellGenerator {
