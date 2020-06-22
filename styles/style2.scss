@@ -1,10 +1,10 @@
 $drawerWidth: 220px; 
 $drawerColor: rgb(50,50,50);
-$textColor: rgb(70,70,70);
+$textColor: rgb(43, 43, 43);
 $backgroundColor: rgb(255, 250, 246);
 $drawerTextColor: rgb(200,200,200); 
 $drawerBackgroundColor: rgb(100,100,100); 
-$listBackgroundColor: rgba(100,100,100,0.5);
+$listBackgroundColor: rgba(100,100,100,0.2);
 $borderRadius: 7px;    
 $standardWidth: calc(70vw); 
 $boldTextColor: rgb(0,0,0);
@@ -141,17 +141,22 @@ article {
 h2 {
     font-size: 3rem;
     margin-bottom: 0px;
+    padding-bottom: 0px;
     text-align: center;
     // adding the following top padding and margin to allow for the anchor to scroll to this item and account for the height of the title 
-    padding-top: $headerHeight;
+    // padding-top: $headerHeight;
     // margin-top: $headerHeight;
 }
 
 h2:before {
-    display: inline-block;
+    display: block;
     content:"";
-    border: 1px solid black; 
-    width: 90%; 
+    height: 0;
+    margin: auto; 
+    margin-top: 0.5 * $headerHeight;
+    margin-bottom: 0.5 * $headerHeight;
+    border-top: 0.5px solid $textColor; 
+    width: 70%; 
     transform: translateY(1rem);
 }
 
