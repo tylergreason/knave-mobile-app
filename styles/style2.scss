@@ -195,6 +195,31 @@ h2:before {
     /* color: blue; */
 }
 
+#spellGenerator {
+    max-width: 300px; 
+    height: 150px; 
+    border: 3px solid $textColor;
+    border-radius: 7px; 
+    margin: 5px auto; 
+    padding: 10px; 
+    text-align: center; 
+}
+
+#spellGeneratorName {
+    margin: 0px auto; 
+}
+
+#spellGeneratorButton {
+    margin: 5px auto; 
+    display: flex; 
+    font-size: 1.5rem;    
+    background-color: $listBackgroundColor;
+    color: $textColor; 
+    border: none; 
+    border-radius: 7px; 
+    padding: 5px;
+}
+
 @media (max-width: 1080px){
     .spells {
         flex-flow: column;
@@ -222,33 +247,11 @@ h2:before {
         border: 3px solid $textColor; 
         border-radius: $borderRadius;
         /* float: right;  */
-        max-width: 80vw;
+        max-width: 90vw;
         max-height: 95vh; 
         overflow-y: scroll;
     }
-}
-
-#spellGenerator {
-    max-width: 300px; 
-    height: 150px; 
-    border: 3px solid $textColor;
-    border-radius: 7px; 
-    margin: 5px auto; 
-    padding: 10px; 
-    text-align: center; 
-}
-
-#spellGeneratorName {
-    margin: 0px auto; 
-}
-
-#spellGeneratorButton {
-    margin: 5px auto; 
-    display: flex; 
-    font-size: 1.5rem;    
-    background-color: $listBackgroundColor;
-    color: $textColor; 
-    border: none; 
-    border-radius: 7px; 
-    padding: 5px;
+    #spellGenerator {
+        max-width: 90vw;
+    }
 }
