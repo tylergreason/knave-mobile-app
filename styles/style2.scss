@@ -23,16 +23,16 @@ body {
     position: fixed; 
     margin: 0px; 
     // top: 0px; 
-    height: 100vh; 
+    height: 100vh - $headerHeight; 
     width: 0px;
     transition: 0.1s ease-in; 
     
     display: flex; 
     flex-flow: column;
     // justify-content: space-evenly;
+    overflow-x: hidden; 
+    overflow-y: auto;
 
-
-    overflow-y: scroll;
     z-index: 2; 
     #closeMenuButton {
         visibility: hidden;
@@ -59,6 +59,12 @@ body {
         visibility: visible;
         width: $drawerWidth; 
     }
+}
+
+.drawerItem {
+    margin: 5px; 
+    font-size: 1.2rem;  
+    text-decoration: none;
 }
 
 

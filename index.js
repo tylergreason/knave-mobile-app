@@ -141,6 +141,6 @@ const generateNavigation = list => {
 }
 generateNavigation(headers); 
 
-closeMenuButton.addEventListener('click', () => closeSideDrawer()); 
+// closeMenuButton.addEventListener('click', () => closeSideDrawer()); 
 toggler.addEventListener('click', () => toggleMenuOpen())
 toggleMenuOpen(); 
