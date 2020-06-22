@@ -214,6 +214,10 @@ h2:before {
   padding: 5px;
 }
 
+#spellGeneratorButton.active {
+  background-color: grey;
+}
+
 @media (max-width: 1080px) {
   .spells {
     -webkit-box-orient: vertical;

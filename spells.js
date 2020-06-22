@@ -155,6 +155,12 @@ spellList.appendChild(createSpellList(spells))
 spellGeneratorButton.addEventListener('click', () => generateRandomSpell(spells))
 // random spell button 
 const generateRandomSpell = spells => {
+    // spellGeneratorButton.classList.add('active')
+    spellGeneratorButton.classList.add('active')
+    setTimeout(()=> {
+        spellGeneratorButton.classList.remove('active')
+    }, 50)
+    // .then(spellGeneratorButton.classList.remove('active'))
     // pick random number from spell list 
     let spell = spells[Math.floor(Math.random()*spells.length)]
     // const spellGenerator = document.getElementById('spellGenerator')
