@@ -83,6 +83,7 @@ button {
   color: #c8c8c8;
   border: none;
   margin: 5px;
+  text-shadow: none;
 }
 
 #mainTitle {
