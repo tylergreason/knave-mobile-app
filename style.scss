@@ -168,7 +168,7 @@ main {
 
 b {
     font-style: italic;
-    color: var(--boldTextColor);
+    color: var($boldTextColor);
 }
 
 h2 {
@@ -185,8 +185,8 @@ h2 {
 
 #spellList {
     margin: auto; 
-    /* max-width: var(--standardWidth);  */
-    /* width: calc(var(--standardWidth) * 2); */
+    /* max-width: var($standardWidth);  */
+    /* width: calc(var($standardWidth) * 2); */
 }
 .spells {
     padding: 5px; 
@@ -223,12 +223,12 @@ h2 {
 /* mobile media query */
 @media (max-height: 700px), (max-width: 600px){
     :root {
-        --standardWidth: calc(90vw);
+        $standardWidth: calc(90vw);
     }
     #spellList {
         /* if the screen isn't tall enough, make the spell list scrollable */
-        border: 3px solid var(--textColor); 
-        border-radius: var(--borderRadius);
+        border: 3px solid var($textColor); 
+        border-radius: var($borderRadius);
         /* float: right;  */
         max-width: 80vw;
         max-height: 95vh; 
@@ -237,7 +237,7 @@ h2 {
 }
 
 .spells div:nth-child(2n){
-    background: var(--listBackgroundColor);
+    background: var($listBackgroundColor);
 }
 
 .spell span:nth-child(1){
@@ -249,7 +249,7 @@ h2 {
 #spellGenerator {
     max-width: 300px; 
     height: 150px; 
-    border: 3px solid var(--textColor);
+    border: 3px solid var($textColor);
     border-radius: 7px; 
     margin: auto; 
     padding: 10px; 
@@ -266,7 +266,7 @@ h2 {
     margin: 5px auto; 
     display: flex; 
     font-size: 1.5rem;    
-    background-color: var(--backgroundColor);
+    background-color: var($backgroundColor);
     color: var(--textColor); 
     border: 3px solid var(--textColor); 
     border-radius: 7px; 

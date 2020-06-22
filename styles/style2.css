@@ -20,9 +20,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
           flex-flow: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
   overflow-y: scroll;
   z-index: 2;
 }
@@ -39,7 +36,7 @@ body {
 
 #sideDrawer.active {
   position: fixed;
-  top: 10vh;
+  top: 8vh;
   -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
   width: 200px;
@@ -55,7 +52,7 @@ body {
 }
 
 #mainTitle, #toggler {
-  max-height: 10vh;
+  max-height: 8vh;
   /* font-size: 4rem; */
   text-align: center;
   margin: auto;
@@ -63,19 +60,17 @@ body {
 }
 
 #toggler {
-  position: fixed;
-  left: 0px;
-  height: 5vh;
-  width: 5vh;
-}
-
-/* give first header a large top margin to make up for floating header */
-#title {
-  margin-top: 10vh;
+  outline: none;
+  width: 4vh;
+  background-color: #646464;
+  color: #c8c8c8;
+  border: none;
+  font-size: 1.5rem;
+  margin: 5px;
 }
 
 #mainTitle {
-  height: 10vh;
+  height: 8vh;
   width: 100%;
   position: fixed;
   top: 0px;
@@ -83,12 +78,21 @@ body {
   font-size: 3vh;
   background: #646464;
   margin: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 2;
+}
+
+/* give first header a large top margin to make up for floating header */
+#title {
+  margin-top: 8vh;
 }
 
 #mainTitle h1 {
-  font-size: 6vh;
+  font-size: 5vh;
+  text-align: left;
   margin: 0;
-  text-align: center;
   /* display: inline-block; */
   /* add padding to the right to make up for the width of the menu button */
   /* padding-right: $headerHeight); */
@@ -98,7 +102,7 @@ main {
   padding: 0px;
   color: #464646;
   height: 100vh;
-  margin-top: 10vh;
+  margin-top: 8vh;
 }
 
 article {
@@ -110,5 +114,7 @@ h2 {
   font-size: 3rem;
   margin-bottom: 0px;
   text-align: center;
+  padding-top: 8vh;
+  margin-top: -8vh;
 }
 /*# sourceMappingURL=style2.css.map */
