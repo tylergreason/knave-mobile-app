@@ -78,17 +78,20 @@ document.addEventListener('touchend', event => {
     // console.log(`${x1} ${x2}`)
     // debugger
     // if swiping right 
-    if (x2 - x1 > minimumSwipeDistance && x1 < swipeAreaRight){
-        if (!sideDrawer.classList.contains('active')){
-            sideDrawer.classList.add('active')
+    if (xDiff > yDiff){
+
+        if (x2 - x1 > minimumSwipeDistance && x1 < swipeAreaRight){
+            if (!sideDrawer.classList.contains('active')){
+                sideDrawer.classList.add('active')
+            }
         }
-    }
-    // if swiping left 
-    else if ((x1 - x2 > minimumSwipeDistance) && x1 < drawerWidth && xDiff > yDiff){
-        // console.log('swiped back')
-        if (sideDrawer.classList.contains('active')){
-            console.log('slide drawer back in ')
-            sideDrawer.classList.remove('active')
+        // if swiping left 
+        else if ((x1 - x2 > minimumSwipeDistance) && x1 < drawerWidth && xDiff > yDiff){
+            // console.log('swiped back')
+            if (sideDrawer.classList.contains('active')){
+                console.log('slide drawer back in ')
+                sideDrawer.classList.remove('active')
+            }
         }
     }
     firstX = '';

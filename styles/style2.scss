@@ -63,12 +63,13 @@ button {
     .drawerItem {
         visibility: visible;
         width: $drawerWidth; 
-    }
-    
+    }    
 }
 
-#sideDrawer.active main {
-    -webkit-filter: blur(5px);
+// prevent scrolling on main div while menu is open 
+#sideDrawer.active ~ #mainWrapper {
+    overflow: hidden;
+    height: 100vh - $headerHeight;
 }
 
 .drawerItem {
@@ -144,6 +145,14 @@ h2 {
     // adding the following top padding and margin to allow for the anchor to scroll to this item and account for the height of the title 
     padding-top: $headerHeight;
     // margin-top: $headerHeight;
+}
+
+h2:before {
+    display: inline-block;
+    content:"";
+    border: 1px solid black; 
+    width: 90%; 
+    transform: translateY(1rem);
 }
 
 #spellList {

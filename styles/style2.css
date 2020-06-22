@@ -57,8 +57,9 @@ button {
   width: 220px;
 }
 
-#sideDrawer.active main {
-  -webkit-filter: blur(5px);
+#sideDrawer.active ~ #mainWrapper {
+  overflow: hidden;
+  height: 92vh;
 }
 
 .drawerItem {
@@ -127,6 +128,15 @@ h2 {
   margin-bottom: 0px;
   text-align: center;
   padding-top: 8vh;
+}
+
+h2:before {
+  display: inline-block;
+  content: "";
+  border: 1px solid black;
+  width: 90%;
+  -webkit-transform: translateY(1rem);
+          transform: translateY(1rem);
 }
 
 #spellList {
