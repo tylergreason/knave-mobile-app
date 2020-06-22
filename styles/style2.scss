@@ -18,6 +18,10 @@ body {
     padding: 0px;
 }
 
+button {
+    outline: none;  
+}
+
 #sideDrawer {
     background-color: $drawerBackgroundColor;
     position: fixed; 
@@ -139,8 +143,95 @@ h2 {
     margin-top: -$headerHeight;
 }
 
+#spellList {
+    margin: auto; 
+}
+
+.spells {
+    padding: 5px; 
+    display: flex; 
+    flex-flow: column wrap; 
+    align-content: center;
+    /* min and max height of the spells list states that 
+    the min height should hold about 30 spells in a column 
+    and at max it should hold about 50 
+    */
+    min-height: calc(50px * 30);
+    max-height: calc(50px * 50);
+}
+
+.spells div {
+    margin: 2px;
+    padding: 3px;
+    /* spells cannot grow (0), they can shrink (1) */
+    flex: 0 1 0;
+    max-width: 30vw;
+}
+
+@media (max-width: 1080px){
+    .spells {
+        flex-flow: column;
+        max-height: none; 
+        max-width: 90vw;
+    }
+    .spells div {
+        max-width: 100%;
+    }
+}
+
 @media (max-width: 600px){
     main {
         width: 90%; 
     }
+}
+
+/* mobile media query */
+@media (max-height: 700px), (max-width: 900px){
+    :root {
+        $standardWidth: calc(90vw);
+    }
+    #spellList {
+        /* if the screen isn't tall enough, make the spell list scrollable */
+        border: 3px solid $textColor; 
+        border-radius: $borderRadius;
+        /* float: right;  */
+        max-width: 80vw;
+        max-height: 95vh; 
+        overflow-y: scroll;
+    }
+}
+
+.spells div:nth-child(2n){
+    background: $listBackgroundColor;
+}
+
+.spell span:nth-child(1){
+    font-weight: 900;
+    font-style: italic;
+    /* color: blue; */
+}
+
+#spellGenerator {
+    max-width: 300px; 
+    height: 150px; 
+    border: 3px solid $textColor;
+    border-radius: 7px; 
+    margin: 5px auto; 
+    padding: 10px; 
+    text-align: center; 
+}
+
+#spellGeneratorName {
+    margin: 0px auto; 
+}
+
+#spellGeneratorButton {
+    margin: 5px auto; 
+    display: flex; 
+    font-size: 1.5rem;    
+    background-color: $listBackgroundColor;
+    color: $textColor; 
+    border: none; 
+    border-radius: 7px; 
+    padding: 5px;
 }
