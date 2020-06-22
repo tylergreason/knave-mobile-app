@@ -11,8 +11,8 @@ body {
   margin: 0px;
   height: 92vh;
   width: 0px;
-  -webkit-transition: 0.1s ease-in;
-  transition: 0.1s ease-in;
+  -webkit-transition: all 0.1s ease-in, height 0s;
+  transition: all 0.1s ease-in, height 0s;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -60,10 +60,10 @@ body {
 
 #mainTitle, #toggler {
   max-height: 8vh;
-  /* font-size: 4rem; */
   text-align: center;
   margin: auto;
   color: #c8c8c8;
+  font-size: 3vh;
 }
 
 #toggler {
@@ -72,7 +72,6 @@ body {
   background-color: #646464;
   color: #c8c8c8;
   border: none;
-  font-size: 1.5rem;
   margin: 5px;
 }
 
@@ -106,10 +105,12 @@ body {
 }
 
 main {
-  padding: 0px;
+  padding: 10px;
   color: #464646;
   height: 100vh;
+  margin: auto;
   margin-top: 8vh;
+  width: calc(70vw);
 }
 
 article {
@@ -123,5 +124,11 @@ h2 {
   text-align: center;
   padding-top: 8vh;
   margin-top: -8vh;
+}
+
+@media (max-width: 600px) {
+  main {
+    width: 90%;
+  }
 }
 /*# sourceMappingURL=style2.css.map */

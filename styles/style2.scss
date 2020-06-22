@@ -25,7 +25,7 @@ body {
     // top: 0px; 
     height: 100vh - $headerHeight; 
     width: 0px;
-    transition: 0.1s ease-in; 
+    transition: all 0.1s ease-in, height 0s; 
     
     display: flex; 
     flex-flow: column;
@@ -70,23 +70,18 @@ body {
 
 #mainTitle, #toggler {
     max-height: $headerHeight;
-    /* font-size: 4rem; */
     text-align: center; 
     margin: auto; 
     color: $drawerTextColor;
+    font-size: 3vh;
 } 
 
 #toggler {
-    // position: fixed; 
-    // top: 0px; 
-    // left: 0px;
     outline: none; 
-    // height: $headerHeight * 0.5;
     width: $headerHeight * 0.5;
     background-color: $drawerBackgroundColor;
     color: $drawerTextColor;
     border: none;
-    font-size: 1.5rem;
     margin: 5px; 
 }
 
@@ -121,11 +116,13 @@ body {
 }
 
 main {
-    padding: 0px;
+    padding: 10px;
     // background-color: $backgroundColor;
     color: $textColor;
     height: 100vh; 
+    margin: auto;
     margin-top: $headerHeight;
+    width: $standardWidth;
 }
 
 article {
@@ -140,4 +137,10 @@ h2 {
     // adding the following top padding and margin to allow for the anchor to scroll to this item and account for the height of the title 
     padding-top: $headerHeight;
     margin-top: -$headerHeight;
+}
+
+@media (max-width: 600px){
+    main {
+        width: 90%; 
+    }
 }
