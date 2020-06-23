@@ -78,12 +78,17 @@ button {
 
 #toggler {
   outline: none;
-  width: 4vh;
   background-color: #646464;
   color: #c8c8c8;
   border: none;
   margin: 5px;
   text-shadow: none;
+}
+
+#toggler svg {
+  -webkit-transform: scale(2);
+          transform: scale(2);
+  fill: #c8c8c8;
 }
 
 #mainTitle {

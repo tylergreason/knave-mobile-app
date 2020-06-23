@@ -89,15 +89,18 @@ button {
 
 #toggler {
     outline: none; 
-    width: $headerHeight * 0.5;
+    // width: $headerHeight * 0.5;
     background-color: $drawerBackgroundColor;
     color: $drawerTextColor;
     border: none;
     margin: 5px; 
     text-shadow: none;
+    svg {
+        transform: scale(2);    
+        // color: blue;
+        fill: $drawerTextColor;
+    }
 }
-
-
 
 #mainTitle{ 
     height: $headerHeight;
