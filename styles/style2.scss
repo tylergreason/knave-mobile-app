@@ -17,6 +17,8 @@ body {
     font-family: roboto, sans-serif;
     padding: 0px;
     background-color: $backgroundColor;
+    scroll-behavior: smooth;
+
 }
 
 button {
@@ -68,8 +70,8 @@ button {
 
 // prevent scrolling on main div while menu is open 
 #sideDrawer.active ~ #mainWrapper {
-    overflow: hidden;
-    height: 100vh - $headerHeight;
+
+    // height: 100vh - $headerHeight;
 }
 
 .drawerItem {

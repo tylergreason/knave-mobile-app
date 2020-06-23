@@ -4,6 +4,7 @@ body {
   font-family: roboto, sans-serif;
   padding: 0px;
   background-color: #fffaf6;
+  scroll-behavior: smooth;
 }
 
 button {
@@ -55,11 +56,6 @@ button {
 #sideDrawer.active .drawerItem {
   visibility: visible;
   width: 220px;
-}
-
-#sideDrawer.active ~ #mainWrapper {
-  overflow: hidden;
-  height: 92vh;
 }
 
 .drawerItem {
