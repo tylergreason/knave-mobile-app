@@ -142,6 +142,8 @@ main {
 article {
     max-width: $standardWidth;
     margin: auto;
+    // try adding columns back in at some point 
+    columns: 300px 3;
 }
 
 h2 {
@@ -205,6 +207,7 @@ h2:before {
     */
     min-height: calc(50px * 30);
     max-height: calc(50px * 50);
+    column-span: all;
 }
 
 .spells div {
