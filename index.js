@@ -1,3 +1,23 @@
+const bodyArea = document.getElementsByTagName(main); 
+// create new hammer instance for opening drawer 
+const openDrawerAction = new Hammer(main); 
+openDrawerAction.on('pan right', e => {
+    if (e.isFinal && e.deltaX > minimumSwipeDistance){
+        openSideDrawer()
+    }
+    console.log(e.deltaX)
+})
+
+// new hammer instance for closing drawer 
+const closeDrawerAction = new Hammer(sideDrawer); 
+closeDrawerAction.on('pan left', e => {
+    if (e.isFinal && e.deltaX < (minimumSwipeDistance * -1)){
+        closeSideDrawer()
+    }
+})
+
+
+
 const drawerWidth = 220; 
 
 const swipeAreaLeft = 0, minimumSwipeDistance = 60, swipeAreaRight = swipeAreaLeft + minimumSwipeDistance; 
@@ -24,6 +44,10 @@ const openSideDrawer = () => {
 // }
 
 // toggler.addEventListener('click', toggleMenuOpen)
+
+
+
+/*
 
 // swiping menu open touch feature
 let x1, y1; 
@@ -120,6 +144,9 @@ document.addEventListener('touchend', event => {
 // subItems.forEach(subItem => {
 //     subItem.addEventListener('click', toggleMenuOpen)
 // })
+
+
+*/
 
 
 // // generate sideDrawer buttons for navigation 

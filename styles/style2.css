@@ -189,8 +189,6 @@ h2:before {
     */
   min-height: calc(50px * 30);
   max-height: calc(50px * 50);
-  -webkit-column-span: all;
-          column-span: all;
 }
 
 .spells div {
