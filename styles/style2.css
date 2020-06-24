@@ -117,11 +117,10 @@ main {
   height: 100vh;
   margin: auto;
   margin-top: 8vh;
-  width: calc(70vw);
+  width: 70vw;
 }
 
 article {
-  max-width: calc(70vw);
   margin: auto;
 }
 
@@ -262,6 +261,9 @@ h2:before {
 
 /* mobile media query */
 @media (max-height: 700px), (max-width: 900px) {
+  main {
+    width: 90vw;
+  }
   #spellList {
     /* if the screen isn't tall enough, make the spell list scrollable */
     border: 3px solid #2b2b2b;
@@ -287,5 +289,17 @@ h2:before {
   bottom: 0px;
   left: 0px;
   right: 0px;
+  z-index: -1;
+}
+
+#openDrawerElement {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10%;
+  height: 100%;
+  background-color: blue;
+  opacity: 0;
+  z-index: 2;
 }
 /*# sourceMappingURL=style2.css.map */

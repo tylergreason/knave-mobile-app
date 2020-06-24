@@ -1,10 +1,15 @@
+// create element to listen for opening drawer event 
+const openDrawerElement = document.createElement('div'); 
+openDrawerElement.id = "openDrawerElement"; 
+let body = document.getElementsByTagName('body')[0]; 
+body.appendChild(openDrawerElement);
+
 // create new hammer instance for opening drawer 
-const openDrawerAction = new Hammer(touchElement); 
+const openDrawerAction = new Hammer(openDrawerElement); 
 openDrawerAction.on('pan right', e => {
     if (e.isFinal && e.deltaX > minimumSwipeDistance){
         openSideDrawer()
     }
-    console.log(e.deltaX)
 })
 
 // new hammer instance for closing drawer 
