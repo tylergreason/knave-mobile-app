@@ -202,7 +202,7 @@ h2:before {
   margin: 0px auto;
 }
 
-#spellGeneratorButton {
+.generatorButton {
   margin: 5px auto;
   display: -webkit-box;
   display: -ms-flexbox;
