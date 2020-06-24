@@ -1,6 +1,6 @@
 $drawerWidth: 220px; 
 $drawerColor: rgb(50,50,50);
-$textColor: rgb(43, 43, 43);
+$textColor: rgb(23, 23, 23);
 $backgroundColor: rgb(255, 250, 246);
 $drawerTextColor: rgb(200,200,200); 
 $drawerBackgroundColor: rgb(100,100,100); 
@@ -18,6 +18,7 @@ body {
     padding: 0px;
     background-color: $backgroundColor;
     scroll-behavior: smooth;
+    font-weight: 600;
 
 }
 
@@ -317,5 +318,5 @@ h2:before {
     height: 100%; 
     background-color: blue;
     opacity: 0;
-    z-index: 2; 
+    // z-index: 2; 
 }

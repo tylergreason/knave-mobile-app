@@ -6,6 +6,7 @@ body.appendChild(openDrawerElement);
 
 // create new hammer instance for opening drawer 
 const openDrawerAction = new Hammer(openDrawerElement); 
+
 openDrawerAction.on('pan right', e => {
     if (e.isFinal && e.deltaX > minimumSwipeDistance){
         openSideDrawer()
@@ -38,6 +39,7 @@ const closeSideDrawer = () => {
 }
 
 const openSideDrawer = () => {
+    sideDrawer.focus()
     sideDrawer.classList.add('active')
 }
 
