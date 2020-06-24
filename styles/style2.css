@@ -123,8 +123,6 @@ main {
 article {
   max-width: calc(70vw);
   margin: auto;
-  -webkit-columns: 300px 3;
-          columns: 300px 3;
 }
 
 h2 {
@@ -279,5 +277,15 @@ h2:before {
   #reactionsList {
     width: 100%;
   }
+}
+
+#touchElement {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
 }
 /*# sourceMappingURL=style2.css.map */

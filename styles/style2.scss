@@ -143,7 +143,7 @@ article {
     max-width: $standardWidth;
     margin: auto;
     // try adding columns back in at some point 
-    columns: 300px 3;
+    // columns: 300px 3;
 }
 
 h2 {
@@ -296,3 +296,12 @@ h2:before {
     }
 }
 
+#touchElement {
+    width: 100%; 
+    height: 100%; 
+    position: fixed; 
+    top: 0px; 
+    bottom: 0px; 
+    left: 0px; 
+    right: 0px; 
+}

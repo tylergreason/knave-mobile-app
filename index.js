@@ -1,6 +1,5 @@
-const bodyArea = document.getElementsByTagName(main); 
 // create new hammer instance for opening drawer 
-const openDrawerAction = new Hammer(main); 
+const openDrawerAction = new Hammer(touchElement); 
 openDrawerAction.on('pan right', e => {
     if (e.isFinal && e.deltaX > minimumSwipeDistance){
         openSideDrawer()
