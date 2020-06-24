@@ -166,6 +166,15 @@ h2:before {
     transform: translateY(1rem);
 }
 
+#reactionsList li {
+    border-bottom: 3px solid black;
+}
+
+#reactionsList li.highlighted {
+    background-color: blue;
+}
+
+
 #spellList {
     margin: auto; 
 }
@@ -264,3 +273,4 @@ h2:before {
         max-width: 90vw;
     }
 }
+
