@@ -121,7 +121,7 @@ main {
 }
 
 article {
-  max-width: standardWidth;
+  max-width: calc(70vw);
   margin: auto;
 }
 
@@ -145,12 +145,25 @@ h2:before {
           transform: translateY(1rem);
 }
 
+#reactionsList {
+  margin: auto;
+  width: 50%;
+  padding: 0px;
+}
+
 #reactionsList li {
-  border-bottom: 3px solid black;
+  font-size: 1.5rem;
+  list-style: none;
+  padding: 10px;
+  border-radius: 7px;
+  max-width: 200px;
+  text-align: center;
+  display: inline-block;
 }
 
 #reactionsList li.highlighted {
-  background-color: blue;
+  color: #c8c8c8;
+  background-color: #646464;
 }
 
 #spellList {
@@ -260,6 +273,9 @@ h2:before {
   }
   #spellGenerator {
     max-width: 90vw;
+  }
+  #reactionsList {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=style2.css.map */

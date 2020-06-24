@@ -140,7 +140,7 @@ main {
 }
 
 article {
-    max-width: standardWidth;
+    max-width: $standardWidth;
     margin: auto;
 }
 
@@ -166,12 +166,27 @@ h2:before {
     transform: translateY(1rem);
 }
 
+#reactionsList {
+    margin: auto;
+    width: 50%;
+    padding: 0px;
+}
+
 #reactionsList li {
-    border-bottom: 3px solid black;
+    font-size: 1.5rem;
+    list-style: none;
+    padding: 10px;
+    border-radius: $borderRadius;
+    max-width: 200px; 
+    text-align: center;
+    display: inline-block;
+    // border-bottom: 3px solid none;
 }
 
 #reactionsList li.highlighted {
-    background-color: blue;
+    // border-bottom: 3px solid blue;
+    color: $drawerTextColor;
+    background-color: $drawerBackgroundColor;
 }
 
 
@@ -233,6 +248,7 @@ h2:before {
     border: none; 
     border-radius: 7px; 
     padding: 5px;
+
 }
 #spellGeneratorButton.active {
     background-color: grey;
@@ -271,6 +287,9 @@ h2:before {
     }
     #spellGenerator {
         max-width: 90vw;
+    }
+    #reactionsList {
+        width: 100%;
     }
 }
 
