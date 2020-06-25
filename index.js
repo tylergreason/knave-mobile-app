@@ -7,7 +7,7 @@ body.appendChild(openDrawerElement);
 // create new hammer instance for opening drawer 
 const openDrawerAction = new Hammer(openDrawerElement); 
 
-openDrawerAction.on('pan right', e => {
+openDrawerAction.on('swipe right', e => {
     if (e.isFinal && e.deltaX > minimumSwipeDistance){
         openSideDrawer()
     }
@@ -15,7 +15,7 @@ openDrawerAction.on('pan right', e => {
 
 // new hammer instance for closing drawer 
 const closeDrawerAction = new Hammer(sideDrawer); 
-closeDrawerAction.on('pan left', e => {
+closeDrawerAction.on('swipe left', e => {
     if (e.isFinal && e.deltaX < (minimumSwipeDistance * -1)){
         closeSideDrawer()
     }
