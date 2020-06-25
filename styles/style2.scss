@@ -181,9 +181,8 @@ h2:before {
     padding: 10px;
     border-radius: $borderRadius;
     max-width: 200px; 
+    margin: auto;
     text-align: center;
-    display: inline-block;
-    // border-bottom: 3px solid none;
 }
 
 #reactionsList li.highlighted {
@@ -209,24 +208,23 @@ h2:before {
     min-height: calc(50px * 30);
     max-height: calc(50px * 50);
     // column-span: all;
-}
+    & div {
+        margin: 2px;
+        padding: 3px;
+        /* spells cannot grow (0), they can shrink (1) */
+        flex: 0 1 0;
+        max-width: 30vw;
+    }
+    
+    & div:nth-child(2n){
+        background: $listBackgroundColor;
+    }
 
-.spells div {
-    margin: 2px;
-    padding: 3px;
-    /* spells cannot grow (0), they can shrink (1) */
-    flex: 0 1 0;
-    max-width: 30vw;
-}
-
-.spells div:nth-child(2n){
-    background: $listBackgroundColor;
-}
-
-.spell span:nth-child(1){
-    font-weight: 900;
-    font-style: italic;
-    /* color: blue; */
+    & span:nth-child(1){
+        font-weight: bold;
+        font-style: italic;
+    }
+    
 }
 
 #spellGenerator {
@@ -263,9 +261,9 @@ h2:before {
         flex-flow: column;
         max-height: none; 
         max-width: 90vw;
-    }
-    .spells div {
-        max-width: 100%;
+        & div {
+            max-width: 100%;
+        }
     }
 }
 

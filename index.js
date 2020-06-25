@@ -10,6 +10,7 @@ const openDrawerAction = new Hammer(openDrawerElement);
 openDrawerAction.on('swipe right', e => {
     if (e.isFinal && e.deltaX > minimumSwipeDistance){
         openSideDrawer()
+        // debugger
     }
 })
 

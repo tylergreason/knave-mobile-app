@@ -157,8 +157,8 @@ h2:before {
   padding: 10px;
   border-radius: 7px;
   max-width: 200px;
+  margin: auto;
   text-align: center;
-  display: inline-block;
 }
 
 #reactionsList li.highlighted {
@@ -203,10 +203,9 @@ h2:before {
   background: rgba(100, 100, 100, 0.2);
 }
 
-.spell span:nth-child(1) {
-  font-weight: 900;
+.spells span:nth-child(1) {
+  font-weight: bold;
   font-style: italic;
-  /* color: blue; */
 }
 
 #spellGenerator {
