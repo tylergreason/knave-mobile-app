@@ -134,7 +134,7 @@ main {
     padding: 10px;
     // background-color: $backgroundColor;
     color: $textColor;
-    height: 100vh; 
+    height: 100%; 
     margin: auto;
     margin-top: $headerHeight;
     width: $standardWidth;
@@ -317,6 +317,6 @@ h2:before {
     width: 10%; 
     height: 100%; 
     background-color: blue;
-    // opacity: 0.2;
+    opacity: 0;
     // z-index: 2; 
 }

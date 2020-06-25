@@ -115,7 +115,7 @@ button {
 main {
   padding: 10px;
   color: #171717;
-  height: 100vh;
+  height: 100%;
   margin: auto;
   margin-top: 8vh;
   width: 70vw;
@@ -300,6 +300,6 @@ h2:before {
   width: 10%;
   height: 100%;
   background-color: blue;
-  opacity: 0.2;
+  opacity: 0;
 }
 /*# sourceMappingURL=style2.css.map */
