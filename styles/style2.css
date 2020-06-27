@@ -5,7 +5,6 @@ body {
   padding: 0px;
   background-color: #fffaf6;
   scroll-behavior: smooth;
-  font-weight: 600;
 }
 
 button {
@@ -114,7 +113,7 @@ button {
 
 main {
   padding: 10px;
-  color: #171717;
+  color: #383131;
   height: 100%;
   margin: auto;
   margin-top: 8vh;
@@ -139,7 +138,7 @@ h2:before {
   margin: auto;
   margin-top: 7.2vh;
   margin-bottom: 7.2vh;
-  border-top: 0.5px solid #171717;
+  border-top: 0.5px solid #383131;
   width: 70%;
   -webkit-transform: translateY(1rem);
           transform: translateY(1rem);
@@ -211,7 +210,7 @@ h2:before {
 #spellGenerator {
   max-width: 300px;
   height: 150px;
-  border: 3px solid #171717;
+  border: 3px solid #383131;
   border-radius: 7px;
   margin: 5px auto;
   padding: 10px;
@@ -229,7 +228,7 @@ h2:before {
   display: flex;
   font-size: 1.5rem;
   background-color: rgba(100, 100, 100, 0.2);
-  color: #171717;
+  color: #383131;
   border: none;
   border-radius: 7px;
   padding: 5px;
@@ -266,7 +265,7 @@ h2:before {
   }
   #spellList {
     /* if the screen isn't tall enough, make the spell list scrollable */
-    border: 3px solid #171717;
+    border: 3px solid #383131;
     border-radius: 7px;
     /* float: right;  */
     max-width: 90vw;
@@ -300,5 +299,9 @@ h2:before {
   height: 100%;
   background-color: blue;
   opacity: 0;
+}
+
+.designerNotes {
+  font-style: italic;
 }
 /*# sourceMappingURL=style2.css.map */
