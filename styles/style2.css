@@ -5,6 +5,7 @@ body {
   padding: 0px;
   background-color: #fffaf6;
   scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 button {
@@ -302,6 +303,23 @@ h2:before {
 }
 
 .designerNotes {
+  text-align: center;
   font-style: italic;
+  background-color: #ebd8cd;
+  border-radius: 10px;
+  padding: 5px;
+  max-height: 32px;
+  overflow: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  border: 3px solid #fffaf6;
+}
+
+.designerNotes.open {
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+  background-color: #fffaf6;
+  max-height: 100vh;
+  border: 3px solid #323232;
 }
 /*# sourceMappingURL=style2.css.map */
