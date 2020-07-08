@@ -318,3 +318,16 @@ h2:before {
         border: 3px solid $drawerColor;
     }
 }
+
+li {
+    list-style: none;
+
+    &:before{
+        content: url('../assets/sword.svg');
+        vertical-align: middle;
+    }
+}
+
+svg {
+    fill: green;
+}

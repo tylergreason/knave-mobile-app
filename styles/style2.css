@@ -292,4 +292,17 @@ h2:before {
   max-height: 100vh;
   border: 3px solid #323232;
 }
+
+li {
+  list-style: none;
+}
+
+li:before {
+  content: url("../assets/sword.svg");
+  vertical-align: middle;
+}
+
+svg {
+  fill: green;
+}
 /*# sourceMappingURL=style2.css.map */
