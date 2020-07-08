@@ -200,22 +200,11 @@ h2:before {
 
 .spells {
     padding: 5px; 
-    display: flex; 
-    flex-flow: column wrap; 
-    align-content: center;
-    /* min and max height of the spells list states that 
-    the min height should hold about 30 spells in a column 
-    and at max it should hold about 50 
-    */
-    min-height: calc(50px * 30);
-    max-height: calc(50px * 50);
-    // column-span: all;
+    columns: 15rem auto;
     & div {
         margin: 2px;
         padding: 3px;
-        /* spells cannot grow (0), they can shrink (1) */
-        flex: 0 1 0;
-        max-width: 30vw;
+        break-inside: avoid;
     }
     
     & div:nth-child(2n){
@@ -258,17 +247,6 @@ h2:before {
     background-color: grey;
 }
 
-@media (max-width: 1080px){
-    .spells {
-        flex-flow: column;
-        max-height: none; 
-        max-width: 90vw;
-        & div {
-            max-width: 100%;
-        }
-    }
-}
-
 @media (max-width: 600px){
     main {
         width: 90%; 
@@ -285,7 +263,6 @@ h2:before {
         /* if the screen isn't tall enough, make the spell list scrollable */
         border: 3px solid $textColor; 
         border-radius: $borderRadius;
-        /* float: right;  */
         max-width: 90vw;
         max-height: 85vh; 
         overflow-y: scroll;
