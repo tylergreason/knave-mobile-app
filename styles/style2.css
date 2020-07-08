@@ -270,7 +270,7 @@ h2:before {
     border-radius: 7px;
     /* float: right;  */
     max-width: 90vw;
-    max-height: 95vh;
+    max-height: 85vh;
     overflow-y: scroll;
   }
   #spellGenerator {
@@ -313,12 +313,13 @@ h2:before {
   -webkit-transition: 0.5s;
   transition: 0.5s;
   border: 3px solid #fffaf6;
+  opacity: 0.5;
 }
 
 .designerNotes.open {
   -webkit-transition: 0.8s;
   transition: 0.8s;
-  background-color: #fffaf6;
+  opacity: 1;
   max-height: 100vh;
   border: 3px solid #323232;
 }
