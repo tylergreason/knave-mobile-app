@@ -1,4 +1,5 @@
-<?xml version="1.0" standalone="no"?>
+// add sword to li elements 
+const swordSVG = `<?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
  "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
@@ -7,7 +8,7 @@
 <metadata>
 Created by potrace 1.15, written by Peter Selinger 2001-2017
 </metadata>
-<g transform="translate(0.000000,720.000000) scale(0.100000,-0.100000)"
+<g transform="translate(00.000000,720.000000) scale(0.100000,-0.100000)"
 stroke="none">
 <path d="M4110 5071 c-294 -119 -436 -228 -457 -350 -4 -25 -7 -230 -6 -454 2
 -380 1 -408 -15 -402 -9 4 -48 16 -87 26 -160 41 -215 44 -815 41 -719 -4
@@ -23,4 +24,12 @@ stroke="none">
 -748 -11 -934 -13 l-339 -3 2 75 c3 130 22 331 41 441 25 147 71 276 142 404
 34 61 70 127 80 147 21 42 24 108 6 126 -23 23 -100 13 -198 -27z"/>
 </g>
-</svg>
+</svg>`
+
+// find all li elements, then append the swordSVG code to the beginning of their innerText as a document fragment: 
+
+const lis = Array.from(document.getElementsByTagName('li')); 
+
+lis.forEach(ele => {
+    
+})

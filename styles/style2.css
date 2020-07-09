@@ -161,9 +161,20 @@ h2:before {
   text-align: center;
 }
 
+#reactionsList li:before {
+  content: "";
+}
+
 #reactionsList li.highlighted {
-  color: #c8c8c8;
+  -webkit-transition: padding 0.3s;
+  transition: padding 0.3s;
+  font-size: 1.6rem;
+  color: #fffaf6;
   background-color: #646464;
+}
+
+#reactionsList li.highlighted:before {
+  content: url("../assets/swordRed.svg");
 }
 
 #spellList {

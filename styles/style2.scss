@@ -185,12 +185,24 @@ h2:before {
     max-width: 200px; 
     margin: auto;
     text-align: center;
+    // transition: 0.3s;
+    &:before{
+        // remove sword from these list items
+        content: ""
+    }
 }
 
 #reactionsList li.highlighted {
+    transition: padding 0.3s;
     // border-bottom: 3px solid blue;
-    color: $drawerTextColor;
+    font-size: 1.6rem;
+    // padding: 12px;
+    color: $backgroundColor;
     background-color: $drawerBackgroundColor;
+    &:before{
+        // add sword again as red sword 
+        content: url('../assets/swordRed.svg');
+    }
 }
 
 
