@@ -188,14 +188,27 @@ h2:before {
     text-align: center;
     // transition: 0.3s;
     transition: 0.3s;
+    svg {
+        opacity: 0.5;
+    }
     &.highlighted {
         color: $backgroundColor;
         background-color: $drawerBackgroundColor;
         svg{
-            transition: 0.5s;
-            fill:red;
-            // create a random rotation value 
-            transform: rotate(-10deg) scale(2);
+            opacity: 1;
+            fill: $backgroundColor;
+            // animation for svg rotating 
+            animation-name: rotatingSword;
+            animation-duration: 0.5s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes rotatingSword {
+            from {
+                transform: rotate(0deg) scale(1); 
+            }
+            to {
+                transform: rotate(360deg) scale(1.5) translateX(-5px);
+            }
         }
     }
 }

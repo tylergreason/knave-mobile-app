@@ -164,17 +164,46 @@ h2:before {
   transition: 0.3s;
 }
 
+#reactionsList li svg {
+  opacity: 0.5;
+}
+
 #reactionsList li.highlighted {
   color: #fffaf6;
   background-color: #646464;
 }
 
 #reactionsList li.highlighted svg {
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  fill: red;
-  -webkit-transform: rotate(-10deg) scale(2);
-          transform: rotate(-10deg) scale(2);
+  opacity: 1;
+  fill: #fffaf6;
+  -webkit-animation-name: rotatingSword;
+          animation-name: rotatingSword;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes rotatingSword {
+  from {
+    -webkit-transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
+  }
+  to {
+    -webkit-transform: rotate(360deg) scale(1.5) translateX(-5px);
+            transform: rotate(360deg) scale(1.5) translateX(-5px);
+  }
+}
+
+@keyframes rotatingSword {
+  from {
+    -webkit-transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
+  }
+  to {
+    -webkit-transform: rotate(360deg) scale(1.5) translateX(-5px);
+            transform: rotate(360deg) scale(1.5) translateX(-5px);
+  }
 }
 
 #spellList {
