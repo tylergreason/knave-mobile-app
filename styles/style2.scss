@@ -1,3 +1,4 @@
+@use "sass:math";
 $drawerWidth: 220px; 
 $drawerColor: rgb(50,50,50);
 $textColor: rgb(56, 49, 49);
@@ -186,25 +187,18 @@ h2:before {
     margin: auto;
     text-align: center;
     // transition: 0.3s;
-    &:before{
-        // remove sword from these list items
-        content: ""
+    transition: 0.3s;
+    &.highlighted {
+        color: $backgroundColor;
+        background-color: $drawerBackgroundColor;
+        svg{
+            transition: 0.5s;
+            fill:red;
+            // create a random rotation value 
+            transform: rotate(-10deg) scale(2);
+        }
     }
 }
-
-#reactionsList li.highlighted {
-    transition: padding 0.3s;
-    // border-bottom: 3px solid blue;
-    font-size: 1.6rem;
-    // padding: 12px;
-    color: $backgroundColor;
-    background-color: $drawerBackgroundColor;
-    &:before{
-        // add sword again as red sword 
-        content: url('../assets/swordRed.svg');
-    }
-}
-
 
 #spellList {
     margin: auto; 
@@ -334,12 +328,7 @@ h2:before {
 li {
     list-style: none;
 
-    &:before{
-        content: url('../assets/sword.svg');
+    svg {
         vertical-align: middle;
     }
-}
-
-svg {
-    fill: green;
 }

@@ -1,3 +1,4 @@
+@use "sass:math";
 body {
   margin: 0px;
   line-height: 1.5;
@@ -159,22 +160,21 @@ h2:before {
   max-width: 200px;
   margin: auto;
   text-align: center;
-}
-
-#reactionsList li:before {
-  content: "";
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 #reactionsList li.highlighted {
-  -webkit-transition: padding 0.3s;
-  transition: padding 0.3s;
-  font-size: 1.6rem;
   color: #fffaf6;
   background-color: #646464;
 }
 
-#reactionsList li.highlighted:before {
-  content: url("../assets/swordRed.svg");
+#reactionsList li.highlighted svg {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  fill: red;
+  -webkit-transform: rotate(-10deg) scale(2);
+          transform: rotate(-10deg) scale(2);
 }
 
 #spellList {
@@ -308,12 +308,7 @@ li {
   list-style: none;
 }
 
-li:before {
-  content: url("../assets/sword.svg");
+li svg {
   vertical-align: middle;
-}
-
-svg {
-  fill: green;
 }
 /*# sourceMappingURL=style2.css.map */

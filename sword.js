@@ -31,5 +31,11 @@ stroke="none">
 const lis = Array.from(document.getElementsByTagName('li')); 
 
 lis.forEach(ele => {
-    
+    // create the fragment to be appended, and add the current inner text to it 
+    let existingText = ele.innerText; 
+    let frag = document.createRange().createContextualFragment(swordSVG + existingText); 
+    // remove current inner text 
+    ele.innerText = "";
+    // append frag 
+    ele.appendChild(frag);
 })
