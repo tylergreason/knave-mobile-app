@@ -192,14 +192,26 @@ h2:before {
         opacity: 0.5;
     }
     &.highlighted {
-        color: $backgroundColor;
-        background-color: $drawerBackgroundColor;
+        animation-name: highlight;
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
+        @keyframes highlight {
+            from {
+                color: $textColor; 
+                background-color: $backgroundColor;
+            }
+
+            to {
+                color: $backgroundColor;
+                background-color: $drawerBackgroundColor;
+            }
+        }
         svg{
             opacity: 1;
             fill: $backgroundColor;
             // animation for svg rotating 
             animation-name: rotatingSword;
-            animation-duration: 0.5s;
+            animation-duration: 0.3s;
             animation-fill-mode: forwards;
         }
         @keyframes rotatingSword {

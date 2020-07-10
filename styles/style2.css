@@ -169,8 +169,34 @@ h2:before {
 }
 
 #reactionsList li.highlighted {
-  color: #fffaf6;
-  background-color: #646464;
+  -webkit-animation-name: highlight;
+          animation-name: highlight;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes highlight {
+  from {
+    color: #383131;
+    background-color: #fffaf6;
+  }
+  to {
+    color: #fffaf6;
+    background-color: #646464;
+  }
+}
+
+@keyframes highlight {
+  from {
+    color: #383131;
+    background-color: #fffaf6;
+  }
+  to {
+    color: #fffaf6;
+    background-color: #646464;
+  }
 }
 
 #reactionsList li.highlighted svg {
@@ -178,8 +204,8 @@ h2:before {
   fill: #fffaf6;
   -webkit-animation-name: rotatingSword;
           animation-name: rotatingSword;
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
