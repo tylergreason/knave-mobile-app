@@ -345,17 +345,10 @@ h2:before {
     border: 3px solid $backgroundColor;
     opacity: 0.5;
     &.open {
-        transition: 0.2s ease;
         opacity: 1;
-        // give this an arbitrarily large max height 
-        // background-color: $backgroundColor;
-        max-height: 100vh;
-        max-width: 100%;
-        border: 3px solid $drawerColor;
     }
     .designerNotes__title {
         text-align: left; 
-        opacity: 1;
     }
 }
 

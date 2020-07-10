@@ -355,17 +355,11 @@ h2:before {
 }
 
 .designerNotes.open {
-  -webkit-transition: 0.2s ease;
-  transition: 0.2s ease;
   opacity: 1;
-  max-height: 100vh;
-  max-width: 100%;
-  border: 3px solid #323232;
 }
 
 .designerNotes .designerNotes__title {
   text-align: left;
-  opacity: 1;
 }
 
 li {
