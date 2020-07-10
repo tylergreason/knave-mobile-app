@@ -18,7 +18,7 @@ const removeReactionHighlighting = () => {
 const generateReaction = () => {
     // remove highlighted class from all reaction LIs
     removeReactionHighlighting() 
-    console.log(reactionElements); 
+    // console.log(reactionElements); 
 
     // roll 2D6 then add the results 
     let roll1 = Math.floor(Math.random()*6)+1; 
@@ -40,7 +40,7 @@ const generateReaction = () => {
         }
     },0)
     
-    console.log(reactionElements); 
+    // console.log(reactionElements); 
 }
 
 reactionGeneratorButton.addEventListener('click', generateReaction); 

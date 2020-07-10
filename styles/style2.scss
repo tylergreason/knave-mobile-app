@@ -190,6 +190,7 @@ h2:before {
     transition: 0.3s;
     svg {
         opacity: 0.5;
+        transform: rotate(90deg);
     }
     &.highlighted {
         animation-name: highlight;
@@ -335,18 +336,26 @@ h2:before {
     background-color: $noteColor;
     border-radius: 10px; 
     padding:5px;
-    max-height: 32px; 
+    // adjust width and height so only the words 'Designer's Notes:' show:
+    max-height: 22px; 
+    max-width: 117px;
+
     overflow: hidden;
-    transition: 0.5s;
+    transition: 0.2s;
     border: 3px solid $backgroundColor;
     opacity: 0.5;
     &.open {
-        transition: 0.8s;
+        transition: 0.2s ease;
         opacity: 1;
         // give this an arbitrarily large max height 
         // background-color: $backgroundColor;
         max-height: 100vh;
+        max-width: 100%;
         border: 3px solid $drawerColor;
+    }
+    .designerNotes__title {
+        text-align: left; 
+        opacity: 1;
     }
 }
 
@@ -355,5 +364,6 @@ li {
 
     svg {
         vertical-align: middle;
+        // transform: rotate(90deg);
     }
 }
