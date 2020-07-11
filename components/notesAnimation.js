@@ -34,8 +34,6 @@ let openFrames = [
     {
         maxWidth: '100%',
         maxHeight: '100vh',
-        // opacity: 1,
-        // border: '3px solid black',
     }
 ]
 
@@ -56,9 +54,9 @@ let closeFrames = [
 ]
 
 let timing = {
-    duration: 200, 
     fill: 'forwards', 
     easing: 'ease',
+    duration: 500, 
 }
 
 // create function to animate element 
