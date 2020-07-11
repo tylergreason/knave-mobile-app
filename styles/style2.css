@@ -1,10 +1,9 @@
-@use "sass:math";
 body {
   margin: 0px;
   line-height: 1.5;
   font-family: roboto, sans-serif;
   padding: 0px;
-  background-color: #fffaf6;
+  background-color: #F4FFFD;
   scroll-behavior: smooth;
   scroll-behavior: smooth;
 }
@@ -14,7 +13,7 @@ button {
 }
 
 #sideDrawer {
-  background-color: #646464;
+  background-color: #011936;
   position: fixed;
   margin: 0px;
   height: 92vh;
@@ -76,7 +75,7 @@ button {
 
 #toggler {
   outline: none;
-  background-color: #646464;
+  background-color: #011936;
   color: #c8c8c8;
   border: none;
   margin: 5px;
@@ -96,7 +95,7 @@ button {
   top: 0px;
   left: 0px;
   font-size: 3vh;
-  background: #646464;
+  background: #011936;
   margin: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -128,20 +127,21 @@ article {
 
 h2 {
   font-size: 3rem;
-  margin-bottom: 0px;
   padding-bottom: 0px;
   text-align: center;
+  background-color: #F9DC5C;
+  border-radius: 10px;
 }
 
-h2:before {
+h2 :before {
   display: block;
   content: "";
   height: 0;
   margin: auto;
-  margin-top: 7.2vh;
-  margin-bottom: 7.2vh;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
   border-top: 0.5px solid #383131;
-  width: 70%;
+  width: 90%;
   -webkit-transform: translateY(1rem);
           transform: translateY(1rem);
 }
@@ -182,28 +182,28 @@ h2:before {
 @-webkit-keyframes highlight {
   from {
     color: #383131;
-    background-color: #fffaf6;
+    background-color: #F4FFFD;
   }
   to {
-    color: #fffaf6;
-    background-color: #646464;
+    color: #F4FFFD;
+    background-color: #011936;
   }
 }
 
 @keyframes highlight {
   from {
     color: #383131;
-    background-color: #fffaf6;
+    background-color: #F4FFFD;
   }
   to {
-    color: #fffaf6;
-    background-color: #646464;
+    color: #F4FFFD;
+    background-color: #011936;
   }
 }
 
 #reactionsList li.highlighted svg {
   opacity: 1;
-  fill: #fffaf6;
+  fill: #F4FFFD;
   -webkit-animation-name: rotatingSword;
           animation-name: rotatingSword;
   -webkit-animation-duration: 0.3s;
@@ -342,7 +342,8 @@ h2:before {
 .designerNotes {
   text-align: center;
   font-style: italic;
-  background-color: #ebd8cd;
+  background-color: #465362;
+  color: #F4FFFD;
   border-radius: 10px;
   padding: 5px;
   max-height: 22px;
@@ -350,7 +351,7 @@ h2:before {
   overflow: hidden;
   -webkit-transition: 0.2s;
   transition: 0.2s;
-  border: 3px solid #fffaf6;
+  border: 3px solid #F4FFFD;
   opacity: 0.8;
 }
 
