@@ -22,7 +22,10 @@ body {
     scroll-behavior: smooth;
     // font-weight: 600;
     scroll-behavior: smooth;
-
+    // background-image: url('../assets/sword.svg');
+    // background-size: cover;
+    // background-position: fixed;
+    // background-repeat: no-repeat;
 }
 
 button {
@@ -161,7 +164,7 @@ h2 {
     text-align: center;
     // adding the following top padding and margin to allow for the anchor to scroll to this item and account for the height of the title 
     // padding-top: $headerHeight;
-    // margin-top: $headerHeight;
+    margin-top: $headerHeight*2;
     background-color: #F9DC5C;
     // background-color: $headerco;
     border-radius: 10px;
