@@ -5,11 +5,20 @@ let body = document.getElementsByTagName('body')[0];
 body.appendChild(openDrawerElement);
 
 // create new hammer instance for opening drawer 
-const openDrawerAction = new Hammer(openDrawerElement); 
+const openDrawerAction = new Hammer(openDrawerElement, {}); 
 
-openDrawerAction.on('swipe right', e => {
+openDrawerAction.on('swiperight', e => {
+    console.log(e);
+    
+    e.preventDefault();
     if (e.isFinal && e.deltaX > minimumSwipeDistance){
+        console.log('ajsdfljas');
+        
+        console.log(document.activeElement);
+        e.target.focus()
+        console.log(document.activeElement);
         openSideDrawer()
+        window.setTimeout(sideDrawer.focus(), 0)
         // debugger
     }
 })
@@ -21,8 +30,6 @@ closeDrawerAction.on('swipe left', e => {
         closeSideDrawer()
     }
 })
-
-
 
 const drawerWidth = 220; 
 
@@ -40,9 +47,36 @@ const closeSideDrawer = () => {
 }
 
 const openSideDrawer = () => {
-    sideDrawer.focus()
     sideDrawer.classList.add('active')
 }
+
+// // generate sideDrawer buttons for navigation 
+const headers = Array.from(document.getElementsByTagName('h2')); 
+
+const generateNavigation = list => {
+    list.forEach(item => {
+        let link = '#' + item.id; 
+        let title = item.childNodes[0].data; 
+        let element = document.createElement('a'); 
+
+        // add event listener to close menu on click 
+        element.addEventListener('click', (e) => {
+            // e.preventDefault()
+            closeSideDrawer();
+        })
+
+        element.className = 'drawerItem'; 
+        element.href = link; 
+        element.innerText = title; 
+        sideDrawer.appendChild(element); 
+    })
+}
+generateNavigation(headers); 
+
+// closeMenuButton.addEventListener('click', () => closeSideDrawer()); 
+toggler.addEventListener('click', () => {
+    toggleMenuOpen(); 
+})
 
 // closeMenuButton.addEventListener('click', toggleMenuOpen)
 // define function to remove event listener from closeMenuButton 
@@ -156,28 +190,3 @@ document.addEventListener('touchend', event => {
 */
 
 
-// // generate sideDrawer buttons for navigation 
-const headers = Array.from(document.getElementsByTagName('h2')); 
-
-const generateNavigation = list => {
-    list.forEach(item => {
-        let link = '#' + item.id; 
-        let title = item.childNodes[0].data; 
-        let element = document.createElement('a'); 
-
-        // add event listener to close menu on click 
-        element.addEventListener('click', (e) => {
-            // e.preventDefault()
-            closeSideDrawer();
-        })
-
-        element.className = 'drawerItem'; 
-        element.href = link; 
-        element.innerText = title; 
-        sideDrawer.appendChild(element); 
-    })
-}
-generateNavigation(headers); 
-
-// closeMenuButton.addEventListener('click', () => closeSideDrawer()); 
-toggler.addEventListener('click', () => toggleMenuOpen())

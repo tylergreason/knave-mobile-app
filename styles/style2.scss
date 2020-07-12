@@ -45,6 +45,8 @@ button {
     overflow-y: auto;
 
     z-index: 2; 
+
+
     #closeMenuButton {
         visibility: hidden;
     }
@@ -54,7 +56,9 @@ button {
         visibility: hidden;
         width: 0px; 
     }
+
 }
+
 
 #sideDrawer.active {
     position: fixed; 
