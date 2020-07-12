@@ -61,9 +61,11 @@ button {
         visibility: hidden;
         width: 0px; 
     }
-
 }
 
+#sideDrawer.focus{
+    background-color: red;
+}
 
 #sideDrawer.active {
     position: fixed; 

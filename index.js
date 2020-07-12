@@ -48,6 +48,8 @@ const closeSideDrawer = () => {
 
 const openSideDrawer = () => {
     sideDrawer.classList.add('active')
+    sideDrawer.focus();
+    console.log(document.activeElement)
 }
 
 // // generate sideDrawer buttons for navigation 
