@@ -341,7 +341,7 @@ h2 :before {
   width: 10%;
   height: 100%;
   background-color: blue;
-  opacity: 0;
+  opacity: 1;
 }
 
 .designerNotes {

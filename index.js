@@ -34,23 +34,31 @@ body.appendChild(openDrawerElement);
 // })
 
 
-// create a region on the document body ZingTouch to work 
-let zt = new ZingTouch.Region(document.body); 
+// // create a region on the document body ZingTouch to work 
+// let zt = new ZingTouch.Region(document.body); 
 
 
-// add listener to element to open drawer 
-zt.bind(openDrawerElement, 'swipe', function(e){
-    console.log(e);
-    // check if swipe was to the right, and open drawer if it was 
-    let direction = e.detail.data[0].currentDirection; 
-    console.log(direction);
-    if ((direction < 361 && direction > 334) || (direction > 0 && direction < 26)){
-        openSideDrawer()
-    }
+// // add listener to element to open drawer 
+// zt.bind(openDrawerElement, 'swipe', function(e){
+//     console.log(e);
+//     // check if swipe was to the right, and open drawer if it was 
+//     let direction = e.detail.data[0].currentDirection; 
+//     console.log(direction);
+//     if ((direction < 361 && direction > 334) || (direction > 0 && direction < 26)){
+//         openSideDrawer()
+//         // add closing drawer function to drawer 
+//     zt.bindOnce(sideDrawer, 'swipe', function(e){
+//         console.log('side drawer swiped');
+//         let direction = e.detail.data[0].currentDirection; 
+//         if (direction < 206 && direction > 154){
+//             closeSideDrawer()
+//         }
+//         // console.log(e);
+//     })
+//     }  
+// })
+
     
-})
-
-
 const drawerWidth = 220; 
 
 const swipeAreaLeft = 0, minimumSwipeDistance = 60, swipeAreaRight = swipeAreaLeft + minimumSwipeDistance; 
@@ -95,67 +103,55 @@ const generateNavigation = list => {
 }
 generateNavigation(headers); 
 
-// closeMenuButton.addEventListener('click', () => closeSideDrawer()); 
-toggler.addEventListener('click', () => {
-    toggleMenuOpen(); 
-})
-
 // closeMenuButton.addEventListener('click', toggleMenuOpen)
 // define function to remove event listener from closeMenuButton 
 // const removeEventListenerFromcloseMenuButton = () => {
 //     closeMenuButton.removeEventListener('click', toggleMenuOpen)
 // }
 
-// toggler.addEventListener('click', toggleMenuOpen)
+toggler.addEventListener('click', toggleMenuOpen)
 
 
 
-/*
+
 
 // swiping menu open touch feature
 let x1, y1; 
 // let recentTouches = []; 
 let firstX = ''; 
 document.addEventListener('touchstart', (event) => {
+    console.log(event);
+    
     if (firstX === ''){
         firstX = event.changedTouches[0].clientX; 
         // console.log(firstX);
     }
-    // console.log(event.timeStamp)
-    // check for doubletap, make sure  recentTouches list isn't empty first 
-    // if (recentTouches.length > 0){
-    //     // console.log(recentTouches)
-    //     // console.log(`${event.timeStamp} - ${recentTouches[recentTouches.length-1]}`);
-    //     if ((event.timeStamp - recentTouches[recentTouches.length-1]) < 1000){
-    //         console.log('double tap')
-    //         recentTouches = [];
-    //     }
-    // }
-    // recentTouches = [];
-    // recentTouches.push(event.timeStamp); 
-    // console.log(recentTouches);
     let touchLocation = event.targetTouches[0]
     x1 = touchLocation.clientX;
     y1 = touchLocation.clientY;
-    // debugger
 })
 
 
-// document.addEventListener('touchmove', (event)=>{
-    // console.log(event.touches[0].clientY)
-    // console.log(event.touches[0].clientX)
+document.addEventListener('touchmove', (event)=>{
+    console.log(event.touches[0].clientY)
+    console.log(event.touches[0].clientX)
 
     // toggler.style.left = event.touches[0].pageX + 'px'
     // toggler.style.top = event.touches[0].pageY + 'px'
-    // console.log(event.touches[0].clientX)
-    // if (event.touches[0].clientX > x1 + 20){
-    //     // move drawer out 
-    //     sideDrawer.style.width = event.touches[0].clientX;
-    // }
+    console.log(event.touches[0].clientX)
+    if (event.touches[0].clientX > x1 + 20){
+        //freeze scrolling 
+        document.body.style.overflow = 'hidden'
+        // move drawer out 
+        // sideDrawer.style.width = event.touches[0].clientX+'px';
+        sideDrawer.style.transform = `translateX(${event.touches[0].clientX - 220}px`;
 
-// })
+    }
+})
 
 document.addEventListener('touchend', event => {
+    // add the ability to scroll the page again 
+    document.body.style.overflow = 'scroll'
     let x2 = event.changedTouches[0].clientX; 
     let y2 = event.changedTouches[0].clientY; 
     let xDiff = Math.abs(x1 - x2); 
@@ -209,6 +205,6 @@ document.addEventListener('touchend', event => {
 // })
 
 
-*/
+
 
 
