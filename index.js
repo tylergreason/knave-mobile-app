@@ -57,6 +57,8 @@ const openMenu = ele => {
 
     // ended up only using the next line, but left the rest for reference or in case I want to reuse it 
     ele.classList.add('active')
+    //freeze scrolling 
+    document.body.style.overflow = 'hidden'
 }
 
 const closeMenu = ele => {
@@ -83,7 +85,9 @@ const closeMenu = ele => {
 
     // set transition style, which needs reset afterwards
     sideDrawer.style.transition = "0.2s ease-out"
-    ele.classList.remove('active')
+    ele.classList.remove('active');
+    // add the ability to scroll the page again 
+    document.body.style.overflow = 'scroll'
 }
 
 
@@ -126,9 +130,6 @@ openDrawerElement.addEventListener('touchmove', (event)=>{
 })
 
 openDrawerElement.addEventListener('touchend', event => {
-    // add the ability to scroll the page again 
-    document.body.style.overflow = 'scroll'
-
     let x2 = event.changedTouches[0].clientX; 
     let y2 = event.changedTouches[0].clientY; 
     // if the final x point is greater than 1/2 the drawerWidth, fire the open drawer animation 
@@ -142,10 +143,6 @@ openDrawerElement.addEventListener('touchend', event => {
         closeMenu(sideDrawer)
     }
     sideDrawer.style.left = null
-
-    // let xDiff = Math.abs(x1 - x2); 
-    // let yDiff = Math.abs(y1 - y2); 
-    // firstX = '';
 })
 
 
@@ -230,3 +227,10 @@ openDrawerElement.addEventListener('touchend', event => {
 //     }  
 // })
 
+
+// listen for click or tap on the body and close the sideDrawer if it's open 
+body.addEventListener('click', e => {
+    if (sideDrawer.classList.contains('active')){
+        closeMenu(sideDrawer)
+    }
+})
