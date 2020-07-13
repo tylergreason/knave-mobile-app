@@ -1,6 +1,7 @@
 // create element to listen for opening drawer event 
 const openDrawerElement = document.createElement('div'); 
 openDrawerElement.id = "openDrawerElement"; 
+// openDrawerElement.style.zIndex = '3';
 let body = document.getElementsByTagName('body')[0]; 
 body.appendChild(openDrawerElement);
 
@@ -76,8 +77,6 @@ const closeSideDrawer = () => {
 
 const openSideDrawer = () => {
     sideDrawer.classList.add('active')
-    // sideDrawer.focus();
-    // console.log(document.activeElement)
 }
 
 // // generate sideDrawer buttons for navigation 
@@ -134,34 +133,42 @@ openDrawerElement.addEventListener('touchstart', (event) => {
 
 openDrawerElement.addEventListener('touchmove', (event)=>{
     // console.log(event.touches[0].clientY)
-    console.log(event.touches[0].clientX)
+    // console.log(event.touches[0].clientX)
+    let yLocation = event.touches[0].clientY; 
     let xLocation = event.touches[0].clientX; 
+    let yDiff = Math.abs(y1 - yLocation);
+    let xDiff = Math.abs(x1 - xLocation);
+
+    // keep drawer from extending out past its own width 
     if (xLocation > drawerWidth){
-        // keep drawer from extending out past its own width 
         xLocation = drawerWidth
     }
-    // toggler.style.left = event.touches[0].pageX + 'px'
-    // toggler.style.top = event.touches[0].pageY + 'px'
-    // console.log(event.touches[0].clientX)
-    if (xLocation > x1 + 20){
+
+    // if the difference traveled along x axis is greater than y axis, start pulling drawer out 
+    if (xDiff > yDiff){
         //freeze scrolling 
         document.body.style.overflow = 'hidden'
-        // move drawer out 
-        sideDrawer.style.width = xLocation+'px';
-        // don't let drawer go past its width 
-        if (sideDrawer.style.width > drawerWidth){
-            sideDrawer.style.transform = `translateX(${event.touches[0].clientX - 220}px`;
-            // sideDrawer.style.width = drawerWidth
-        }
-
+        // move drawer out
+        sideDrawer.style.left = `${xLocation - drawerWidth}px`;
     }
 })
 
-document.addEventListener('touchend', event => {
+openDrawerElement.addEventListener('touchend', event => {
     // add the ability to scroll the page again 
     document.body.style.overflow = 'scroll'
+
     let x2 = event.changedTouches[0].clientX; 
     let y2 = event.changedTouches[0].clientY; 
+
+    // if the final x point is greater than 1/3 the drawerWidth, fire the open drawer animation 
+    if (x2 > drawerWidth/3){
+        sideDrawer.style.left = 0+'px';
+        console.log('open');
+    }else{
+        sideDrawer.style.left = -drawerWidth+'px';
+        console.log('close');
+    }
+
     let xDiff = Math.abs(x1 - x2); 
     let yDiff = Math.abs(y1 - y2); 
 
@@ -169,22 +176,22 @@ document.addEventListener('touchend', event => {
     // console.log(`${x1} ${x2}`)
     // debugger
     // if swiping right 
-    if (xDiff > yDiff){
+    // if (xDiff > yDiff){
 
-        if (x2 - x1 > minimumSwipeDistance && x1 < swipeAreaRight){
-            if (!sideDrawer.classList.contains('active')){
-                sideDrawer.classList.add('active')
-            }
-        }
-        // if swiping left 
-        else if ((x1 - x2 > minimumSwipeDistance) && x1 < drawerWidth && xDiff > yDiff){
-            // console.log('swiped back')
-            if (sideDrawer.classList.contains('active')){
-                console.log('slide drawer back in ')
-                sideDrawer.classList.remove('active')
-            }
-        }
-    }
+    //     if (x2 - x1 > minimumSwipeDistance && x1 < swipeAreaRight){
+    //         if (!sideDrawer.classList.contains('active')){
+    //             sideDrawer.classList.add('active')
+    //         }
+    //     }
+    //     // if swiping left 
+    //     else if ((x1 - x2 > minimumSwipeDistance) && x1 < drawerWidth && xDiff > yDiff){
+    //         // console.log('swiped back')
+    //         if (sideDrawer.classList.contains('active')){
+    //             console.log('slide drawer back in ')
+    //             sideDrawer.classList.remove('active')
+    //         }
+    //     }
+    // }
     firstX = '';
 })
 

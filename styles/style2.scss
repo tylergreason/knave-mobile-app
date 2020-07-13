@@ -39,8 +39,9 @@ button {
     position: fixed; 
     margin: 0px; 
     // top: 0px; 
+    left: -$drawerWidth;
     height: 100vh - $headerHeight; 
-    width: 0px;
+    width: $drawerWidth;
     // transition: all 0.1s ease-in, height 0s; 
     
     display: flex; 
@@ -51,15 +52,13 @@ button {
 
     z-index: 2; 
 
-
     #closeMenuButton {
         visibility: hidden;
     }
 
     .drawerItem {
         color: $drawerTextColor;
-        visibility: hidden;
-        width: 0px; 
+        width: $drawerWidth; 
     }
 }
 
@@ -70,12 +69,12 @@ button {
 #sideDrawer.active {
     position: fixed; 
     top: $headerHeight; 
-    // transition: 0.2s ease-out; 
-    width: $drawerWidth;
-    
-    #closeMenuButton {
-        visibility: visible;
-    }
+    transition: 0.2s ease-out; 
+    // width: $drawerWidth;
+    left: 0;
+    // #closeMenuButton {
+    //     visibility: visible;
+    // }
 
     .drawerItem {
         visibility: visible;
@@ -341,7 +340,7 @@ h2 {
     width: 10%; 
     height: 100%; 
     background-color: blue;
-    opacity: 1;
+    opacity: 0.3;
     // z-index: 2; 
 }
 

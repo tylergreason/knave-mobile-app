@@ -16,8 +16,9 @@ button {
   background-color: #011936;
   position: fixed;
   margin: 0px;
+  left: -220px;
   height: 92vh;
-  width: 0px;
+  width: 220px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -36,8 +37,7 @@ button {
 
 #sideDrawer .drawerItem {
   color: #c8c8c8;
-  visibility: hidden;
-  width: 0px;
+  width: 220px;
 }
 
 #sideDrawer.focus {
@@ -47,11 +47,9 @@ button {
 #sideDrawer.active {
   position: fixed;
   top: 8vh;
-  width: 220px;
-}
-
-#sideDrawer.active #closeMenuButton {
-  visibility: visible;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+  left: 0;
 }
 
 #sideDrawer.active .drawerItem {
@@ -337,7 +335,7 @@ h2 :before {
   width: 10%;
   height: 100%;
   background-color: blue;
-  opacity: 1;
+  opacity: 0.3;
 }
 
 .designerNotes {
