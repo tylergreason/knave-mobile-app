@@ -28,7 +28,7 @@ stroke="none">
 
 // find all li elements, then append the swordSVG code to the beginning of their innerText as a document fragment: 
 
-const lis = Array.from(document.getElementsByTagName('li')); 
+const lis = Array.from(reactionsList.getElementsByTagName('li')); 
 
 lis.forEach(ele => {
     // create the fragment to be appended, and add the current inner text to it 

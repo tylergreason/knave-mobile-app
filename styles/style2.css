@@ -137,7 +137,7 @@ h2 {
   padding-bottom: 0px;
   text-align: center;
   padding-top: 8vh;
-  margin-top: 8vh;
+  margin: 0px;
   border-radius: 10px;
 }
 
@@ -369,10 +369,6 @@ h2 :before {
 
 .designerNotes .designerNotes__title {
   text-align: left;
-}
-
-li {
-  list-style: none;
 }
 
 li svg {

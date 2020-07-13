@@ -174,7 +174,8 @@ h2 {
     text-align: center;
     // adding the following top padding and margin to allow for the anchor to scroll to this item and account for the height of the title 
     padding-top: $headerHeight;
-    margin-top: $headerHeight;
+    // margin-top: $headerHeight;
+    margin: 0px;
     border-radius: 10px;
 
     // background-image: url('../assets/sword.svg');
@@ -378,7 +379,7 @@ h2 {
 }
 
 li {
-    list-style: none;
+    // list-style: none;
 
     svg {
         vertical-align: middle;

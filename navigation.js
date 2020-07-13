@@ -9,12 +9,14 @@ const generateNavigation = list => {
 
         // add event listener to close menu on click 
         element.addEventListener('click', (e) => {
-            // e.preventDefault()
+            item.scrollIntoView({behavior: 'smooth'})
+            console.log(item);
+            e.preventDefault()
             closeMenu(sideDrawer)
         })
 
         element.className = 'drawerItem'; 
-        element.href = link; 
+        // element.href = link; 
         element.innerText = title; 
         sideDrawer.appendChild(element); 
     })
