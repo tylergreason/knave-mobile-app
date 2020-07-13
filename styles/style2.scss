@@ -1,6 +1,4 @@
-
-
-$drawerWidth: 220px; 
+$drawerWidth: 300px; 
 $drawerColor: rgb(50,50,50);
 $textColor: rgb(56, 49, 49);
 $backgroundColor: #F4FFFD;
@@ -63,7 +61,7 @@ button {
     &.active {
         top: $headerHeight; 
         left: 0px;
-        transition: 0.2s ease-out; 
+        transition: 0.4s ease-out; 
         // width: $drawerWidth;
         // left: 0;
         // #closeMenuButton {
@@ -90,7 +88,7 @@ button {
 
 #mainWrapper {
     opacity: 1;
-    
+
     &.menuActive {
         transition: 0.2s ease;
         opacity: 0.3;
@@ -175,11 +173,14 @@ h2 {
     padding-bottom: 0px;
     text-align: center;
     // adding the following top padding and margin to allow for the anchor to scroll to this item and account for the height of the title 
-    // padding-top: $headerHeight;
-    margin-top: $headerHeight*2;
-    background-color: #F9DC5C;
-    // background-color: $headerco;
+    padding-top: $headerHeight;
+    margin-top: $headerHeight;
     border-radius: 10px;
+
+    // background-image: url('../assets/sword.svg');
+    // background-repeat: no-repeat;
+    // background-position: center;
+    // background-size: cover;
 
     // I put a space between the & and the : to turn off the horizontal line generated below 
     & :before {

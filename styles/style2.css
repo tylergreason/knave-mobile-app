@@ -16,9 +16,9 @@ button {
   background-color: #011936;
   position: fixed;
   margin: 0px;
-  left: -220px;
+  left: -300px;
   height: 92vh;
-  width: 220px;
+  width: 300px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -37,19 +37,19 @@ button {
 
 #sideDrawer .drawerItem {
   color: #c8c8c8;
-  width: 220px;
+  width: 300px;
 }
 
 #sideDrawer.active {
   top: 8vh;
   left: 0px;
-  -webkit-transition: 0.2s ease-out;
-  transition: 0.2s ease-out;
+  -webkit-transition: 0.4s ease-out;
+  transition: 0.4s ease-out;
 }
 
 #sideDrawer.active .drawerItem {
   visibility: visible;
-  width: 220px;
+  width: 300px;
 }
 
 #sideDrawer.focus {
@@ -136,8 +136,8 @@ h2 {
   font-size: 3rem;
   padding-bottom: 0px;
   text-align: center;
-  margin-top: 16vh;
-  background-color: #F9DC5C;
+  padding-top: 8vh;
+  margin-top: 8vh;
   border-radius: 10px;
 }
 

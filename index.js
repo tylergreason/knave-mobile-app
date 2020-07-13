@@ -5,7 +5,7 @@ openDrawerElement.id = "openDrawerElement";
 let body = document.getElementsByTagName('body')[0]; 
 body.appendChild(openDrawerElement);
     
-const drawerWidth = 220; 
+const drawerWidth = 300; 
 
 const swipeAreaLeft = 0, minimumSwipeDistance = 60, swipeAreaRight = swipeAreaLeft + minimumSwipeDistance; 
 // // set css drawer width to that which is set above 
@@ -129,7 +129,7 @@ openDrawerElement.addEventListener('touchend', event => {
     let x2 = event.changedTouches[0].clientX; 
     let y2 = event.changedTouches[0].clientY; 
     // if the final x point is greater than 1/2 the drawerWidth, fire the open drawer animation 
-    if (x2 > drawerWidth/2){
+    if (x2 > drawerWidth/4){
         // sideDrawer.style.left = 0+'px';
         // openMenu(sideDrawer)
         openMenu(sideDrawer)
