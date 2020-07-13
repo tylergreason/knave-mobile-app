@@ -56,6 +56,16 @@ button {
   background-color: red;
 }
 
+#mainWrapper {
+  opacity: 1;
+}
+
+#mainWrapper.menuActive {
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  opacity: 0.3;
+}
+
 .drawerItem {
   margin: 5px;
   font-size: 1.2rem;

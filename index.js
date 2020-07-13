@@ -13,7 +13,6 @@ const swipeAreaLeft = 0, minimumSwipeDistance = 60, swipeAreaRight = swipeAreaLe
 
 // // add 'active' class to drawer to open and close it
 const toggleMenuOpen = () => {
-    // sideDrawer.classList.toggle('active'); 
     if (sideDrawer.classList.contains('active')){
         closeMenu(sideDrawer)
     }else{
@@ -21,13 +20,6 @@ const toggleMenuOpen = () => {
     }
 }
 
-const closeSideDrawer = () => {
-    sideDrawer.classList.remove('active')
-}
-
-const openSideDrawer = () => {
-    sideDrawer.classList.add('active')
-}
 
 toggler.addEventListener('click', toggleMenuOpen)
 
@@ -43,8 +35,7 @@ const openMenu = ele => {
             left: 0+'px',
         }
     ]; 
-    // make up a duration now, but later base it on how far to the left the drawer is already and make the length a fraction of the difference between that and the final left position 
-    // actually, just using a short time feels fine. 
+
     let timing = {
         duration: 300,
         fill: 'forwards',
@@ -55,8 +46,11 @@ const openMenu = ele => {
     // ele.style.left = null
     // ele.style.left = drawerWidth+'px'
 
-    // ended up only using the next line, but left the rest for reference or in case I want to reuse it 
+    // ended up only using the next 3 lines, but left the rest for reference or in case I want to reuse it 
     ele.classList.add('active')
+    mainWrapper.style.opacity = null;
+    mainWrapper.classList.add('menuActive')
+
     //freeze scrolling 
     document.body.style.overflow = 'hidden'
 }
@@ -72,8 +66,7 @@ const closeMenu = ele => {
             left: -drawerWidth + 'px',
         }
     ]; 
-    // make up a duration now, but later base it on how far to the left the drawer is already and make the length a fraction of the difference between that and the final left position 
-    // actually, just using a short time feels fine. 
+    
     let timing = {
         duration: 300,
         fill: 'forwards',
@@ -86,6 +79,7 @@ const closeMenu = ele => {
     // set transition style, which needs reset afterwards
     sideDrawer.style.transition = "0.2s ease-out"
     ele.classList.remove('active');
+    mainWrapper.classList.remove('menuActive')
     // add the ability to scroll the page again 
     document.body.style.overflow = 'scroll'
 }
@@ -93,8 +87,6 @@ const closeMenu = ele => {
 
 // swiping menu open touch feature
 let x1, y1; 
-// let recentTouches = []; 
-// let firstX = ''; 
 openDrawerElement.addEventListener('touchstart', (event) => {
     console.log(event);
     let touchLocation = event.targetTouches[0]
@@ -122,8 +114,13 @@ openDrawerElement.addEventListener('touchmove', (event)=>{
     if (xDiff > yDiff){
         //freeze scrolling 
         document.body.style.overflow = 'hidden'
+
         // move drawer out
         sideDrawer.style.left = `${xLocation - (drawerWidth+x1)}px`;
+
+        // calc percent moved 
+        let percent = xLocation/drawerWidth; 
+        reduceOpacity(mainWrapper, xLocation, drawerWidth)
         // console.log(window.getComputedStyle(sideDrawer).left );
         
     }
@@ -145,6 +142,24 @@ openDrawerElement.addEventListener('touchend', event => {
     sideDrawer.style.left = null
 })
 
+
+// listen for click or tap on the body and close the sideDrawer if it's open 
+body.addEventListener('click', e => {
+    if (sideDrawer.classList.contains('active')){
+        closeMenu(sideDrawer)
+    }
+})
+
+
+// function to reduce mainWrapper opacity based on percentage the menu has scrolled out 
+const reduceOpacity = (ele, fraction, total) => {
+    let percent = fraction/total; 
+    let opacity = 1.3 - percent; 
+    if (opacity < 0.3){
+        opacity = 0.3; 
+    }
+    ele.style.opacity = opacity;
+}
 
 
 // const toggleSubItemActive = (subItem) => {
@@ -226,11 +241,3 @@ openDrawerElement.addEventListener('touchend', event => {
 //     })
 //     }  
 // })
-
-
-// listen for click or tap on the body and close the sideDrawer if it's open 
-body.addEventListener('click', e => {
-    if (sideDrawer.classList.contains('active')){
-        closeMenu(sideDrawer)
-    }
-})

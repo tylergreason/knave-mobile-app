@@ -84,8 +84,16 @@ button {
 
 // prevent scrolling on main div while menu is open 
 #sideDrawer.active ~ #mainWrapper {
-
+    // opacity: 0.5;
     // height: 100vh - $headerHeight;
+}
+
+#mainWrapper {
+    opacity: 1;
+    &.menuActive {
+        transition: 0.2s ease;
+        opacity: 0.3;
+    }
 }
 
 .drawerItem {
