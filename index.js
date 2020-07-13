@@ -14,14 +14,14 @@ const swipeAreaLeft = 0, minimumSwipeDistance = 60, swipeAreaRight = swipeAreaLe
 // // add 'active' class to drawer to open and close it
 const toggleMenuOpen = () => {
     if (sideDrawer.classList.contains('active')){
-        closeMenu(sideDrawer)
+        closeMenu(sideDrawer);
     }else{
-        openMenu(sideDrawer)
+        openMenu(sideDrawer);
     }
 }
 
-
 toggler.addEventListener('click', toggleMenuOpen)
+
 
 // touch specific functions for animating drawer open and closed 
 const openMenu = ele => {
@@ -47,10 +47,9 @@ const openMenu = ele => {
     // ele.style.left = drawerWidth+'px'
 
     // ended up only using the next 3 lines, but left the rest for reference or in case I want to reuse it 
-    ele.classList.add('active')
+    ele.classList.add('active');
     mainWrapper.style.opacity = null;
     mainWrapper.classList.add('menuActive')
-
     //freeze scrolling 
     document.body.style.overflow = 'hidden'
 }
@@ -77,7 +76,7 @@ const closeMenu = ele => {
     // ele.style.left = null
 
     // set transition style, which needs reset afterwards
-    sideDrawer.style.transition = "0.2s ease-out"
+    sideDrawer.style.transition = "0.2s"
     ele.classList.remove('active');
     mainWrapper.classList.remove('menuActive')
     // add the ability to scroll the page again 
@@ -144,7 +143,7 @@ openDrawerElement.addEventListener('touchend', event => {
 
 
 // listen for click or tap on the body and close the sideDrawer if it's open 
-body.addEventListener('click', e => {
+mainWrapper.addEventListener('click', e => {
     if (sideDrawer.classList.contains('active')){
         closeMenu(sideDrawer)
     }

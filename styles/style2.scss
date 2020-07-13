@@ -90,6 +90,7 @@ button {
 
 #mainWrapper {
     opacity: 1;
+    
     &.menuActive {
         transition: 0.2s ease;
         opacity: 0.3;
@@ -348,7 +349,7 @@ h2 {
     width: 10%; 
     height: 100%; 
     background-color: blue;
-    opacity: 0.3;
+    opacity: 0.0;
     // z-index: 2; 
 }
 
