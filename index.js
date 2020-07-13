@@ -37,9 +37,17 @@ body.appendChild(openDrawerElement);
 // create a region on the document body ZingTouch to work 
 let zt = new ZingTouch.Region(document.body); 
 
+
 // add listener to element to open drawer 
-zt.bind(openDrawerElement, 'tap', function(e){
-    openSideDrawer()
+zt.bind(openDrawerElement, 'swipe', function(e){
+    console.log(e);
+    // check if swipe was to the right, and open drawer if it was 
+    let direction = e.detail.data[0].currentDirection; 
+    console.log(direction);
+    if ((direction < 361 && direction > 334) || (direction > 0 && direction < 26)){
+        openSideDrawer()
+    }
+    
 })
 
 
@@ -60,8 +68,8 @@ const closeSideDrawer = () => {
 
 const openSideDrawer = () => {
     sideDrawer.classList.add('active')
-    sideDrawer.focus();
-    console.log(document.activeElement)
+    // sideDrawer.focus();
+    // console.log(document.activeElement)
 }
 
 // // generate sideDrawer buttons for navigation 
