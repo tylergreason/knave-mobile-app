@@ -13,7 +13,12 @@ const swipeAreaLeft = 0, minimumSwipeDistance = 60, swipeAreaRight = swipeAreaLe
 
 // // add 'active' class to drawer to open and close it
 const toggleMenuOpen = () => {
-    sideDrawer.classList.toggle('active'); 
+    // sideDrawer.classList.toggle('active'); 
+    if (sideDrawer.classList.contains('active')){
+        closeMenu(sideDrawer)
+    }else{
+        openMenu(sideDrawer)
+    }
 }
 
 const closeSideDrawer = () => {
@@ -47,10 +52,11 @@ const openMenu = ele => {
     }
     // animate element
     // ele.animate(openFrames, timing)
-    ele.classList.add('active')
-    ele.style.left = null
+    // ele.style.left = null
     // ele.style.left = drawerWidth+'px'
-    // ele.classList.add('active')
+
+    // ended up only using the next line, but left the rest for reference or in case I want to reuse it 
+    ele.classList.add('active')
 }
 
 const closeMenu = ele => {
@@ -73,8 +79,11 @@ const closeMenu = ele => {
     }
     // animate element
     // ele.animate(closeFrames, timing)
+    // ele.style.left = null
+
+    // set transition style, which needs reset afterwards
+    sideDrawer.style.transition = "0.2s ease-out"
     ele.classList.remove('active')
-    ele.style.left = null
 }
 
 
@@ -87,6 +96,8 @@ openDrawerElement.addEventListener('touchstart', (event) => {
     let touchLocation = event.targetTouches[0]
     x1 = touchLocation.clientX;
     y1 = touchLocation.clientY;
+    // reset sideDrawer transition so it doesn't act jumpy while moving with touch 
+    sideDrawer.style.transition = ""
 })
 
 
@@ -99,8 +110,8 @@ openDrawerElement.addEventListener('touchmove', (event)=>{
     let xDiff = Math.abs(x1 - xLocation);
 
     // keep drawer from extending out past its own width 
-    if (xLocation > drawerWidth){
-        xLocation = drawerWidth
+    if (xLocation > drawerWidth+x1){
+        xLocation = drawerWidth+x1
     }
 
     // if the difference traveled along x axis is greater than y axis, start pulling drawer out 
@@ -108,7 +119,7 @@ openDrawerElement.addEventListener('touchmove', (event)=>{
         //freeze scrolling 
         document.body.style.overflow = 'hidden'
         // move drawer out
-        sideDrawer.style.left = `${xLocation - drawerWidth}px`;
+        sideDrawer.style.left = `${xLocation - (drawerWidth+x1)}px`;
         // console.log(window.getComputedStyle(sideDrawer).left );
         
     }
@@ -123,15 +134,15 @@ openDrawerElement.addEventListener('touchend', event => {
     // if the final x point is greater than 1/2 the drawerWidth, fire the open drawer animation 
     if (x2 > drawerWidth/2){
         // sideDrawer.style.left = 0+'px';
+        // openMenu(sideDrawer)
         openMenu(sideDrawer)
-        console.log('open');
     }else{
         // sideDrawer.style.left = -drawerWidth+'px';
-        closeMenu(sideDrawer);
-        console.log('close');
-        sideDrawer.style.left = null;
-
+        // closeMenu(sideDrawer);
+        closeMenu(sideDrawer)
     }
+    sideDrawer.style.left = null
+
     // let xDiff = Math.abs(x1 - x2); 
     // let yDiff = Math.abs(y1 - y2); 
     // firstX = '';
