@@ -119,12 +119,12 @@ toggler.addEventListener('click', toggleMenuOpen)
 let x1, y1; 
 // let recentTouches = []; 
 let firstX = ''; 
-document.addEventListener('touchstart', (event) => {
+openDrawerElement.addEventListener('touchstart', (event) => {
     console.log(event);
     
     if (firstX === ''){
         firstX = event.changedTouches[0].clientX; 
-        // console.log(firstX);
+        console.log(firstX);
     }
     let touchLocation = event.targetTouches[0]
     x1 = touchLocation.clientX;
@@ -132,19 +132,27 @@ document.addEventListener('touchstart', (event) => {
 })
 
 
-document.addEventListener('touchmove', (event)=>{
-    console.log(event.touches[0].clientY)
+openDrawerElement.addEventListener('touchmove', (event)=>{
+    // console.log(event.touches[0].clientY)
     console.log(event.touches[0].clientX)
-
+    let xLocation = event.touches[0].clientX; 
+    if (xLocation > drawerWidth){
+        // keep drawer from extending out past its own width 
+        xLocation = drawerWidth
+    }
     // toggler.style.left = event.touches[0].pageX + 'px'
     // toggler.style.top = event.touches[0].pageY + 'px'
-    console.log(event.touches[0].clientX)
-    if (event.touches[0].clientX > x1 + 20){
+    // console.log(event.touches[0].clientX)
+    if (xLocation > x1 + 20){
         //freeze scrolling 
         document.body.style.overflow = 'hidden'
         // move drawer out 
-        // sideDrawer.style.width = event.touches[0].clientX+'px';
-        sideDrawer.style.transform = `translateX(${event.touches[0].clientX - 220}px`;
+        sideDrawer.style.width = xLocation+'px';
+        // don't let drawer go past its width 
+        if (sideDrawer.style.width > drawerWidth){
+            sideDrawer.style.transform = `translateX(${event.touches[0].clientX - 220}px`;
+            // sideDrawer.style.width = drawerWidth
+        }
 
     }
 })

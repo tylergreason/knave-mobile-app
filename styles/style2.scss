@@ -41,7 +41,7 @@ button {
     // top: 0px; 
     height: 100vh - $headerHeight; 
     width: 0px;
-    transition: all 0.1s ease-in, height 0s; 
+    // transition: all 0.1s ease-in, height 0s; 
     
     display: flex; 
     flex-flow: column;
@@ -70,7 +70,7 @@ button {
 #sideDrawer.active {
     position: fixed; 
     top: $headerHeight; 
-    transition: 0.2s ease-out; 
+    // transition: 0.2s ease-out; 
     width: $drawerWidth;
     
     #closeMenuButton {
