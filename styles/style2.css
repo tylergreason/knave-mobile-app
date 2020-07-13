@@ -40,21 +40,20 @@ button {
   width: 220px;
 }
 
-#sideDrawer.focus {
-  background-color: red;
-}
-
 #sideDrawer.active {
-  position: fixed;
   top: 8vh;
+  left: 0px;
   -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
-  left: 0;
 }
 
 #sideDrawer.active .drawerItem {
   visibility: visible;
   width: 220px;
+}
+
+#sideDrawer.focus {
+  background-color: red;
 }
 
 .drawerItem {

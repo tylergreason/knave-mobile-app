@@ -60,27 +60,27 @@ button {
         color: $drawerTextColor;
         width: $drawerWidth; 
     }
+    &.active {
+        top: $headerHeight; 
+        left: 0px;
+        transition: 0.2s ease-out; 
+        // width: $drawerWidth;
+        // left: 0;
+        // #closeMenuButton {
+        //     visibility: visible;
+        // }
+    
+        .drawerItem {
+            visibility: visible;
+            width: $drawerWidth; 
+        }    
+    }
 }
 
 #sideDrawer.focus{
     background-color: red;
 }
 
-#sideDrawer.active {
-    position: fixed; 
-    top: $headerHeight; 
-    transition: 0.2s ease-out; 
-    // width: $drawerWidth;
-    left: 0;
-    // #closeMenuButton {
-    //     visibility: visible;
-    // }
-
-    .drawerItem {
-        visibility: visible;
-        width: $drawerWidth; 
-    }    
-}
 
 // prevent scrolling on main div while menu is open 
 #sideDrawer.active ~ #mainWrapper {
