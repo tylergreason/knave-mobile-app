@@ -100,7 +100,7 @@ openDrawerElement.addEventListener('touchend', event => {
     
     // if the final x point is greater than 1/2 the drawerWidth, fire the open drawer animation 
     // or if it's been less than 200 miliseconds and the swipe was positive and at least 40px 
-    if (x2 > drawerWidth/4 || (timeDiff < 200 && xDiff > 19)){
+    if (xDiff > drawerWidth/4 || (timeDiff < 200 && xDiff > 19)){
         openMenu(sideDrawer)
     }else{
         closeMenu(sideDrawer)
