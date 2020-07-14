@@ -160,6 +160,39 @@ const reduceOpacity = (ele, fraction, total) => {
     ele.style.opacity = opacity;
 }
 
+// close side drawer listeners 
+sideDrawer.addEventListener('touchstart', event => {
+    let touchLocation = event.targetTouches[0]
+    x1 = touchLocation.clientX;
+    y1 = touchLocation.clientY;
+})
+
+sideDrawer.addEventListener('touchmove', event => {
+    let touchLocation = event.touches[0]; 
+    let xLocation = touchLocation.clientX; 
+    // let yLocation = touchLocation.clientY; 
+    console.log(xLocation);
+    // keep drawer from extending out past its own width 
+    if (xLocation > drawerWidth+x1){
+        xLocation = drawerWidth+x1
+    }
+    // remove sideDrawer 'active' class so it doesn't act jumpy while moving with touch 
+    // this might be added on again if the user doesn't swipe far enough left to close the drawer (meaning openMenu() will fire again)
+    sideDrawer.classList.remove('active');
+    // find value that the drawer's left should be, and make sure it doesn't exceed 0 
+    let marker = xLocation - drawerWidth; 
+    if (marker > 0){
+        marker = 0; 
+    }
+    sideDrawer.style.left =`${marker}px`
+})
+
+sideDrawer.addEventListener('touchend', event => {
+    let touchLocation = event.changedTouches[0]; 
+    let x2 = touchLocation.clientX; 
+
+    // decide to open or close the drawer based on how far the user pushed it 
+})
 
 // const toggleSubItemActive = (subItem) => {
 //     if (subItem !== undefined){
