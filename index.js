@@ -51,12 +51,14 @@ const closeMenu = ele => {
 // swiping menu open touch feature
 let x1, y1; 
 openDrawerElement.addEventListener('touchstart', (event) => {
-    console.log(event);
     let touchLocation = event.targetTouches[0]
     x1 = touchLocation.clientX;
     y1 = touchLocation.clientY;
     // reset sideDrawer transition so it doesn't act jumpy while moving with touch 
     sideDrawer.style.transition = ""
+    console.log(event);
+    console.log(event.timeStamp);
+        
 })
 
 
@@ -87,6 +89,8 @@ openDrawerElement.addEventListener('touchmove', (event)=>{
         // console.log(window.getComputedStyle(sideDrawer).left );
         
     }
+    console.log(event.timeStamp);
+    
 })
 
 openDrawerElement.addEventListener('touchend', event => {
@@ -103,6 +107,8 @@ openDrawerElement.addEventListener('touchend', event => {
         closeMenu(sideDrawer)
     }
     sideDrawer.style.left = null
+    console.log(`final timestamp is ${event.timeStamp}`);
+    
 })
 
 
@@ -125,13 +131,13 @@ const reduceOpacity = (ele, fraction, total) => {
 }
 
 // close side drawer listeners 
-sideDrawer.addEventListener('touchstart', event => {
+closeDrawerElement.addEventListener('touchstart', event => {
     let touchLocation = event.targetTouches[0]
     x1 = touchLocation.clientX;
     y1 = touchLocation.clientY;
 })
 
-sideDrawer.addEventListener('touchmove', event => {
+closeDrawerElement.addEventListener('touchmove', event => {
     let touchLocation = event.touches[0]; 
     let xLocation = touchLocation.clientX; 
     // let yLocation = touchLocation.clientY; 
@@ -151,7 +157,7 @@ sideDrawer.addEventListener('touchmove', event => {
     sideDrawer.style.left =`${marker}px`
 })
 
-sideDrawer.addEventListener('touchend', event => {
+closeDrawerElement.addEventListener('touchend', event => {
     let touchLocation = event.changedTouches[0]; 
     let x2 = touchLocation.clientX; 
 
@@ -159,7 +165,7 @@ sideDrawer.addEventListener('touchend', event => {
     console.log(`xDiff is ${xDiff}`);
     
     // decide to open or close the drawer based on how far the user pushed it 
-    if (xDiff > drawerWidth/2){
+    if (xDiff > drawerWidth/3){
         console.log('closing menu');
         
         closeMenu(sideDrawer)
