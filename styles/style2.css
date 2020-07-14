@@ -76,6 +76,10 @@ button {
   opacity: 0.0;
 }
 
+#openDrawerElement.show {
+  opacity: 0.5;
+}
+
 #closeDrawerElement {
   background-color: red;
   width: 100%;
@@ -85,6 +89,10 @@ button {
   top: 8vh;
   opacity: 0.0;
   z-index: 3;
+}
+
+#closeDrawerElement.show {
+  opacity: 0.5;
 }
 
 #sideDrawer.focus {
@@ -387,5 +395,20 @@ h2 :before {
 
 li svg {
   vertical-align: middle;
+}
+
+#devButton {
+  margin-left: auto;
+  background-color: #011936;
+  color: #c8c8c8;
+  border: none;
+  word-wrap: wrap;
+  max-width: 10%;
+  font-size: 0.5rem;
+  opacity: 0.5;
+}
+
+#devButton.show {
+  opacity: 0.8;
 }
 /*# sourceMappingURL=style2.css.map */

@@ -98,6 +98,9 @@ button {
     background-color: blue;
     opacity: 0.0;
     // z-index: 2; 
+    &.show {
+        opacity: 0.5;
+    }
 }
 
 #closeDrawerElement {
@@ -109,8 +112,10 @@ button {
     top: $headerHeight;
     opacity: 0.0;
     z-index: 3;
+    &.show {
+        opacity: 0.5; 
+    }
 }
-
 
 #sideDrawer.focus{
     background-color: red;
@@ -398,5 +403,19 @@ li {
     svg {
         vertical-align: middle;
         // transform: rotate(90deg);
+    }
+}
+
+#devButton {
+    margin-left: auto;
+    background-color: $drawerBackgroundColor;
+    color: $drawerTextColor;
+    border: none;
+    word-wrap: wrap;
+    max-width: 10%;
+    font-size: 0.5rem;
+    opacity: 0.5;
+    &.show {
+        opacity: 0.8;
     }
 }
