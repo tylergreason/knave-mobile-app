@@ -24,30 +24,9 @@ toggler.addEventListener('click', toggleMenuOpen)
 
 
 // touch specific functions for animating drawer open and closed 
-const openMenu = ele => {
-    // find the current left attribute of the element's style 
-    let currentLeft = window.getComputedStyle(ele).left; 
-    let openFrames = [
-        {
-            left: currentLeft,
-        },
-        {
-            left: 0+'px',
-        }
-    ]; 
-
-    let timing = {
-        duration: 300,
-        fill: 'forwards',
-        easing: 'ease'
-    }
-    // animate element
-    // ele.animate(openFrames, timing)
-    // ele.style.left = null
-    // ele.style.left = drawerWidth+'px'
-
-    // ended up only using the next 3 lines, but left the rest for reference or in case I want to reuse it 
+const openMenu = ele => { 
     ele.classList.add('active');
+    sideDrawer.style.left = null;
     mainWrapper.style.opacity = null;
     mainWrapper.classList.add('menuActive')
     //freeze scrolling 
@@ -55,28 +34,9 @@ const openMenu = ele => {
 }
 
 const closeMenu = ele => {
-    // find the current left attribute of the element's style 
-    let currentLeft = window.getComputedStyle(ele).left; 
-    let closeFrames = [
-        {
-            left: currentLeft,
-        },
-        {
-            left: -drawerWidth + 'px',
-        }
-    ]; 
-    
-    let timing = {
-        duration: 300,
-        fill: 'forwards',
-        easing: 'ease'
-    }
-    // animate element
-    // ele.animate(closeFrames, timing)
-    // ele.style.left = null
-
     // set transition style, which needs reset afterwards
     sideDrawer.style.transition = "0.2s"
+    sideDrawer.style.left = null;
     ele.classList.remove('active');
     mainWrapper.classList.remove('menuActive')
     // add the ability to scroll the page again 
@@ -191,7 +151,18 @@ sideDrawer.addEventListener('touchend', event => {
     let touchLocation = event.changedTouches[0]; 
     let x2 = touchLocation.clientX; 
 
+    let xDiff = x1 - x2; 
+    console.log(`xDiff is ${xDiff}`);
+    
     // decide to open or close the drawer based on how far the user pushed it 
+    if (xDiff > drawerWidth/2){
+        console.log('closing menu');
+        
+        closeMenu(sideDrawer)
+    }else{
+        console.log('openign menu');
+        openMenu(sideDrawer)
+    }
 })
 
 // const toggleSubItemActive = (subItem) => {
