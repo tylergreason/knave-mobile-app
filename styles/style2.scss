@@ -61,7 +61,7 @@ button {
     &.active {
         top: $headerHeight; 
         left: 0px;
-        transition: 0.4s ease-out; 
+        transition: 0.2s ease-out; 
         // width: $drawerWidth;
         // left: 0;
         // #closeMenuButton {
@@ -100,10 +100,11 @@ button {
 
 #closeDrawerElement {
     background-color: red;
-    width: 20%; 
+    width: 100%; 
     height: 100vh; 
-    position: absolute; 
-    right: 0px;
+    position: fixed; 
+    right: -$drawerWidth;
+    top: 0px;
     opacity: 0.5;
 }
 

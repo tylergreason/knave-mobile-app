@@ -1,12 +1,12 @@
+let body = document.body; 
 // create element to listen for opening drawer event 
 const openDrawerElement = document.createElement('div'); 
 openDrawerElement.id = "openDrawerElement"; 
 // create element to listen for closing the drawer 
 const closeDrawerElement = document.createElement('div'); 
 closeDrawerElement.id = "closeDrawerElement"; 
-sideDrawer.appendChild(closeDrawerElement); 
+body.appendChild(closeDrawerElement); 
 // openDrawerElement.style.zIndex = '3';
-let body = document.body; 
 body.appendChild(openDrawerElement);
     
 const drawerWidth = 300; 
@@ -48,17 +48,17 @@ const closeMenu = ele => {
 }
 
 
-// swiping menu open touch feature
-let x1, y1; 
+// swiping menu open touch feature. Define them outside events to ensure they can be shared between them. 
+let x1, y1, timeStart, timeEnd; 
 openDrawerElement.addEventListener('touchstart', (event) => {
     let touchLocation = event.targetTouches[0]
     x1 = touchLocation.clientX;
     y1 = touchLocation.clientY;
+    timeStart = event.timeStamp; 
     // reset sideDrawer transition so it doesn't act jumpy while moving with touch 
     sideDrawer.style.transition = ""
     console.log(event);
     console.log(event.timeStamp);
-        
 })
 
 
@@ -96,14 +96,16 @@ openDrawerElement.addEventListener('touchmove', (event)=>{
 openDrawerElement.addEventListener('touchend', event => {
     let x2 = event.changedTouches[0].clientX; 
     let y2 = event.changedTouches[0].clientY; 
+    timeEnd = event.timeStamp; 
+    let timeDiff = timeEnd - timeStart; 
+    let xDiff = x2 - x1; 
+    console.log(xDiff);
+    
     // if the final x point is greater than 1/2 the drawerWidth, fire the open drawer animation 
-    if (x2 > drawerWidth/4){
-        // sideDrawer.style.left = 0+'px';
-        // openMenu(sideDrawer)
+    // or if it's been less than 200 miliseconds and the swipe was positive and at least 40px 
+    if (x2 > drawerWidth/4 || (timeDiff < 200 && xDiff > 39)){
         openMenu(sideDrawer)
     }else{
-        // sideDrawer.style.left = -drawerWidth+'px';
-        // closeMenu(sideDrawer);
         closeMenu(sideDrawer)
     }
     sideDrawer.style.left = null
