@@ -409,4 +409,24 @@ li svg {
 #devButton.show {
   opacity: 0.8;
 }
+
+#devDataWrapper {
+  position: fixed;
+  left: 50%;
+  top: 30%;
+  width: 50%;
+  height: 300px;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  background-color: #011936;
+  border-radius: 10px;
+  color: #c8c8c8;
+  text-align: center;
+  opacity: 0;
+  z-index: 3;
+}
+
+#devDataWrapper.show {
+  opacity: 0.9;
+}
 /*# sourceMappingURL=style2.css.map */

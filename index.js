@@ -107,6 +107,17 @@ openDrawerElement.addEventListener('touchend', event => {
     }
     sideDrawer.style.left = null
     console.log(`final timestamp is ${event.timeStamp}`);
+    
+    setDevData({
+        type: 'Open Drawer',
+        x1: x1, 
+        x2: x2, 
+        xDiff: xDiff,
+        timeStart: timeStart,
+        timeEnd: timeEnd, 
+        timeDiff: timeDiff
+    })
+    
 })
 
 
@@ -175,6 +186,15 @@ const closeEnd = event => {
             console.log('openign menu');
             openMenu(sideDrawer)
         }
+    setDevData({
+        type: 'Close Drawer',
+        x1: x1, 
+        x2: x2, 
+        xDiff: xDiff,
+        timeStart: timeStart,
+        timeEnd: timeEnd, 
+        timeDiff: timeDiff
+    })
 }
 
 // remove event listeners from closeDrawerElement 

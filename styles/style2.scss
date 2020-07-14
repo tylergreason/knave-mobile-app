@@ -411,3 +411,21 @@ li {
         opacity: 0.8;
     }
 }
+
+#devDataWrapper {
+    position:fixed; 
+    left: 50%; 
+    top: 30%; 
+    width: 50%;
+    height: 300px;
+    transform: translate(-50%);
+    background-color: $drawerBackgroundColor;
+    border-radius: 10px;
+    color: $drawerTextColor; 
+    text-align: center; 
+    opacity: 0; 
+    z-index: 3;
+    &.show {
+        opacity: 0.9;
+    }
+}
