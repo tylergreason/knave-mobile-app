@@ -41,6 +41,7 @@ const closeMenu = ele => {
     // set transition style, which needs reset afterwards
     sideDrawer.style.transition = "0.2s"
     sideDrawer.style.left = null;
+    mainWrapper.style.opacity = null;
     ele.classList.remove('active');
     mainWrapper.classList.remove('menuActive')
     // add the ability to scroll the page again 
@@ -63,8 +64,6 @@ openDrawerElement.addEventListener('touchstart', (event) => {
 
 
 openDrawerElement.addEventListener('touchmove', (event)=>{
-    // console.log(event.touches[0].clientY)
-    // console.log(event.touches[0].clientX)
     let yLocation = event.touches[0].clientY; 
     let xLocation = event.touches[0].clientX; 
     let yDiff = Math.abs(y1 - yLocation);
@@ -82,12 +81,7 @@ openDrawerElement.addEventListener('touchmove', (event)=>{
 
         // move drawer out
         sideDrawer.style.left = `${xLocation - (drawerWidth+x1)}px`;
-
-        // calc percent moved 
-        let percent = xLocation/drawerWidth; 
         reduceOpacity(mainWrapper, xLocation, drawerWidth)
-        // console.log(window.getComputedStyle(sideDrawer).left );
-        
     }
     console.log(event.timeStamp);
     
@@ -95,7 +89,6 @@ openDrawerElement.addEventListener('touchmove', (event)=>{
 
 openDrawerElement.addEventListener('touchend', event => {
     let x2 = event.changedTouches[0].clientX; 
-    let y2 = event.changedTouches[0].clientY; 
     timeEnd = event.timeStamp; 
     let timeDiff = timeEnd - timeStart; 
     let xDiff = x2 - x1; 
@@ -110,16 +103,15 @@ openDrawerElement.addEventListener('touchend', event => {
     }
     sideDrawer.style.left = null
     console.log(`final timestamp is ${event.timeStamp}`);
-    
 })
 
 
-// listen for click or tap on the body and close the sideDrawer if it's open 
-mainWrapper.addEventListener('click', e => {
-    if (sideDrawer.classList.contains('active')){
-        closeMenu(sideDrawer)
-    }
-})
+// // listen for click or tap on the body and close the sideDrawer if it's open 
+// mainWrapper.addEventListener('click', e => {
+//     if (sideDrawer.classList.contains('active')){
+//         closeMenu(sideDrawer)
+//     }
+// })
 
 
 // function to reduce mainWrapper opacity based on percentage the menu has scrolled out 
@@ -132,14 +124,16 @@ const reduceOpacity = (ele, fraction, total) => {
     ele.style.opacity = opacity;
 }
 
-// close side drawer listeners 
-closeDrawerElement.addEventListener('touchstart', event => {
+
+
+const closeStart = event => {
     let touchLocation = event.targetTouches[0]
     x1 = touchLocation.clientX;
     y1 = touchLocation.clientY;
-})
+    timeStart = event.timeStamp; 
+}
 
-closeDrawerElement.addEventListener('touchmove', event => {
+const closeMove = event => {
     let touchLocation = event.touches[0]; 
     let xLocation = touchLocation.clientX; 
     // let yLocation = touchLocation.clientY; 
@@ -152,107 +146,46 @@ closeDrawerElement.addEventListener('touchmove', event => {
     // this might be added on again if the user doesn't swipe far enough left to close the drawer (meaning openMenu() will fire again)
     sideDrawer.classList.remove('active');
     // find value that the drawer's left should be, and make sure it doesn't exceed 0 
-    let marker = xLocation - drawerWidth; 
+    let marker = xLocation - x1; 
     if (marker > 0){
         marker = 0; 
     }
+    reduceOpacity(mainWrapper, xLocation, drawerWidth)
     sideDrawer.style.left =`${marker}px`
-})
+}
 
-closeDrawerElement.addEventListener('touchend', event => {
+const closeEnd = event => {
     let touchLocation = event.changedTouches[0]; 
     let x2 = touchLocation.clientX; 
-
     let xDiff = x1 - x2; 
+    timeEnd = event.timeStamp; 
+    timeDiff = timeEnd - timeStart; 
+    console.log(`time diff is ${timeEnd - timeStart}`);
     console.log(`xDiff is ${xDiff}`);
-    
-    // decide to open or close the drawer based on how far the user pushed it 
-    if (xDiff > drawerWidth/3){
-        console.log('closing menu');
-        
-        closeMenu(sideDrawer)
-    }else{
-        console.log('openign menu');
-        openMenu(sideDrawer)
-    }
-})
+        // decide to open or close the drawer based on how far the user pushed it 
+        // or if the timeDiff is really small
+        if (xDiff > drawerWidth/3 || timeDiff < 20){
+            console.log('closing menu');
+            closeMenu(sideDrawer)
 
-// const toggleSubItemActive = (subItem) => {
-//     if (subItem !== undefined){
-//         subItem.classList.toggle('active');
-//     }
-// }
+            // remove event listeners from closeDrawerElement 
+            removeCloseEventListeners(closeDrawerElement)
+        }else{
+            console.log('openign menu');
+            openMenu(sideDrawer)
+        }
+}
 
-// // find all titles, add this event listener to them
-// let titles = Array.from(document.getElementsByClassName('drawerItemTitle')); 
-// let subItems = Array.from(document.getElementsByClassName('subItems'))
+// remove event listeners from closeDrawerElement 
+const removeCloseEventListeners = ele => {
+    ele.removeEventListener('touchstart', closeStart); 
+    ele.removeEventListener('touchmove', closeMove); 
+    ele.removeEventListener('touchend', closeEnd); 
+}
 
-// titles.forEach(title => {
-//     // find the UL that matches this title element (the next sibling element) and add toggle its visitbility with a callback to toggleSubItemActive(the matching UL) 
-//     let matchingUL = title.nextElementSibling;
-//     console.log(matchingUL);
-//     if (matchingUL !== undefined){
-//         title.addEventListener('click', () => toggleSubItemActive(matchingUL))
-//     }
-// })
+// close side drawer listeners 
+closeDrawerElement.addEventListener('touchstart', closeStart)
 
-// // on a subitem click, hide the drawer
-// subItems.forEach(subItem => {
-//     subItem.addEventListener('click', toggleMenuOpen)
-// })
+closeDrawerElement.addEventListener('touchmove', closeMove)
 
-
-
-
-
-// create new hammer instance for opening drawer 
-// const openDrawerAction = new Hammer(openDrawerElement, {}); 
-
-// // openDrawerAction.on('swiperight', e => {
-// //     console.log(e);
-    
-// //     e.preventDefault();
-// //     if (e.isFinal && e.deltaX > minimumSwipeDistance){
-// //         console.log('ajsdfljas');
-        
-// //         console.log(document.activeElement);
-// //         e.target.focus()
-// //         console.log(document.activeElement);
-// //         openSideDrawer()
-// //         window.setTimeout(sideDrawer.focus(), 0)
-// //         // debugger
-// //     }
-// // })
-
-// // new hammer instance for closing drawer 
-// const closeDrawerAction = new Hammer(sideDrawer); 
-// closeDrawerAction.on('swipe left', e => {
-//     if (e.isFinal && e.deltaX < (minimumSwipeDistance * -1)){
-//         closeSideDrawer()
-//     }
-// })
-
-
-// // create a region on the document body ZingTouch to work 
-// let zt = new ZingTouch.Region(document.body); 
-
-
-// // add listener to element to open drawer 
-// zt.bind(openDrawerElement, 'swipe', function(e){
-//     console.log(e);
-//     // check if swipe was to the right, and open drawer if it was 
-//     let direction = e.detail.data[0].currentDirection; 
-//     console.log(direction);
-//     if ((direction < 361 && direction > 334) || (direction > 0 && direction < 26)){
-//         openSideDrawer()
-//         // add closing drawer function to drawer 
-//     zt.bindOnce(sideDrawer, 'swipe', function(e){
-//         console.log('side drawer swiped');
-//         let direction = e.detail.data[0].currentDirection; 
-//         if (direction < 206 && direction > 154){
-//             closeSideDrawer()
-//         }
-//         // console.log(e);
-//     })
-//     }  
-// })
+closeDrawerElement.addEventListener('touchend', closeEnd)
