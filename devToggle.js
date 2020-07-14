@@ -45,7 +45,7 @@ const setDevTouchData = dataObject => {
     <br> 
     time: ${dataObject.timeDiff}
     <br>
-    velocity (px/milisecond): ${(dataObject.xDiff/dataObject.timeDiff).toFixed(4)}`
+    velocity (px/ms): ${(dataObject.xDiff/dataObject.timeDiff).toFixed(4)}`
 
     if (dataObject.type === 'open'){
         devOpenData.innerHTML = 
