@@ -104,8 +104,6 @@ button {
 }
 
 #mainWrapper.menuActive {
-  -webkit-transition: 0.2s ease;
-  transition: 0.2s ease;
   opacity: 0.3;
 }
 
