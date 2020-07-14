@@ -6,7 +6,12 @@ mainTitle.appendChild(devButton)
 
 let devDataString = `
     <div id='devDataWrapper'>
-        touch data shows here 
+        <div id=devOpenData>
+            Open drawer touch data shows here 
+        </div>
+        <div id=devCloseData>
+            Close drawer touch data shows here 
+        </div>
     </div>
 `
 // add element to show touch data 
@@ -24,25 +29,37 @@ const toggleTouchAreasOpacities = () => {
 
 devButton.addEventListener('click', toggleTouchAreasOpacities)
 
-const setDevData = dataObject => {
+const setDevTouchData = dataObject => {
+
     // round all numbers 
     for (const prop in dataObject){
-        console.log(dataObject[prop]);
-        
         if (typeof(dataObject[prop]) === 'number'){
             dataObject[prop] = Math.floor(dataObject[prop])
         }
     }
-    devDataWrapper.innerHTML = 
-    `
-    ${dataObject.type}
-    <br>
-    x1: ${dataObject.x1} x2: ${dataObject.x2} 
+
+    // make string to hold data text formatting 
+    const string = `x1: ${dataObject.x1} x2: ${dataObject.x2} 
     <br>
     xDiff: ${dataObject.xDiff}
     <br> 
     time: ${dataObject.timeDiff}
     <br>
-    velocity (px/milisecond): ${(dataObject.xDiff/dataObject.timeDiff).toFixed(4)}
-    `
+    velocity (px/milisecond): ${(dataObject.xDiff/dataObject.timeDiff).toFixed(4)}`
+
+    if (dataObject.type === 'open'){
+        devOpenData.innerHTML = 
+        `
+        Open Drawer
+        <br>
+        ${string}    
+        `
+    }else if (dataObject.type === 'close'){
+        devCloseData.innerHTML = 
+        `
+        Close Drawer
+        <br>
+        ${string}
+        `
+    }
 }

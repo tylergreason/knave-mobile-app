@@ -108,8 +108,8 @@ openDrawerElement.addEventListener('touchend', event => {
     sideDrawer.style.left = null
     console.log(`final timestamp is ${event.timeStamp}`);
     
-    setDevData({
-        type: 'Open Drawer',
+    setDevTouchData({
+        type: 'open',
         x1: x1, 
         x2: x2, 
         xDiff: xDiff,
@@ -186,8 +186,8 @@ const closeEnd = event => {
             console.log('openign menu');
             openMenu(sideDrawer)
         }
-    setDevData({
-        type: 'Close Drawer',
+    setDevTouchData({
+        type: 'close',
         x1: x1, 
         x2: x2, 
         xDiff: xDiff,
