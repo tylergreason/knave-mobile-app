@@ -2,18 +2,14 @@ let body = document.body;
 // create element to listen for opening drawer event 
 const openDrawerElement = document.createElement('div'); 
 openDrawerElement.id = "openDrawerElement"; 
+body.appendChild(openDrawerElement);
+
 // create element to listen for closing the drawer 
 const closeDrawerElement = document.createElement('div'); 
 closeDrawerElement.id = "closeDrawerElement"; 
 body.appendChild(closeDrawerElement); 
-// openDrawerElement.style.zIndex = '3';
-body.appendChild(openDrawerElement);
-    
-const drawerWidth = 250; 
 
-const swipeAreaLeft = 0, minimumSwipeDistance = 60, swipeAreaRight = swipeAreaLeft + minimumSwipeDistance; 
-// // set css drawer width to that which is set above 
-// document.documentElement.style.setProperty(`--drawerWidth`, `${drawerWidth}px`);
+const drawerWidth = 250; 
 
 // // add 'active' class to drawer to open and close it
 const toggleMenuOpen = () => {
@@ -26,12 +22,13 @@ const toggleMenuOpen = () => {
 
 toggler.addEventListener('click', toggleMenuOpen)
 
-
-// touch specific functions for animating drawer open and closed 
+// functions for opening and closing sideDrawer
 const openMenu = ele => { 
     ele.classList.add('active');
+    // reset inline styles so css classes can affect these attributes
     sideDrawer.style.left = null;
     mainWrapper.style.opacity = null;
+    // tell the mainWrapper element that the drawer is open
     mainWrapper.classList.add('menuActive')
     //freeze scrolling 
     document.body.style.overflow = 'hidden'
@@ -42,6 +39,7 @@ const openMenu = ele => {
 const closeMenu = ele => {
     // set transition style, which needs reset afterwards
     sideDrawer.style.transition = "0.2s"
+    // reset inline styles so css classes can affect these attributes
     sideDrawer.style.left = null;
     mainWrapper.style.opacity = null;
     ele.classList.remove('active');
@@ -53,23 +51,25 @@ const closeMenu = ele => {
 }
 
 
-// swiping menu open touch feature. Define them outside events to ensure they can be shared between them. 
+// Define touch variables outside events so they can be shared amongst them
 let x1, y1, timeStart, timeEnd; 
-openDrawerElement.addEventListener('touchstart', (event) => {
+
+// add functions to fire during start, move, and end touches on openDrawerElement 
+const openStart = event => {
+    // set variables for the start of the touch event 
     let touchLocation = event.targetTouches[0]
     x1 = touchLocation.clientX;
     y1 = touchLocation.clientY;
     timeStart = event.timeStamp; 
     // reset sideDrawer transition so it doesn't act jumpy while moving with touch 
     sideDrawer.style.transition = ""
-    console.log(event);
-    console.log(event.timeStamp);
-})
+}
 
-
-openDrawerElement.addEventListener('touchmove', (event)=>{
+const openMove = event => {
+    // set moving touch coordinates
     let yLocation = event.touches[0].clientY; 
     let xLocation = event.touches[0].clientX; 
+    // find distance traveled 
     let yDiff = Math.abs(y1 - yLocation);
     let xDiff = Math.abs(x1 - xLocation);
 
@@ -88,10 +88,9 @@ openDrawerElement.addEventListener('touchmove', (event)=>{
         reduceOpacity(mainWrapper, xLocation, drawerWidth)
     }
     console.log(event.timeStamp);
-    
-})
+}
 
-openDrawerElement.addEventListener('touchend', event => {
+const openEnd = event => {
     let x2 = event.changedTouches[0].clientX; 
     timeEnd = event.timeStamp; 
     let timeDiff = timeEnd - timeStart; 
@@ -107,7 +106,7 @@ openDrawerElement.addEventListener('touchend', event => {
     }
     sideDrawer.style.left = null
     console.log(`final timestamp is ${event.timeStamp}`);
-    
+    // set the dev data element's text to this touch event's text 
     setDevTouchData({
         type: 'open',
         x1: x1, 
@@ -117,17 +116,7 @@ openDrawerElement.addEventListener('touchend', event => {
         timeEnd: timeEnd, 
         timeDiff: timeDiff
     })
-    
-})
-
-
-// // listen for click or tap on the body and close the sideDrawer if it's open 
-// mainWrapper.addEventListener('click', e => {
-//     if (sideDrawer.classList.contains('active')){
-//         closeMenu(sideDrawer)
-//     }
-// })
-
+}
 
 // function to reduce mainWrapper opacity based on percentage the menu has scrolled out 
 const reduceOpacity = (ele, fraction, total) => {
@@ -138,9 +127,14 @@ const reduceOpacity = (ele, fraction, total) => {
     }
     ele.style.opacity = opacity;
 }
+// add event listeners to openDrawerElement
+openDrawerElement.addEventListener('touchstart', openStart)
 
+openDrawerElement.addEventListener('touchmove', openMove)
 
+openDrawerElement.addEventListener('touchend', openEnd)
 
+// define functions to fire during close start, move, and end events
 const closeStart = event => {
     let touchLocation = event.targetTouches[0]
     x1 = touchLocation.clientX;
@@ -175,17 +169,16 @@ const closeEnd = event => {
     let xDiff = x1 - x2; 
     timeEnd = event.timeStamp; 
     timeDiff = timeEnd - timeStart; 
-    console.log(`time diff is ${timeEnd - timeStart}`);
-    console.log(`xDiff is ${xDiff}`);
-        // decide to open or close the drawer based on how far the user pushed it 
-        // or if the timeDiff is really small
-        if (xDiff > drawerWidth/3 || timeDiff < 100){
-            console.log('closing menu');
-            closeMenu(sideDrawer)
-        }else{
-            console.log('openign menu');
-            openMenu(sideDrawer)
-        }
+    // decide to open or close the drawer based on how far the user pushed it 
+    // or if the timeDiff is really small (meaning the user tapped the area)
+    if (xDiff > drawerWidth/3 || timeDiff < 100){
+        console.log('closing menu');
+        closeMenu(sideDrawer)
+    }else{
+        console.log('openign menu');
+        openMenu(sideDrawer)
+    }
+    // set the dev data element's text to this touch event's text 
     setDevTouchData({
         type: 'close',
         x1: x1, 
