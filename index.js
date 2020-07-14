@@ -9,7 +9,7 @@ body.appendChild(closeDrawerElement);
 // openDrawerElement.style.zIndex = '3';
 body.appendChild(openDrawerElement);
     
-const drawerWidth = 300; 
+const drawerWidth = 250; 
 
 const swipeAreaLeft = 0, minimumSwipeDistance = 60, swipeAreaRight = swipeAreaLeft + minimumSwipeDistance; 
 // // set css drawer width to that which is set above 
@@ -168,7 +168,7 @@ const closeEnd = event => {
     console.log(`xDiff is ${xDiff}`);
         // decide to open or close the drawer based on how far the user pushed it 
         // or if the timeDiff is really small
-        if (xDiff > drawerWidth/3 || timeDiff < 20){
+        if (xDiff > drawerWidth/3 || timeDiff < 100){
             console.log('closing menu');
             closeMenu(sideDrawer)
         }else{
