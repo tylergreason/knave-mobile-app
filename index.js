@@ -35,6 +35,8 @@ const openMenu = ele => {
     mainWrapper.classList.add('menuActive')
     //freeze scrolling 
     document.body.style.overflow = 'hidden'
+    // add event listeners to closeDrawerElement 
+    addCloseEventListeners(closeDrawerElement)
 }
 
 const closeMenu = ele => {
@@ -46,6 +48,8 @@ const closeMenu = ele => {
     mainWrapper.classList.remove('menuActive')
     // add the ability to scroll the page again 
     document.body.style.overflow = 'scroll'
+    // remove event listeners from closeDrawerElement 
+    removeCloseEventListeners(closeDrawerElement)
 }
 
 
@@ -167,9 +171,6 @@ const closeEnd = event => {
         if (xDiff > drawerWidth/3 || timeDiff < 20){
             console.log('closing menu');
             closeMenu(sideDrawer)
-
-            // remove event listeners from closeDrawerElement 
-            removeCloseEventListeners(closeDrawerElement)
         }else{
             console.log('openign menu');
             openMenu(sideDrawer)
@@ -182,10 +183,9 @@ const removeCloseEventListeners = ele => {
     ele.removeEventListener('touchmove', closeMove); 
     ele.removeEventListener('touchend', closeEnd); 
 }
-
-// close side drawer listeners 
-closeDrawerElement.addEventListener('touchstart', closeStart)
-
-closeDrawerElement.addEventListener('touchmove', closeMove)
-
-closeDrawerElement.addEventListener('touchend', closeEnd)
+// add event listeners to closeDrawerElement 
+const addCloseEventListeners = ele => {
+    ele.addEventListener('touchstart', closeStart); 
+    ele.addEventListener('touchmove', closeMove); 
+    ele.addEventListener('touchend', closeEnd); 
+}
