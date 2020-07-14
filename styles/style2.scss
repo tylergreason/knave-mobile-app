@@ -34,13 +34,13 @@ button {
 
 #sideDrawer {
     background-color: $drawerBackgroundColor;
-    position: fixed; 
+    position: fixed;
     margin: 0px; 
     // top: 0px; 
     left: -$drawerWidth;
     height: 100vh - $headerHeight; 
     width: $drawerWidth;
-    // transition: all 0.1s ease-in, height 0s; 
+    transition: all 0.0s ease-in;
     
     display: flex; 
     flex-flow: column;
@@ -74,6 +74,39 @@ button {
         }    
     }
 }
+
+// touch elements styling 
+#touchElement {
+    width: 100%; 
+    height: 100%; 
+    position: fixed; 
+    top: 0px; 
+    bottom: 0px; 
+    left: 0px; 
+    right: 0px; 
+    z-index: -1;
+}
+
+#openDrawerElement {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 10%; 
+    height: 100%; 
+    background-color: blue;
+    opacity: 0.0;
+    // z-index: 2; 
+}
+
+#closeDrawerElement {
+    background-color: red;
+    width: 20%; 
+    height: 100vh; 
+    position: absolute; 
+    right: 0px;
+    opacity: 0.5;
+}
+
 
 #sideDrawer.focus{
     background-color: red;
@@ -330,29 +363,6 @@ h2 {
     #reactionsList {
         width: 100%;
     }
-}
-
-// touch elements styling 
-#touchElement {
-    width: 100%; 
-    height: 100%; 
-    position: fixed; 
-    top: 0px; 
-    bottom: 0px; 
-    left: 0px; 
-    right: 0px; 
-    z-index: -1;
-}
-
-#openDrawerElement {
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    width: 10%; 
-    height: 100%; 
-    background-color: blue;
-    opacity: 0.0;
-    // z-index: 2; 
 }
 
 .designerNotes {

@@ -1,8 +1,12 @@
 // create element to listen for opening drawer event 
 const openDrawerElement = document.createElement('div'); 
 openDrawerElement.id = "openDrawerElement"; 
+// create element to listen for closing the drawer 
+const closeDrawerElement = document.createElement('div'); 
+closeDrawerElement.id = "closeDrawerElement"; 
+sideDrawer.appendChild(closeDrawerElement); 
 // openDrawerElement.style.zIndex = '3';
-let body = document.getElementsByTagName('body')[0]; 
+let body = document.body; 
 body.appendChild(openDrawerElement);
     
 const drawerWidth = 300; 
