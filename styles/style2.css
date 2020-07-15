@@ -34,10 +34,6 @@ button {
   z-index: 2;
 }
 
-#sideDrawer #closeMenuButton {
-  visibility: hidden;
-}
-
 #sideDrawer .drawerItem {
   color: #c8c8c8;
   width: 250px;
@@ -48,11 +44,6 @@ button {
   left: 0px;
   -webkit-transition: 0.2s;
   transition: 0.2s;
-}
-
-#sideDrawer.active .drawerItem {
-  visibility: visible;
-  width: 250px;
 }
 
 #touchElement {
@@ -423,10 +414,11 @@ li svg {
   color: #c8c8c8;
   text-align: center;
   opacity: 0;
-  z-index: 3;
+  z-index: -1;
 }
 
 #devDataWrapper.show {
   opacity: 0.9;
+  z-index: 3;
 }
 /*# sourceMappingURL=style2.css.map */

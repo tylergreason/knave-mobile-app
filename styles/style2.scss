@@ -38,23 +38,18 @@ button {
     background-color: $drawerBackgroundColor;
     position: fixed;
     margin: 0px; 
-    // top: 0px; 
+
     left: -$drawerWidth - $borderWidth;
     height: 100vh - $headerHeight; 
     width: $drawerWidth;
     transition: all 0.0s ease-in;
     display: flex; 
     flex-flow: column;
-    // justify-content: space-evenly;
+
     overflow-x: hidden; 
     overflow-y: auto;
     border-right: 15px solid $drawerTextColor;
-
     z-index: 2; 
-
-    #closeMenuButton {
-        visibility: hidden;
-    }
 
     .drawerItem {
         color: $drawerTextColor;
@@ -64,16 +59,6 @@ button {
         top: $headerHeight; 
         left: 0px;
         transition: 0.2s; 
-        // width: $drawerWidth;
-        // left: 0;
-        // #closeMenuButton {
-        //     visibility: visible;
-        // }
-    
-        .drawerItem {
-            visibility: visible;
-            width: $drawerWidth; 
-        }    
     }
 }
 
@@ -424,8 +409,9 @@ li {
     color: $drawerTextColor; 
     text-align: center; 
     opacity: 0; 
-    z-index: 3;
+    z-index: -1;
     &.show {
         opacity: 0.9;
+        z-index: 3;
     }
 }
