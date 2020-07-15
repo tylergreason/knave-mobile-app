@@ -111,6 +111,7 @@ button {
 
     &.menuActive {
         opacity: 0.3;
+        padding-right: 15px;
     }
 }
 
@@ -348,6 +349,10 @@ h2 {
     }
     #reactionsList {
         width: 100%;
+    }
+    #mainWrapper.menuActive {
+        opacity: 0.3;
+        padding-right: 0px;
     }
 }
 

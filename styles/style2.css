@@ -96,6 +96,7 @@ button {
 
 #mainWrapper.menuActive {
   opacity: 0.3;
+  padding-right: 15px;
 }
 
 .drawerItem {
@@ -355,6 +356,10 @@ h2 :before {
   }
   #reactionsList {
     width: 100%;
+  }
+  #mainWrapper.menuActive {
+    opacity: 0.3;
+    padding-right: 0px;
   }
 }
 

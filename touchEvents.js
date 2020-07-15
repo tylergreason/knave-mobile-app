@@ -45,7 +45,7 @@ const closeMenu = ele => {
     ele.classList.remove('active');
     mainWrapper.classList.remove('menuActive')
     // add the ability to scroll the page again 
-    document.body.style.overflow = 'scroll'
+    document.body.style.overflow = 'visible'
     // add/remove event listeners
     removeCloseEventListeners(closeDrawerElement)
     addOpenEventListeners(openDrawerElement);
@@ -156,7 +156,6 @@ const closeMove = event => {
         xLocation = drawerWidth+x1
     }
     // remove sideDrawer 'active' class so it doesn't act jumpy while moving with touch 
-    // this might be added on again if the user doesn't swipe far enough left to close the drawer (meaning openMenu() will fire again)
     sideDrawer.classList.remove('active');
     sideDrawer.style.transition = "";
     // find value that the drawer's left should be, and make sure it doesn't exceed 0 
