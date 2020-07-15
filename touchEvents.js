@@ -158,6 +158,7 @@ const closeMove = event => {
     // remove sideDrawer 'active' class so it doesn't act jumpy while moving with touch 
     // this might be added on again if the user doesn't swipe far enough left to close the drawer (meaning openMenu() will fire again)
     sideDrawer.classList.remove('active');
+    sideDrawer.style.transition = "";
     // find value that the drawer's left should be, and make sure it doesn't exceed 0 
     let marker = xLocation - x1; 
     if (marker > 0){
