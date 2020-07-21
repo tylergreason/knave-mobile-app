@@ -34,6 +34,8 @@ const openMenu = ele => {
     // add/remove event listeners
     addCloseEventListeners(closeDrawerElement)
     removeOpenEventListeners(openDrawerElement);
+    // change z index for closeDrawerElement so it can be interacted with  
+    closeDrawerElement.style.zIndex = 3;
 }
 
 const closeMenu = ele => {
@@ -49,6 +51,8 @@ const closeMenu = ele => {
     // add/remove event listeners
     removeCloseEventListeners(closeDrawerElement)
     addOpenEventListeners(openDrawerElement);
+    // change z index for closeDrawerElement so buttons around it can be clicked
+    closeDrawerElement.style.zIndex = -1;
 }
 
 

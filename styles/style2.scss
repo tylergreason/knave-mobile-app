@@ -96,7 +96,7 @@ button {
     left: $drawerWidth - 20px;
     top: $headerHeight;
     opacity: 0.0;
-    z-index: 3;
+    z-index: -1;
     &.show {
         opacity: 0.5; 
     }
