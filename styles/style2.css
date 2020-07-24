@@ -3,7 +3,7 @@ body {
   line-height: 1.5;
   font-family: roboto, sans-serif;
   padding: 0px;
-  background-color: #F4FFFD;
+  background-color: #ffffff;
   scroll-behavior: smooth;
   scroll-behavior: smooth;
 }
@@ -223,10 +223,10 @@ h2 :before {
 @-webkit-keyframes highlight {
   from {
     color: #383131;
-    background-color: #F4FFFD;
+    background-color: #ffffff;
   }
   to {
-    color: #F4FFFD;
+    color: #ffffff;
     background-color: #011936;
   }
 }
@@ -234,17 +234,17 @@ h2 :before {
 @keyframes highlight {
   from {
     color: #383131;
-    background-color: #F4FFFD;
+    background-color: #ffffff;
   }
   to {
-    color: #F4FFFD;
+    color: #ffffff;
     background-color: #011936;
   }
 }
 
 #reactionsList li.highlighted svg {
   opacity: 1;
-  fill: #F4FFFD;
+  fill: #ffffff;
   -webkit-animation-name: rotatingSword;
           animation-name: rotatingSword;
   -webkit-animation-duration: 0.3s;
@@ -367,7 +367,7 @@ h2 :before {
   text-align: center;
   font-style: italic;
   background-color: #465362;
-  color: #F4FFFD;
+  color: #ffffff;
   border-radius: 10px;
   padding: 5px;
   max-height: 22px;
@@ -375,7 +375,7 @@ h2 :before {
   overflow: hidden;
   -webkit-transition: 0.2s;
   transition: 0.2s;
-  border: 3px solid #F4FFFD;
+  border: 3px solid #ffffff;
   opacity: 0.8;
 }
 

@@ -1,7 +1,7 @@
 $drawerWidth: 250px; 
 $drawerColor: rgb(50,50,50);
 $textColor: rgb(56, 49, 49);
-$backgroundColor: #F4FFFD;
+$backgroundColor: #ffffff;
 $noteColor: #465362;
 $headerColor : #ED254E;
 $drawerTextColor: rgb(200,200,200); 
@@ -370,7 +370,7 @@ h2 {
     overflow: hidden;
     transition: 0.2s;
     border: 3px solid $backgroundColor;
-    opacity: 0.8;    
+    opacity: 0.8;
     &.open {
         opacity: 1;
     }
